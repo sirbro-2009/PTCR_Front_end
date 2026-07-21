@@ -17,6 +17,7 @@ const request = await fetch(`${serverHost}user/delete`,{
       method:"DELETE"
 })
 const respond = await request.json()
+localStorage.removeItem("token")
 return respond
 })
 export const updateData = createAsyncThunk("user/update_data",async(payload:any)=>{
