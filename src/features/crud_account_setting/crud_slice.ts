@@ -17,7 +17,7 @@ const request = await fetch(`${serverHost}user/delete`,{
       method:"DELETE"
 })
 const respond = await request.json()
-localStorage.removeItem("token")
+
 return respond
 })
 export const updateData = createAsyncThunk("user/update_data",async(payload:any)=>{
@@ -95,10 +95,13 @@ export const userSlice = createSlice({
     builder.addCase(deletAccount.fulfilled,(state)=>{
       state.done = true
       state.data = {}
+      localStorage.removeItem("token")
+
       for (let index = 0; index < localStorage.length; index++) {
             localStorage.removeItem(localStorage.key(index) as string)
           }
     })
+      location.reload()
   }
 })
 export const { get_data ,reset_value} = userSlice.actions
