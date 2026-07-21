@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { Provider } from "./hooks/Provide.js";
-import { Route, Routes } from "react-router";
+import { Route, Routes, useLocation } from "react-router";
 import Dashbord from "@/dashbord/Dashbord.tsx";
 import mainObjects from "./routes/Main_normal.js";
 import route from "./routes/Routes.js";
@@ -21,6 +21,12 @@ if (localStorage.getItem("lastDPindex") === undefined) {
 }
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    document.body.style.overflow = "";
+    document.body.style.pointerEvents = "";
+  }, [location.pathname]);
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
   const [theScreen, setScreen] = useState<boolean>(true);
   const {i18n} = useTranslation()
