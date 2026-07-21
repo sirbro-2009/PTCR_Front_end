@@ -72,6 +72,8 @@
     "some":"something wronge"
   },
   "footer": {
+        "donwload":"download",
+
     "about_title": "About Us",
     "about_desc": "Mohamed is a Muslim from \n Algeria learning programming, \nseeking to help others\n and earn his Lord's\n pleasure through these\n simple projects",
     "app_subtitle": "Prayer Times Counter",

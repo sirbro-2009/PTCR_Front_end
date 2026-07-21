@@ -1,3 +1,6 @@
+import {  FaApple, FaAppStoreIos, FaGlobe, FaLinux, FaWindows } from "react-icons/fa";
+import { FaAndroid } from "react-icons/fa6";
+
 export const serverHost =  "https://ptcr-back-end.vercel.app/";
 export interface Tafsir {
   id: number;
@@ -116,3 +119,53 @@ export const reciters: Reciter[] = [
   { id: 78, subfolder: "translations/urdu_farhat_hashmi", name: { ar: "فرحت هاشمي (ترجمة أردو كلمة بكلمة)", en: "Farhat Hashmi (Urdu word for word translation)" }, bitrate: "32kbps" },
   { id: 79, subfolder: "Ayman_Sowaid_64kbps", name: { ar: "أيمن سويد", en: "Ayman Sowaid" }, bitrate: "64kbps" },
 ];
+interface Download{
+  text:string,
+  link:string,
+  icon:any,
+  available:boolean
+}
+export const Downloads:Download[] = [
+  {
+    text:"Web site",
+    link:"https://ptcr-front-end.vercel.app/",
+    icon:<FaGlobe size={30}/>,
+    available:true
+  },
+  {
+    text:"Andorid",
+    link:"https://median.co/share/abzewen#apk",
+    icon:<FaAndroid size={30}/>,
+    available:true
+  },
+  {
+    text:"ios",
+    link:"",
+    icon:<FaAppStoreIos size={30}/>,
+    available:false
+  },
+  {
+    text:"windows 64 x",
+    link:"",
+    icon:<FaWindows size={30}/>,
+    available:false
+  },
+  {
+    text:"windows 32 x",
+    link:"",
+    icon:<FaWindows size={30}/>,
+    available:false
+  },
+  {
+    text:"macOS",
+    link:"",
+    icon:<FaApple size={30}/>,
+    available:false
+  },
+  {
+    text:"Linux",
+    link:"",
+    icon:<FaLinux size={30}/>,
+    available:false
+  },    
+]
