@@ -94,7 +94,10 @@ export const userSlice = createSlice({
     })
     builder.addCase(deletAccount.fulfilled,(state)=>{
       state.done = true
-      state.data = null
+      state.data = {}
+      for (let index = 0; index < localStorage.length; index++) {
+            localStorage.removeItem(localStorage.key(index) as string)
+          }
     })
   }
 })
