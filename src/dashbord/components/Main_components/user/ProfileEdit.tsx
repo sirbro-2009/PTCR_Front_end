@@ -6,11 +6,13 @@ import {useAppDispatch,useAppSelector} from '@/hooks/Redux'
 import { useEffect } from "react"
 import { userData } from "@/features/crud_account_setting/crud_slice"
 import Loader from "@/other/Loader."
+import type { Data } from "@/dashbord/components/SideBar_components/SideBarFooter.js";
+
 export default function ProfileEdit(){
 const {t,i18n} = useTranslation()
 const userInformations = useAppSelector(state=>state.user)
 const dispatch = useAppDispatch()
-const {profilePicture,fullName} = userInformations.data
+const {profilePicture,fullName} = userInformations.data as Data
 
 useEffect(()=>{
 const data = dispatch(userData())

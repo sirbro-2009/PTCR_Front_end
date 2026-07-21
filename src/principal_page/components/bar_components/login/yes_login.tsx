@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import {useAppDispatch,useAppSelector} from '@/hooks/Redux'
 import Loader from "@/other/Loader.";
+import type { Data } from "@/dashbord/components/SideBar_components/SideBarFooter.js";
 export default function Yes_Login() {
   //const [user, setUser] = useState({});
 
@@ -27,6 +28,7 @@ useEffect(()=>{
 dispatch(userData())
 },[dispatch])
 const user = userInformations.data
+const {profilePicture,fullName,userName} = user as Data
   return (
     <DropdownMenu onOpenChange={(open) => {
   document.body.style.overflowY = open ? "hidden" : "auto"
@@ -34,12 +36,12 @@ const user = userInformations.data
       <DropdownMenuTrigger asChild >
         <Button variant="outline" className={`rounded-full w-8 h-8 bg-transparent cursor-pointer`} >
                 {
-                  user.profilePicture?
+                  profilePicture?
                   
                   <Avatar >
-                    <AvatarImage   src={user.profilePicture} alt="User image" className="scale-170  rounded-full"/>
+                    <AvatarImage   src={profilePicture} alt="User image" className="scale-170  rounded-full"/>
                     <AvatarFallback className="scale-170  rounded-full">
-                      {user.fullName.split("")[0].toUpperCase()||`F`}
+                      { fullName ?fullName.charAt(0).toUpperCase() :`F`}
                     </AvatarFallback>
                   </Avatar>:!userInformations.done?
                   <Loader/>
@@ -54,8 +56,8 @@ const user = userInformations.data
                 {/*ACCOUNT NAME USER NAME */}
                   {userInformations.done?
                     <DropdownMenuLabel>
-                          <h1 className="font-bold">{user.fullName||`Full Name`}</h1>
-                          <h1 className="font-medium">{user.userName||`user_1234`}</h1>
+                          <h1 className="font-bold">{fullName||`Full Name`}</h1>
+                          <h1 className="font-medium">{userName||`user_1234`}</h1>
                     </DropdownMenuLabel>:
                     <Loader/>
                     }
