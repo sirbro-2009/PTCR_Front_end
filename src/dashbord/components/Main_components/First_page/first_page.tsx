@@ -15,6 +15,9 @@ dispatch(userData())
 },[dispatch])
 const {fullName,profilePicture} = userInformations.data
 const isDone = userInformations.done
+if(!isDone){
+    location.reload()
+}
     return (isDone?
         <Card className="m-auto w-full md:w-1/2 p-2 " dir={i18n.language==='ar'?'rtl':`ltr`}>
             <h1 className="font-bold text-xl text-center">{t(`navbar.greeting`)}</h1>
