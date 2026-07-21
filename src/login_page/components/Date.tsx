@@ -40,25 +40,24 @@ export default function DatePicker() {
                 ? "border-red-500 bg-red-50 text-red-900 focus:ring-red-500"
                 : "border-input bg-background"
             }`}>
-            {signUp.dateOfborn ? signUp.dateOfborn : t(`auth.Select_date`)}
+            {signUp.dateOfborn
+              ? new Date(signUp.dateOfborn).toLocaleDateString()
+              : t(`auth.Select_date`)}
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto overflow-hidden p-0" align="start">
           <Calendar
             mode="single"
-            selected={
-               new Date(signUp.dateOfborn)
-            }
-            defaultMonth={
-               new Date(signUp.dateOfborn)
-            }
+            selected={new Date(signUp.dateOfborn || Date.now())}
+            defaultMonth={new Date(signUp.dateOfborn || Date.now())}
             captionLayout="dropdown"
             onSelect={(date) => {
-              console.log(date)
+              if (!date) return;
+              const isoDate = date.toISOString();
               setSignUp({
                 ...signUp,
-                dateOfborn: date!.toLocaleDateString(),
-                isValidDate: !Checker(date!.toLocaleDateString()),
+                dateOfborn: isoDate,
+                isValidDate: !Checker(isoDate),
               });
               setOpen(false);
             }}
