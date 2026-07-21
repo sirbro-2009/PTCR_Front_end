@@ -12,33 +12,10 @@ const request = await fetch(`${serverHost}user/sign-out`,{
 const res =await  request.json()
 if(res.done){
 localStorage.removeItem("token")
-location.reload()
+location.href = 'https://ptcr-front-end.vercel.app/'
 }
 }
 catch(e){
     console.log(e)
 }
 }
-/*
-export  async function getData(token) {
-let res 
-try {
-if(token){
-const request = await fetch(`${theHoster}user/get-infromations`,{
-    headers:{
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`     
-    }
-})
-res ={...await  request.json() ,fullfied:true}
-}
-else {
-res = {fullfied:false}
-}
-}
-catch  {
-res = {fullfied:false}
-}
-return res
-}
-*/

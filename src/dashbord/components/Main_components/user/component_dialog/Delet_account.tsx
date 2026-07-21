@@ -17,6 +17,11 @@ export function Delet_account() {
 const {t} = useTranslation()
 const dispatch = useAppDispatch()
 const userInformations = useAppSelector(state=>state.user)
+if(userInformations.done && !userInformations.data ){
+      localStorage.removeItem("token")
+      location.href = 'https://ptcr-front-end.vercel.app/'
+}
+
 const henddleClick = ()=>{
             dispatch(deletAccount())  
 }

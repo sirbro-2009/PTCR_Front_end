@@ -101,7 +101,7 @@ export const userSlice = createSlice({
             localStorage.removeItem(localStorage.key(index) as string)
           }
     })
-      location.reload()
+      
   }
 })
 export const { get_data ,reset_value} = userSlice.actions

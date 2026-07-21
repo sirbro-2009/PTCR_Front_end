@@ -117,7 +117,7 @@ export default function SideBarFooter() {
                       <a
                         className="w-full flex flex-row  items-center justify-start"
                         onClick={() => {
-                          sign_out();
+                          sign_out()
                         }}>
                         <LogOut className="mr-3" />
                         {t(`navbar.logOut`)}
