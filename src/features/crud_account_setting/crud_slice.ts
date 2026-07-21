@@ -48,7 +48,7 @@ const data = await  request.json()
 return data
 })
 const  initialState:any = {
-    done:false,
+    done:null,
     change:undefined,
     data:{}
   }
