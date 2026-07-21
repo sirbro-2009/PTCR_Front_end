@@ -181,7 +181,7 @@ export const getTafsir = createAsyncThunk(
     aya: number;
   }) => {
     const request = await fetch(
-      `http://api.quran-tafseer.com/tafseer/${id.toString()}/${surahIndex.toString()}/${aya.toString()}`,
+      `${serverHost}quran/tafsir?id=${id.toString()}&surahIndex=${surahIndex.toString()}&aya=${aya.toString()}`,
     );
     return await request.json();
   },
