@@ -33,5 +33,5 @@ const isDone = userInformations.done
 
             <p className="text-center text-3xl">{fullName}</p>
         </Card>
-        :isDone === null?<Loader />:location.reload())
+        :isDone === null?<Loader />:``)
 }
