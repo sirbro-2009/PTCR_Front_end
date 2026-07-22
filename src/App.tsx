@@ -12,6 +12,7 @@ import {
   ContextMenu,
   ContextMenuTrigger,
 } from "@/components/ui/context-menu";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import ContextMenuContentComp from "./other/contextMenu.js";
 if (localStorage.getItem("theme") === undefined) {
   localStorage.setItem("theme", "dark");
@@ -104,6 +105,7 @@ function App() {
                 element={<Dashbord>{mainObjects[dpIndex]}</Dashbord>}
               />
             </Routes>
+              <SpeedInsights />
           </div>
         </ContextMenuTrigger>
         <ContextMenuContentComp/>
