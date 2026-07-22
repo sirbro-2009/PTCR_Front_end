@@ -17,14 +17,18 @@ export default function DatePicker() {
   const { signUp, setSignUp } = useContext(Provider) as IProvider;
   const [open, setOpen] = useState(false);
   const Checker = (sentedDate: string): boolean => {
-    let theDate = new Date(Date.now());
-    const SendedDate = new Date(sentedDate);
-    const def: number = Math.round(
-      (theDate.getTime() - SendedDate.getTime()) / 1000 / 60 / 60 / 24 / 365,
-    );
-    if (def >= 5) {
-      return true;
-    } else {
+    try {
+      let theDate = new Date(Date.now());
+      const SendedDate = new Date(sentedDate);
+      const def: number = Math.round(
+        (theDate.getTime() - SendedDate.getTime()) / 1000 / 60 / 60 / 24 / 365,
+      );
+      if (def >= 5) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch {
       return false;
     }
   };

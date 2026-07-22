@@ -41,7 +41,7 @@ function App() {
     Gender: "",
     confirmPassword: "",
     userType: null,
-    dateOfborn: new Date().toLocaleString().split(",")[0],
+    dateOfborn: new Date().toISOString().split(",")[0],
     done: null,
   });
   const [login, setLogin] = useState({
