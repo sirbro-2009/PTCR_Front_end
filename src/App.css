@@ -14,6 +14,23 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Indopak'; 
+  src: url('@/assets/fonts/IndopakNastaleeq.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+.tajweed-dark-invert {
+  filter: invert(1) hue-rotate(180deg);
+}
+@font-face {
+  font-family: 'SurahName'; 
+  src:
+  url("https://quranfonts.com/fonts/Surah name font v2/surah-name-v2.woff2") format("woff2"),
+  url("https://quranfonts.com/fonts/Surah name font v2/surah-name-v2.woff") format("woff"),
+  url("https://quranfonts.com/fonts/Surah name font v2/surah-name-v2.ttf") format("truetype");
+  font-display: swap;
+}
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;    

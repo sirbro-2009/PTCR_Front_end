@@ -45,7 +45,7 @@ export default function DatePicker() {
                 : "border-input bg-background"
             }`}>
             {signUp.dateOfborn
-              ? new Date(signUp.dateOfborn).toLocaleDateString()
+              ? new Date(signUp.dateOfborn).toISOString().split("T")[0]
               : t(`auth.Select_date`)}
           </Button>
         </PopoverTrigger>

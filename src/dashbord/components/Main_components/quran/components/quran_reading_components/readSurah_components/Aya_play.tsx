@@ -1,14 +1,5 @@
-import { useAppDispatch, useAppSelector } from "@/hooks/Redux";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
 import { Slider } from "@/components/ui/slider";
-import { reciters } from "@/other/data";
 import { useRef, useState } from "react";
 import Audio_Bar from "./audio_bar";
 export default function Aya_play({ props }: any) {

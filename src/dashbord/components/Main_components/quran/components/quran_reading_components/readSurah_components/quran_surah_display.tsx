@@ -13,12 +13,14 @@ export interface IquranText {
     en: "meccan" | "medinan";
   };
   verses_count: number;
+  tadjwid?: string[];
   verses: {
     number: number;
     text: {
       ar: string;
       en: string;
     };
+
     juz: number;
     page: number;
     sajda: boolean;

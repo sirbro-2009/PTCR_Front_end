@@ -7,7 +7,6 @@ import mainObjects from "./routes/Main_normal.js";
 import route from "./routes/Routes.js";
 import { serverHost } from "@/other/data";
 import { useTranslation } from "react-i18next";
-import { DirectionProvider } from "@/components/ui/direction"
 import {
   ContextMenu,
   ContextMenuTrigger,
@@ -89,7 +88,6 @@ function App() {
         theScreen,
         setScreen,
       }}>
-      <DirectionProvider direction={i18n.language === 'ar'?'rtl':'ltr'} dir={i18n.language === 'ar'?'rtl':'ltr'}>
       <ContextMenu>
         <ContextMenuTrigger>
           {" "}
@@ -110,7 +108,6 @@ function App() {
         </ContextMenuTrigger>
         <ContextMenuContentComp/>
       </ContextMenu>
-      </DirectionProvider>
 
     </Provider.Provider>
   );

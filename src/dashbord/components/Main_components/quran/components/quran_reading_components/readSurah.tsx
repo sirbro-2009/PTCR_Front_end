@@ -6,8 +6,9 @@ import { useAppDispatch, useAppSelector } from "@/hooks/Redux";
 import { toastFunctions } from "../quran_recitation_components/mp3_compnents/ifFulfied";
 import Loader from "@/other/Loader.";
 import Quran_surah_display from "./readSurah_components/quran_surah_display";
-localStorage.setItem("lastTab","surah_reading")
 export default function ReadSurah() {
+  localStorage.setItem("lastTab","surah_reading")
+
   const [surahIndex, surahSelect] = useState("")
   const infromations = useAppSelector((state) => state.quran);
   const done = infromations.done4;

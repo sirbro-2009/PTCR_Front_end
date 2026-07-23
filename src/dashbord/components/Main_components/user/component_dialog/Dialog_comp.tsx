@@ -48,7 +48,9 @@ export default function Dialog_comp({ edit_type, children }: any) {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const formData = new FormData(e.target);
+        console.log([...formData.entries()])
     const [entrieType, entrie] = [...formData.entries()][0] as [String,FormDataEntryValue]
+
     if (ready) {
       const theEntrieType =
         entrieType === "gender"

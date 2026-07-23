@@ -1,5 +1,18 @@
+if (!localStorage.getItem("QDS")) {
+  localStorage.setItem(
+    "QDS",
+    JSON.stringify({
+      done: false,
+      font: "quranFont",
+      theme: localStorage.getItem("theme"),
+      lang: localStorage.getItem("i18nextLng"),
+      readMode: false,
+    }),
+  );
+}
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const theToken = localStorage.getItem("token");
+const QDS = JSON.parse(localStorage.getItem("QDS") as string);
 import { serverHost } from "@/other/data";
 const headers = {
   "Content-Type": "application/json",
@@ -19,6 +32,13 @@ export interface theIinitialState {
   done3: boolean | null;
   done4: boolean | null | undefined;
   done5: boolean | null | undefined;
+  QDS: {
+    done: boolean;
+    font: string;
+    theme: string;
+    lang: string;
+    readMode: boolean;
+  };
   audioData: any;
   tafsir_objects?: {
     tafseer_id: number;
@@ -193,7 +213,7 @@ const initialState: theIinitialState = {
   done3: null,
   done4: null,
   done5: null,
-
+  QDS,
   quran_text: {},
   audioData: {},
   quranAudio: null,
@@ -210,6 +230,20 @@ export const quranSlice = createSlice({
       state.audioData = { ...action.payload, isSaved: true };
       state.done2 = true;
     },
+    editQDS: (state, action) => {
+      const [key, value]:[
+        "lang" | "theme" | "readMode"|'font',
+        string | boolean,
+      ] = action.payload 
+      state.QDS.done = true;
+      if(typeof value !== 'string'){state.QDS.readMode = value}
+      if (typeof value === 'string' && key !== 'readMode') {
+        state.QDS[key] = value
+      }
+      localStorage.setItem('QDS',JSON.stringify({...state.QDS}))
+
+    },
+
   },
   extraReducers: (builder) => {
     //get reader
@@ -285,5 +319,5 @@ export const quranSlice = createSlice({
     });
   },
 });
-export const { playSaved } = quranSlice.actions;
+export const { playSaved ,editQDS} = quranSlice.actions;
 export default quranSlice.reducer;

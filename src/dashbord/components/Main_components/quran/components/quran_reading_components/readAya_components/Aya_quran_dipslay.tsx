@@ -21,11 +21,15 @@ import {
 } from "@/components/ui/select";
 import { Ellipsis } from "lucide-react";
 import Aya_Number from "../readSurah_components/aya_number";
+import { useAppDispatch, useAppSelector } from "@/hooks/Redux";
+import AWTC, { AyNUMBER } from "./AyaWithTajwidComp";
+
 export default function AyaQuranDisplay({ contentObjects }: any) {
-  const { name, number, revelation_place, verses_count, verses } =
+  const { name, number, tadjwid, revelation_place, verses_count, verses } =
     contentObjects as IquranText;
   const [active, setActive] = useState(1);
-  const [show, setShow] = useState(false);
+  const Data = useAppSelector((state) => state.quran.QDS);
+
   const goTo = (page: number) => {
     if (page < 1 || page > verses_count) return;
     setActive(page);
@@ -46,17 +50,31 @@ export default function AyaQuranDisplay({ contentObjects }: any) {
 
     return pages;
   };
-
+  const pageNumber = verses[active - 1]?.page;
   return (
     <div>
-      <img
-        src={`https://everyayah.com/data/images_png/${number}_${active}.png`}
-        className="m-auto"
-        alt={verses[active - 1]?.text.ar}
-      />
+      {Data.font === "quranFont" ? (
+        <img
+          src={`https://everyayah.com/data/images_png/${number}_${active}.png`}
+          className="m-auto"
+          alt={verses[active - 1]?.text.ar}
+        />
+      ) : Data.font === "Indopak" ? (
+        <p className="w-full font-[Indopak] text-2xl text-center ">
+          {verses[active - 1]?.text.ar}
+          <AyNUMBER data={{pageNumber:pageNumber!,aya:tadjwid![active-1]!}}/>
+          </p>
+      ) : (
+        <AWTC data={{pageNumber:pageNumber!,aya:tadjwid![active-1]!}}/>
+      )}
+
+      {/**      <p className="w-full text-center font-[Indopak] text-2xl">
+        {verses[active - 1]?.text.ar}
+      </p> */}
       <p className="w-full text-center">
         [{name.ar} : {active}]
       </p>
+
       <div className="flex items-center flex-col gap-4">
         <Field orientation="horizontal" className="w-fit">
           <FieldLabel htmlFor="select-rows-per-page">
@@ -82,17 +100,9 @@ export default function AyaQuranDisplay({ contentObjects }: any) {
           </Select>
           <Aya_Number ayaIndex={active - 1} activeDefaultButton={true}>
             <button>
-            <Ellipsis
-              size={30}
-              className="cursor-pointer"
-              onClick={() => {
-                //setShow(!show);
-              }}
-            />              
+              <Ellipsis size={30} className="cursor-pointer" />
             </button>
-
           </Aya_Number>
-          {show ? `` : ``}
         </Field>
         <Pagination>
           <PaginationContent>

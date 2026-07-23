@@ -5,13 +5,13 @@ import { useAppDispatch, useAppSelector } from "@/hooks/Redux";
 import { toastFunctions } from "../quran_recitation_components/mp3_compnents/ifFulfied";
 import Loader from "@/other/Loader.";
 import AyaQuranDisplay from '@/dashbord/components/Main_components/quran/components/quran_reading_components/readAya_components/Aya_quran_dipslay'
-localStorage.setItem("lastTab","aya_reading")
 
 export default function ReadAya() {
     const [surah,surahSelect] = useState("")
+localStorage.setItem("lastTab","aya_reading")
+
   const infromations = useAppSelector((state) => state.quran);
   const done = infromations.done4;
-  const dispatch = useAppDispatch();
   if (done === false) {
     toastFunctions("error", "error");
   }
