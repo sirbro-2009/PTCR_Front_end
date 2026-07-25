@@ -52,7 +52,7 @@ export default function AyaQuranDisplay({ contentObjects }: any) {
   };
   const pageNumber = verses[active - 1]?.page;
   return (
-    <div>
+    <div className="w-4/5 m-auto ">
       {Data.font === "quranFont" ? (
         <img
           src={`https://everyayah.com/data/images_png/${number}_${active}.png`}
@@ -60,9 +60,9 @@ export default function AyaQuranDisplay({ contentObjects }: any) {
           alt={verses[active - 1]?.text.ar}
         />
       ) : Data.font === "Indopak" ? (
-        <p className="w-full font-[Indopak] text-2xl text-center ">
+        <p className="w-full font-[Indopak] text-2xl text-center " dir="rtl">
           {verses[active - 1]?.text.ar}
-          <AyNUMBER data={{pageNumber:pageNumber!,aya:tadjwid![active-1]!}}/>
+          <Aya_Number ayaIndex={active - 1} />
           </p>
       ) : (
         <AWTC data={{pageNumber:pageNumber!,aya:tadjwid![active-1]!}}/>

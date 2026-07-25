@@ -12,7 +12,7 @@ export default function Quran_Reading() {
           Read surah
         </TabsTrigger>
         <TabsTrigger value="aya_reading" className="cursor-pointer">
-          Find aya
+          Read aya par aya
         </TabsTrigger>
       </TabsList>
       <TabsContent value="surah_reading" className="overflow-y-scroll scrollbar-hide ">

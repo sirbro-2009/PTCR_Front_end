@@ -11,6 +11,12 @@ import { useState, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { Provider } from "@/hooks/Provide";
 import type { IProvider } from "@/hooks/Provide";
+function formatLocalDate(date: Date): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
 export function TheDate({ name = "dateOfborn" }: { name?: string }) {
   const { t } = useTranslation();
 
@@ -48,7 +54,7 @@ function DatePickerSimple({ name }: { name: string }) {
       <input
         type="hidden"
         name={name}
-        value={date ? date.toISOString().split("T")[0] : ""}
+        value={date ? formatLocalDate(date) : ""}
       />
 
       <Popover open={open} onOpenChange={setOpen}>
@@ -64,7 +70,7 @@ function DatePickerSimple({ name }: { name: string }) {
                 }
               `}
           >
-            {date ? date.toISOString().split("T")[0] : t(`auth.Select_date`)}
+            {date ? formatLocalDate(date) : t(`auth.Select_date`)}
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto overflow-hidden p-0" align="start">

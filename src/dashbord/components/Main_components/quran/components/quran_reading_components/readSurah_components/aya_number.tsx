@@ -10,6 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import Aya_play from "./Aya_play";
+
 import { Languages, ClipboardCopy, BookOpenText } from "lucide-react";
 import { handleCopyLink } from "../../quran_recitation_components/mp3_compnents/ifFulfied";
 import { Separator } from "@/components/ui/separator";
@@ -29,7 +30,7 @@ export default function Aya_Number({
 }) {
   const infromations = useAppSelector((state) => state.quran);
   const Data = useAppSelector(state=>state.quran.QDS)
-
+const isDark = Data.theme ==='dark'
   const { name,tadjwid, number, revelation_place, verses_count, verses } =
     infromations.quran_text as IquranText;
   const ayaProps = verses[ayaIndex];
@@ -71,8 +72,8 @@ export default function Aya_Number({
   ];
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
+    <Dialog >
+      <DialogTrigger asChild >
         {activeDefaultButton ? (
           children
         ) : (
@@ -90,8 +91,8 @@ export default function Aya_Number({
       </DialogTrigger>
       <DialogContent
         showCloseButton={false}
-        className="bg-foreground text-background">
-        <DialogHeader>
+        className="bg-foreground text-background overflow-y-scroll max-h-[85vh] sm:max-w-full md:max-w-1/2">
+          <DialogHeader>
           <Separator />
           <DialogTitle dir="rtl">
             {/*aya_number*/}
@@ -103,7 +104,7 @@ export default function Aya_Number({
               {ayaProps?.text.ar}
               {
                 Data.font === 'Indopak'?
-                <AyNUMBER data={{pageNumber:verses[ayaIndex]!.page,aya:tadjwid![ayaIndex]}}/>:              
+                <AyNUMBER data={{pageNumber:verses[ayaIndex]!.page,aya:tadjwid![ayaIndex]!}}/>:              
                 
               <div className="cursor-pointer relative inline-flex items-center justify-center w-[1.5em] h-[1.5em] mx-1">
                 <span className="absolute inset-0 flex  items-center justify-center text-[1em] font-['conv_original-hafs']">
@@ -115,7 +116,7 @@ export default function Aya_Number({
               </div>
               }
             </div>:
-            <AWTC data={{pageNumber:ayaProps!.number,aya:ayaProps!.text.ar}}/>
+            <AWTC data={{pageNumber:verses[ayaIndex]!.page,aya:tadjwid![ayaIndex]??``}}/>
 
             }
 

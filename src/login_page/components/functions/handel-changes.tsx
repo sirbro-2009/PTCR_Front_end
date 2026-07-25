@@ -24,7 +24,6 @@ export default function useAuthActions() {
     }
   };
   const showTermsFuntion = () => {
-    console.log("true");
     setShowTerms({ ...showTerms, show: true });
   };
   //////////////////////////////////////////SignUP

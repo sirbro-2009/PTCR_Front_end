@@ -9,13 +9,14 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Book, Globe, Pencil } from "lucide-react";
+import { Book, Globe, Pencil,Copy } from "lucide-react";
 
 import { tafsirs } from "@/other/data";
 import { useAppDispatch, useAppSelector } from "@/hooks/Redux";
 import Loader from "@/other/Loader.";
-import { toastFunctions } from "../../quran_recitation_components/mp3_compnents/ifFulfied";
+import { handleCopyLink, toastFunctions } from "../../quran_recitation_components/mp3_compnents/ifFulfied";
 import { getTafsir } from "@/features/quran/quran_slice";
+import { Label } from "@/components/ui/label";
 
 export function TafsirDialoge({
   quran,
@@ -82,7 +83,13 @@ export function TafsirDialoge({
               ))}
             </div>
           </div>
-
+          <div className="m-auto flex flex-row cursor-pointer" onClick={()=>{
+            handleCopyLink(object?.text as string)
+          }}>
+            <Copy className="m-2 "></Copy>
+            <Label className="m-2 font-bold">Copy</Label>
+            
+          </div>
           <div
             dir="rtl"
             className={`w-full ${

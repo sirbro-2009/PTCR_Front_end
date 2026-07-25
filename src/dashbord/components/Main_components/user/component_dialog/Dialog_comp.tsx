@@ -13,25 +13,24 @@ import { FieldGroup } from "@/components/ui/field";
 import { useTranslation } from "react-i18next";
 import { updateData } from "@/features/crud_account_setting/crud_slice";
 import {useAppDispatch,useAppSelector} from '@/hooks/Redux'
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Provider } from "@/hooks/Provide";
 import { toast } from "sonner";
 import { reset_value } from "@/features/crud_account_setting/crud_slice";
 import type { IProvider } from "@/hooks/Provide";
+import { toastFunctions } from "../../quran/components/quran_recitation_components/mp3_compnents/ifFulfied";
 
 export default function Dialog_comp({ edit_type, children }: any) {
   const { t } = useTranslation();
   const { ready, setReady } = useContext(Provider) as IProvider;
   const dispatch = useAppDispatch();
   const userInformations = useAppSelector((state) => state.user);
+  function ToastReturn(){
   if (userInformations.change === true) {
-    toast.success(t(`auth.done`));
-    setTimeout(() => {
-      dispatch(reset_value());
-    }, 3000);
+    toastFunctions(t(`auth.done`),"success")
   }
   if (userInformations.done === false) {
-    toast.error("error");
+    toastFunctions("error","error")
   }
   if (userInformations.change === null) {
           toast.promise<{ name: string }>(
@@ -45,13 +44,15 @@ export default function Dialog_comp({ edit_type, children }: any) {
           )
 
   }
+      dispatch(reset_value())
+  }
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-        console.log([...formData.entries()])
     const [entrieType, entrie] = [...formData.entries()][0] as [String,FormDataEntryValue]
 
     if (ready) {
+            ToastReturn()
       const theEntrieType =
         entrieType === "gender"
           ? "Gender"
@@ -87,7 +88,9 @@ export default function Dialog_comp({ edit_type, children }: any) {
         newFomrmData.append("profile_img", entrie);
         dispatch(updateData(newFomrmData));
       }
+
       setReady(false);
+      
     }
   };
   return (

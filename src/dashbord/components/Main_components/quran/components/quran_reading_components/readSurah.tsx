@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { QuranSurahSelect } from "../quran_recitation_components/SelectSurah";
 import { Label } from "@/components/ui/label";
-import { quranReading } from "@/features/quran/quran_slice";
 import { useAppDispatch, useAppSelector } from "@/hooks/Redux";
 import { toastFunctions } from "../quran_recitation_components/mp3_compnents/ifFulfied";
 import Loader from "@/other/Loader.";
@@ -11,6 +10,7 @@ export default function ReadSurah() {
 
   const [surahIndex, surahSelect] = useState("")
   const infromations = useAppSelector((state) => state.quran);
+  
   const done = infromations.done4;
   const dispatch = useAppDispatch();
   if (done === false) {
@@ -27,7 +27,7 @@ export default function ReadSurah() {
       {done === null ? (
         <h1 className="text-center">select to start</h1>
       ) : done === true ? (
-        <Quran_surah_display contentObjects={{...infromations.quran_text}}/>
+        <Quran_surah_display key={surahIndex} contentObjects={{...infromations.quran_text}}/>
       ) : (
         <Loader />
       )}

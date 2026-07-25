@@ -1,0 +1,44 @@
+import {
+  Field,
+  FieldContent,
+  FieldDescription,
+  FieldLabel,
+  FieldTitle,
+} from "@/components/ui/field";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { useAppDispatch,useAppSelector } from "@/hooks/Redux";
+import { toastFunctions } from "../../quran_recitation_components/mp3_compnents/ifFulfied";
+import { editQDS } from "@/features/quran/quran_slice";
+import { Label } from "@/components/ui/label";
+export default function Auto_read(){
+const dispatch = useAppDispatch()
+const Data = useAppSelector(state=>state.quran.QDS)
+const options = [
+    {
+        text:"Enabel auto scroll reading",
+        value:"true"
+    },
+    {
+        text:"Disable auto scroll reading",
+        value:"false"
+    }
+]
+return (<RadioGroup defaultValue={Data.readMode?'true':'false'} className="max-w-full p-2">
+<Label className="p-2">Auto Scroll for Read</Label>
+      {options.map((e, i) => {
+        return (
+          <FieldLabel key={i} >
+            <Field orientation="horizontal">
+              <FieldContent>
+                <FieldTitle>{e.text}</FieldTitle>
+              </FieldContent>
+              <RadioGroupItem value={e.value} onClick={async()=>{
+                await dispatch(editQDS(['font',e.value === 'true'?true:false]))
+                toastFunctions("Done","success")
+              }}/>
+            </Field>
+          </FieldLabel>
+        );
+      })}
+</RadioGroup>)
+}

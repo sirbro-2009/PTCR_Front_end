@@ -30,7 +30,7 @@ const dispatch = useAppDispatch()
       value: "Indopak",
       aya: ayaForTest.asWords,
     },
-    {
+  {
       text: "Tajweed ",
       desc: "Calligraphy in the colors of Tajweed",
       value: "Tajweed",
@@ -54,7 +54,7 @@ const dispatch = useAppDispatch()
                 <FieldDescription>
                     {e.desc}
                 </FieldDescription>
-                <div className={`font-[${e.value}] ${isDark && e.value ==='Tajweed'?'tajweed-dark-invert':``} md:w-2/3 text-center whitespace-normal wrap-break-word overflow-hidden m-auto  text-3xl`}>
+                <div style={{fontFamily:e.value}} className={`font-[${e.value}] ${isDark && e.value ==='Tajweed'?'tajweed-dark-invert':``} md:w-2/3 text-center whitespace-normal wrap-break-word overflow-hidden m-auto  text-3xl`}>
                     {e.aya}
                 </div>
               </FieldContent>
@@ -69,3 +69,4 @@ const dispatch = useAppDispatch()
     </RadioGroup>
   );
 }
+/**     */

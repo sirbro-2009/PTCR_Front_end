@@ -88,7 +88,7 @@ export default function Verify_page_login() {
         }, 5000);
       } else if (res.cause) {
         setLogin({ ...login, done: false });
-        toast.error("Eroor", {
+        toast.error("Error", {
           description: res.cause,
           action: {
             label: "Undo",
@@ -122,7 +122,7 @@ export default function Verify_page_login() {
       if (res.done && !res.cause) {
         setLogin({ ...login, show: true });
         setShowInput({...showInput,show:true})
-        console.log(res)
+
       } else if (res.cause) {
         setLogin({ ...login, done: false });
         toast.error("Eroor", {

@@ -89,8 +89,8 @@ function App() {
         setScreen,
       }}>
       <ContextMenu>
+        {/*ContextMenuTrigger */}
         <ContextMenuTrigger>
-          {" "}
           <div
             className={`min-h-screen   max-w-screen bg-background text-foreground   ${theme} font-['Rubik']`}
             dir="rtl">
@@ -106,6 +106,7 @@ function App() {
               <SpeedInsights />
           </div>
         </ContextMenuTrigger>
+        {/*** */}
         <ContextMenuContentComp/>
       </ContextMenu>
 
