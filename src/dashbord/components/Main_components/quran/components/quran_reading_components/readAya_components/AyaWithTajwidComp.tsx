@@ -27,7 +27,7 @@ return (<>
               font-family: 'Tajweed';
               src: url('https://static-cdn.tarteel.ai/qul/fonts/quran_fonts/v4-tajweed/ttf/p${pageNumber}.ttf') format('truetype');
               font-display: swap;}`}</style>
-    <div className={`font-[Tajweed] ${isDark ?'tajweed-dark-invert' :``} p-2 whitespace-normal wrap-break-word ${className?'text-4xl w-fit my-2':` w-175  m-auto text-center text-4xl`} text-4xl `}>
+    <div className={`font-[Tajweed] ${isDark ?'tajweed-dark-invert':``}  whitespace-normal wrap-break-word ${className?'text-4xl w-fit my-2':` w-full  m-auto text-center text-xl md:text-3xl`} text-4xl `}>
         {aya}
     </div>
 </>)

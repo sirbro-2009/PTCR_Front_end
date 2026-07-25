@@ -30,7 +30,6 @@ export default function Aya_Number({
 }) {
   const infromations = useAppSelector((state) => state.quran);
   const Data = useAppSelector(state=>state.quran.QDS)
-const isDark = Data.theme ==='dark'
   const { name,tadjwid, number, revelation_place, verses_count, verses } =
     infromations.quran_text as IquranText;
   const ayaProps = verses[ayaIndex];
