@@ -33,8 +33,6 @@ export interface IquranText {
 //////////////////////////////
 export default function Quran_surah_display({ contentObjects, key }: any) {
   const Data = useAppSelector((state) => state.quran.QDS.font);
-  const iSAutoModeEnabled = useAppSelector((state) => state.quran.QDS.readMode);
-  const myDiv = document.getElementById('quranCrad');
   const isDark = useAppSelector((state) => state.quran.QDS.theme) === "dark";
   const { name, number, revelation_place, verses_count, verses, tadjwid } =
     contentObjects as IquranText;
@@ -84,7 +82,6 @@ export default function Quran_surah_display({ contentObjects, key }: any) {
     );
     return { page: e.page, comp };
   });
-console.log(myDiv?.scrollTop,"dd")
   return (
     <div className="flex flex-col " key={key}>
       <SurahSvgBar
