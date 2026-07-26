@@ -21,7 +21,6 @@ const dispatch = useAppDispatch()
   const handleLanguageChange = (value:string):void => {
     const selectedLang = value;
     i18n.changeLanguage(selectedLang);
-    document.dir = selectedLang === 'en' ? 'ltr' : 'rtl';
   }
   return    {handleTheme,handleLanguageChange,theme,i18n}
 }

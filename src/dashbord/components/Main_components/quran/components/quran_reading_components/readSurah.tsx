@@ -49,7 +49,7 @@ useEffect(() => {
   if (!done || !iSAutoModeEnabled) return;
 
   let animationFrameId: number;
-  const scrollSpeed = 0.3; // بكسل لكل فريم - عدّل الرقم للتحكم في السرعة
+  const scrollSpeed = 0.3;       
 
   const step = () => {
     if (containerRef.current) {
@@ -62,7 +62,7 @@ useEffect(() => {
   animationFrameId = requestAnimationFrame(step);
 
   return () => {
-    cancelAnimationFrame(animationFrameId); // ✅ تنظيف صحيح عند إلغاء التفعيل أو تغيير الاعتماديات
+    cancelAnimationFrame(animationFrameId)           
   };
 }, [done, iSAutoModeEnabled]);
   return (

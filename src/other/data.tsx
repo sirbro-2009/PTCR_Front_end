@@ -169,3 +169,24 @@ export const Downloads:Download[] = [
     available:false
   },    
 ]
+export interface ILanguage {
+  code: string;      
+  name: string;      
+  nameEn: string;     
+  dir: "rtl" | "ltr"; 
+}
+
+export const supportedLanguages: ILanguage[] = [
+  { code: "ar", name: "العربية", nameEn: "Arabic", dir: "rtl" },
+  { code: "en", name: "English", nameEn: "English", dir: "ltr" },
+  { code: "ur", name: "اردو", nameEn: "Urdu", dir: "rtl" },
+  { code: "id", name: "Bahasa Indonesia", nameEn: "Indonesian", dir: "ltr" },
+  { code: "ms", name: "Bahasa Melayu", nameEn: "Malay", dir: "ltr" },
+  { code: "tr", name: "Türkçe", nameEn: "Turkish", dir: "ltr" },
+  { code: "fr", name: "Français", nameEn: "French", dir: "ltr" },
+  { code: "fa", name: "فارسی", nameEn: "Persian", dir: "rtl" },
+  { code: "bn", name: "বাংলা", nameEn: "Bengali", dir: "ltr" },
+  { code: "ha", name: "Hausa", nameEn: "Hausa", dir: "ltr" },
+  { code: "sw", name: "Kiswahili", nameEn: "Swahili", dir: "ltr" },
+  { code: "de", name: "Deutsch", nameEn: "German", dir: "ltr" },
+];

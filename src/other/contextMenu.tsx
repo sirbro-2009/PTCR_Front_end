@@ -15,15 +15,22 @@ import {
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import useUiChanges from "@/principal_page/components/bar_components/login/useUIchanges";
-import { Home, ArrowLeft, LayoutDashboardIcon, Paintbrush,Languages } from "lucide-react";
+import {
+  Home,
+  ArrowLeft,
+  LayoutDashboardIcon,
+  Paintbrush,
+  Languages,
+  Check,
+} from "lucide-react";
 import { IoRefreshCircleSharp } from "react-icons/io5";
 import Loader from "./Loader.";
-import { Github, TranslateIcon } from "@hugeicons/core-free-icons";
+import { supportedLanguages } from "@/other/data";
 
 export default function ContextMenuContentComp() {
   const navigate = useNavigate();
-    const {handleTheme,theme,handleLanguageChange,i18n}= useUiChanges()
-  
+  const { handleTheme, theme, handleLanguageChange, i18n } = useUiChanges();
+
   const current_patch = location.pathname !== "/dashboard";
   const object = {
     firstGroup: [
@@ -54,60 +61,58 @@ export default function ContextMenuContentComp() {
         text: "theme",
         icon: <Paintbrush />,
         isContextMenuSub: true,
-        ContextMenuSubItems:[
+        ContextMenuSubItems: [
           {
-            text:"dark",
-            check:theme === 'dark',
-            function:handleTheme
+            text: "dark",
+            check: theme === "dark",
+            function: handleTheme,
           },
           {
-            text:"light",
-            check:theme !== 'dark',
-            function:handleTheme            
-          }
+            text: "light",
+            check: theme !== "dark",
+            function: handleTheme,
+          },
         ],
         handelChange: () => {},
       },
       {
-        text:"languages",
-        icon:<Languages/>,
+        text: "languages",
+        icon: <Languages />,
         isContextMenuSub: true,
-        ContextMenuSubItems:[
-          {
-            text:"arabic",
-            check:i18n.language === 'ar',
-            lng:true,
-            function:handleLanguageChange
-          },
-          {
-            text:"english",
-            check:i18n.language !== 'ar',
-            lng:true,
-            function:handleLanguageChange            
-          }
-        ],
-      }
+        ContextMenuSubItems: supportedLanguages.map((e, i) => {
+          return {
+            text: e.nameEn,
+            check: i18n.language === e.code,
+            lng: true,
+            function: () => {
+              handleLanguageChange(e.code);
+              document.dir = e.dir;
+            },
+          };
+        }),
+      },
     ],
     thirdGroup: [
       {
         isContextMenuSub: true,
         text: "links",
         icon: <Loader long={true} />,
-        ContextMenuSubItems:[
+        ContextMenuSubItems: [
           {
-            text:"Github",
-            icon:<FaGithub />,
-            function:()=>{
-              location.href = ('https://github.com/sirbro-2009')
-            }            
+            text: "Github",
+            icon: <FaGithub />,
+            function: () => {
+              location.href = "https://github.com/sirbro-2009";
+            },
           },
           {
-            text:"Linked In",
-            icon:<FaLinkedin />,
-            function:()=>{
-              location.href = ('https://www.linkedin.com/in/zernikh-mouhamed-8a91a4408')
-            }            
-          }             
+            text: "Linked In",
+            icon: <FaLinkedin />,
+            function: () => {
+              location.href =
+                "https://www.linkedin.com/in/zernikh-mouhamed-8a91a4408";
+            },
+          },
         ],
         handelChange: () => {},
       },
@@ -119,7 +124,7 @@ export default function ContextMenuContentComp() {
       {(Object.keys(object) as Array<keyof typeof object>).map((ele, index) => {
         const key = object[ele];
         return (
-          <div key={index+1}>
+          <div key={index + 1}>
             <ContextMenuGroup key={index}>
               {key.map((e, i) => {
                 return "isContextMenuSub" in e ? (
@@ -127,36 +132,30 @@ export default function ContextMenuContentComp() {
                     <ContextMenuSubTrigger>{e.text}</ContextMenuSubTrigger>
                     <ContextMenuSubContent className="w-44 bg-foreground text-background">
                       <ContextMenuGroup>
-                        {
-                          e.ContextMenuSubItems.map((ele, i) => {
-                            if ("check" in ele) {
-                              return (
-                                <ContextMenuCheckboxItem 
-                                  checked={ele.check}
-                                  onClick={() => {
-                                    if ('lng' in ele){
-                                     ele.function(ele.text.substring(0,2)); 
-                                    }
-                                    else{
-                                    ele.function()  
-                                    }
-                                    
-                                  }}
-                                  key={i}
-                                >
-                                  {ele.text}
-                                </ContextMenuCheckboxItem>
-                              );
-                            }
-
+                        {e.ContextMenuSubItems.map((ele, i) => {
+                          if ("check" in ele) {
                             return (
-                              <ContextMenuItem key={i} onClick={() => ele.function()}>
+                              <ContextMenuCheckboxItem
+                                checked={ele.check}
+                                onClick={() => {
+                                    ele.function();}}
+                                key={i}>
                                 {ele.text}
-                                <ContextMenuShortcut>{ele.icon}</ContextMenuShortcut>
-                              </ContextMenuItem>
+                              </ContextMenuCheckboxItem>
                             );
-                          })
-                        }
+                          }
+
+                          return (
+                            <ContextMenuItem
+                              key={i}
+                              onClick={() => ele.function()}>
+                              {ele.text}
+                              <ContextMenuShortcut>
+                                {"icon" in ele ? ele.icon : ``}
+                              </ContextMenuShortcut>
+                            </ContextMenuItem>
+                          );
+                        })}
                       </ContextMenuGroup>
                     </ContextMenuSubContent>
                   </ContextMenuSub>
@@ -171,7 +170,7 @@ export default function ContextMenuContentComp() {
                 );
               })}
             </ContextMenuGroup>
-            {index !== 2 ? <ContextMenuSeparator key={index+2}/> : ``}
+            {index !== 2 ? <ContextMenuSeparator key={index + 2} /> : ``}
           </div>
         );
       })}
