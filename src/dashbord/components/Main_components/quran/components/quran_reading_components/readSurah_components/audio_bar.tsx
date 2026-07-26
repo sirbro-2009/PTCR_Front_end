@@ -38,11 +38,13 @@ import {
 import { useAppDispatch } from "@/hooks/Redux";
 import { useState } from "react";
 import { reciters } from "@/other/data";
+import { useTranslation } from "react-i18next";
 
 export default function Audio_Bar({ props }: any) {
   const disptch = useAppDispatch();
   const { audioProps, audioRef, audio, handleSelectChange } = props;
   const [isPlayed, setIsPlayed] = useState(!audioRef.current?.paused);
+  const {t} = useTranslation()
 
   {
     /**back and front audio */
@@ -99,7 +101,7 @@ export default function Audio_Bar({ props }: any) {
                   obj: (
                     <a href={audio?.link} download={true} target="_blank" className="flex-row flex w-full items-center">
                       <Download size={30} className="cursor-pointer mr-2" />
-                      Download
+                      {t(`dashboard.quran_page.Download`)}
                     </a>
                   ),
                 },
@@ -115,7 +117,7 @@ export default function Audio_Bar({ props }: any) {
                         audioRef.current?.play();
                         setIsPlayed(true);
                       },
-                  text: "Repeat",
+                  text: t(`dashboard.quran_page.Repeat`),
                 },
                 {
                   obj: (
@@ -127,7 +129,7 @@ export default function Audio_Bar({ props }: any) {
                   handelFunctions:() => {
                         handleCopyLink(audio?.link as string);
                       },
-                  text: "Share",
+                  text: t(`dashboard.quran_page.Share`),
                 },
               ].map((e, i) => {
                 return (
@@ -145,7 +147,7 @@ export default function Audio_Bar({ props }: any) {
               <DropdownMenuSub>
                 <DropdownMenuSubTrigger>
                   <User />
-                  reader
+                  {t(`dashboard.quran_page.reader`)}
                 </DropdownMenuSubTrigger>
                 <DropdownMenuPortal>
                   <DropdownMenuSubContent className="overflow-y-auto max-h-(--radix-dropdown-menu-content-available-height)">

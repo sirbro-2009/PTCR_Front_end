@@ -114,6 +114,65 @@
     "delete": "Futa",
     "absoulutely": "Una uhakika kabisa?",
     "delete_description": "Kitendo hiki hakiwezi kutenguliwa. Hii itafuta akaunti yako kabisa kutoka kwa seva zetu.",
-    "imgLabel": "Tafadhali pakia picha isiyozidi MB 5 pekee"
+    "imgLabel": "Tafadhali pakia picha isiyozidi MB 5 pekee",
+  "quran_page": {
+    "title": "Visomo vya Quran",
+    "subtitle": "chagua surah na simulizi ya Qurani na Msomaji",
+    "select_reader": "Chagua Kisomaji",
+    "select_narration": "Chagua Simulizi",
+    "select_surah": "Chagua surah",
+    "select_audio_hint": "Chagua sauti kama hii",
+    "saved_recitations": "Visomo vya Kurani vilivyohifadhiwa",
+  "read_surah": "Soma surah",
+  "read_aya_by_aya": "Soma aya na aya",
+  "select_surah_and_read": "Chagua surah na usome",
+  "select_to_start": "chagua kuanza",
+  "select_surah_and_verse": "Chagua surah na aya",
+  "select_aya_from_here": "Chagua aya kutoka hapa",
+  "previous": "Iliyotangulia",
+  "next": "Inayofuata",
+  "page": "Ukurasa",
+  "copy_aya": "nakala aya",
+  "copy_translate": "nakala tafsiri",
+  "read_tafsir": "soma tafsir",
+  "quran_tafsirs": "Tafsir za Quran",
+  "select_a_tafsir": "chagua tafsir",
+  "copy": "Nakili",
+  "tafsir_names": {
+    "al_muyassar": "Al-Tafsir Al-Muyassar",
+    "al_jalalayn": "Tafsir Al-Jalalayn",
+    "al_sadi": "Tafsir Al-Sa'di",
+    "ibn_kathir": "Tafsir Ibn Kathir",
+    "al_baghawi": "Tafsir Al-Baghawi",
+    "al_qurtubi": "Tafsir Al-Qurtubi",
+    "al_tabari": "Tafsir Al-Tabari",
+    "arberry": "Arberry",
+    "yusuf_ali": "Yusuf Ali",
+    "keyzer": "Keyzer",
+    "leemhuis": "Leemhuis",
+    "ar": "kiarabu",
+    "en": "kiingereza",
+    "nl": "Uholanzi"
+  },
+"reader": "Msomaji",
+    "Share": "Shirikisha",
+    "Repeat": "Rudia",
+    "Download": "Pakua",
+  "theme": {
+    "title": "Mandhari",
+    "normal_font_title": "Fonti ya kawaida",
+    "normal_font_desc": "Fonti ya kawaida ambayo ilitengenezwa na Outhman taha",
+    "indopak_title": "Indopak",
+    "indopak_desc": "Hati ya Kiindonesia",
+    "tajweed_title": "Tajweed",
+    "tajweed_desc": "Calligraphy katika rangi za Tajweed"
+  },
+  "reading_settings": {
+    "title": "Mipangilio ya kusoma",
+    "auto_scroll_title": "Tembeza Kiotomatiki kwa Kusomwa",
+    "enable_auto_scroll": "Washa usomaji wa kusogeza kiotomatiki",
+    "disable_auto_scroll": "Zima usomaji wa kusogeza kiotomatiki"
+  }
+  }
   }
 }

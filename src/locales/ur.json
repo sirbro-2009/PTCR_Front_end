@@ -114,6 +114,61 @@
     "delete": "حذف کریں",
     "absoulutely": "کیا آپ کو پورا یقین ہے؟",
     "delete_description": "یہ عمل واپس نہیں ہو سکتا۔ اس سے آپ کا اکاؤنٹ ہمارے سرورز سے مستقل طور پر حذف ہو جائے گا۔",
-    "imgLabel": "براہ کرم صرف ایسی تصویر اپ لوڈ کریں جو 5 ایم بی سے زیادہ نہ ہو"
+    "imgLabel": "براہ کرم صرف ایسی تصویر اپ لوڈ کریں جو 5 ایم بی سے زیادہ نہ ہو",
+      "quran_page": {
+    "title": "تلاوت قرآن",
+    "subtitle": "سورہ اور قرآنی حکایت اور قاری کا انتخاب کریں۔",
+    "select_reader": "ایک ریڈر منتخب کریں۔",
+    "select_narration": "ایک بیانیہ منتخب کریں۔",
+    "select_surah": "ایک سورہ منتخب کریں۔",
+    "select_audio_hint": "اس طرح آڈیو منتخب کریں۔",
+    "saved_recitations": "محفوظ شدہ قرآن کی تلاوت",
+"read_surah": "سورہ پڑھیں",
+  "read_aya_by_aya": "آیا کے ذریعہ آیا پڑھیں",
+  "select_surah_and_read": "سورہ منتخب کریں اور پڑھیں",
+  "select_to_start": "شروع کرنے کے لیے منتخب کریں۔",
+  "select_surah_and_verse": "سورہ اور آیت منتخب کریں۔",
+  "select_aya_from_here": "یہاں سے آیا منتخب کریں۔",
+  "previous": "پچھلا",
+  "next": "اگلا",
+  "page": "صفحہ",
+  "copy_aya": "کاپی کریں",
+  "copy_translate": "کاپی ترجمہ",
+  "read_tafsir": "تفسیر پڑھیں",
+  "quran_tafsirs": "تفسیر قرآن",
+  "select_a_tafsir": "ایک تفسیر کا انتخاب کریں۔",
+  "copy": "کاپی",
+  "tafsir_names": {
+    "al_muyassar": "التفسیر المیثر",
+    "al_jalalayn": "تفسیر الجلالعین",
+    "al_sadi": "تفسیر السعدی",
+    "ibn_kathir": "تفسیر ابن کثیر",
+    "al_baghawi": "تفسیر البغوی ۔",
+    "al_qurtubi": "تفسیر القرطبی ۔",
+    "al_tabari": "تفسیر الطبری",
+    "arberry": "آربیری",
+    "yusuf_ali": "یوسف علی",
+    "keyzer": "کیزر",
+    "leemhuis": "Leemhuis",
+    "ar": "عربی",
+    "en": "انگریزی",
+    "nl": "نیدرلینڈز"
+  },
+  "theme": {
+    "title": "تھیم",
+    "normal_font_title": "عام فونٹ",
+    "normal_font_desc": "عام فونٹ جو اوتھمان طحہ نے بنایا تھا۔",
+    "indopak_title": "انڈوپاک",
+    "indopak_desc": "انڈونیشی رسم الخط",
+    "tajweed_title": "تجوید",
+    "tajweed_desc": "تاجوید کے رنگوں میں خطاطی۔"
+  },
+  "reading_settings": {
+    "title": "پڑھنے کی ترتیبات",
+    "auto_scroll_title": "پڑھنے کے لیے آٹو اسکرول",
+    "enable_auto_scroll": "آٹو اسکرول ریڈنگ کو فعال کریں۔",
+    "disable_auto_scroll": "آٹو اسکرول ریڈنگ کو غیر فعال کریں۔"
+  }
+  }
   }
 }

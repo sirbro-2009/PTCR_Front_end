@@ -4,6 +4,7 @@ import IfFulfied from "./mp3_compnents/ifFulfied";
 import Gif from "@/assets/icons/gif.gif";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next"
 export interface QuranAudio {
   isSaved?:boolean,
   number?: number;
@@ -39,12 +40,14 @@ export default function Mp3Playe() {
   const data = useAppSelector((state) => {
     return state.quran;
   });
+    const { t } = useTranslation();
+    
   const isReady: boolean | undefined | null = data.done2;
   const QuranAudio: QuranAudio = data.audioData;
   const { audio, revelation_place, name, number } = QuranAudio;
   const ifNothing = (
     <Card className="w-full p-2">
-      <Label className="m-auto text-3xl">Select audio like this</Label>
+      <Label className="m-auto text-3xl">{t(`dashboard.quran_page.select_audio_hint`)}</Label>
       <img
         src={Gif}
         alt="how to use gif"

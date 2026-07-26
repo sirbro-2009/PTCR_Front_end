@@ -114,6 +114,65 @@
     "delete": "Sil",
     "absoulutely": "Kesinlikle emin misiniz?",
     "delete_description": "Bu işlem geri alınamaz. Hesabınız sunucularımızdan kalıcı olarak silinecektir.",
-    "imgLabel": "lütfen 5 mb'ı geçmeyen bir resim yükleyin"
+    "imgLabel": "lütfen 5 mb'ı geçmeyen bir resim yükleyin",
+      "quran_page": {
+    "title": "Kuran okunuşları",
+    "subtitle": "sureyi ve Kuran anlatımını ve Okuyucuyu seçin",
+    "select_reader": "Bir Okuyucu Seçin",
+    "select_narration": "Bir Anlatım Seçin",
+    "select_surah": "Bir sure seçin",
+    "select_audio_hint": "Bunun gibi ses seçin",
+    "saved_recitations": "Kaydedilen Kur'an okunuşları",
+"read_surah": "Sureyi oku",
+  "read_aya_by_aya": "Aya'yı aya'ya oku",
+  "select_surah_and_read": "Sureyi seçip okuyun",
+  "select_to_start": "başlamayı seç",
+  "select_surah_and_verse": "Sure ve ayeti seçin",
+  "select_aya_from_here": "Buradan aya'yı seçin",
+  "previous": "Öncesi",
+  "next": "Sonraki",
+  "page": "Sayfa",
+  "copy_aya": "aya'yı kopyala",
+  "copy_translate": "kopyala tercüme et",
+  "read_tafsir": "tefsir oku",
+  "quran_tafsirs": "Kuran tefsirleri",
+  "select_a_tafsir": "bir tefsir seç",
+  "copy": "Kopyala",
+  "tafsir_names": {
+    "al_muyassar": "El-Tefsir El-Muyassar",
+    "al_jalalayn": "Tefsir el-Celaleyn",
+    "al_sadi": "Tefsir Al-Sa'di",
+    "ibn_kathir": "Tefsir İbni Kesir",
+    "al_baghawi": "Tefsir el-Beğavi",
+    "al_qurtubi": "Tefsir-i Kurtubi",
+    "al_tabari": "Tefsir Taberi",
+    "arberry": "Arberry",
+    "yusuf_ali": "Yusuf Ali",
+    "keyzer": "Keyzer",
+    "leemhuis": "Leemhuis",
+    "ar": "Arapça",
+    "en": "İngilizce",
+    "nl": "Hollanda"
+  },
+"reader": "Okuyucu",
+    "Share": "Paylaş",
+    "Repeat": "Tekrar et",
+    "Download": "İndir",
+  "theme": {
+    "title": "Tema",
+    "normal_font_title": "Normal yazı tipi",
+    "normal_font_desc": "Outhman taha tarafından yapılan normal yazı tipi",
+    "indopak_title": "Hintpak",
+    "indopak_desc": "Endonezya alfabesi",
+    "tajweed_title": "tecvid",
+    "tajweed_desc": "Tajweed'in renklerinde kaligrafi"
+  },
+  "reading_settings": {
+    "title": "Okuma ayarları",
+    "auto_scroll_title": "Okuma için Otomatik Kaydırma",
+    "enable_auto_scroll": "Otomatik kaydırmalı okumayı etkinleştir",
+    "disable_auto_scroll": "Otomatik kaydırma okumayı devre dışı bırak"
+  }
+  }
   }
 }

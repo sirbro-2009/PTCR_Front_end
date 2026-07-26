@@ -5,9 +5,12 @@ import { useAppDispatch, useAppSelector } from "@/hooks/Redux";
 import { toastFunctions } from "../quran_recitation_components/mp3_compnents/ifFulfied";
 import Loader from "@/other/Loader.";
 import Quran_surah_display from "./readSurah_components/quran_surah_display";
+import { useTranslation } from "react-i18next";
 
 export default function ReadSurah() {
   const containerRef = useRef<HTMLDivElement>(null);
+    const {t} = useTranslation()
+
   const [currentScroll, setCurrentScroll] = useState(0);
   const [surahIndex, surahSelect] = useState("");
 
@@ -27,7 +30,6 @@ export default function ReadSurah() {
   };
 
   useEffect(() => {
-    console.log("current scroll:", currentScroll);
   }, [currentScroll]);
 
   useEffect(() => {
@@ -72,13 +74,13 @@ useEffect(() => {
   onScroll={handleScroll}>
       <div className="bg-secondary p-2 justify-center flex rounded-xl w-full">
         <Label className="my-2 font-semibold md:text-2xl">
-          Select surah and read
+          {t(`dashboard.quran_page.select_surah_and_read`)}
         </Label>
         <QuranSurahSelect values={{ surahSelect, reading: true }} />
       </div>
 
       {done === null ? (
-        <h1 className="text-center">select to start</h1>
+        <h1 className="text-center">{t(`dashboard.quran_page.select_to_start`)}</h1>
       ) : done === true ? (
         <Quran_surah_display
           key={surahIndex}

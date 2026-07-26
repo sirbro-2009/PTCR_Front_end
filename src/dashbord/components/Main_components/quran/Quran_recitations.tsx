@@ -7,10 +7,12 @@ import { useAppDispatch } from "@/hooks/Redux";
 import { getReader, getAudio } from "@/features/quran/quran_slice";
 import Mp3Playe from "./components/quran_recitation_components/Mp3Playe";
 import { Separator } from "@/components/ui/separator";
-import Saved from "./components/quran_recitation_components/saved"
+import Saved from "./components/quran_recitation_components/saved";
+import { useTranslation } from "react-i18next"
 
 export default function Quran_recitations() {
   const dispatch = useAppDispatch();
+const { t } = useTranslation();
   const [startValue, setStartValue] = useState({
     quranSurah: "",
     narration: false,
@@ -40,11 +42,10 @@ export default function Quran_recitations() {
         src={Basmala}
         alt="In the name of Allah, the most gracious, the most merciful/بسم الله الرحمن الرحيم"
       />
-
-      <div className="text-end self-end mt-10">
-        <h1 className="text-2xl font-bold">Quran reactiations</h1>
+      <div className="text-center">
+        <h1 className="text-2xl font-bold">{t(`dashboard.quran_page.title`)}</h1>
         <h1 className="text-foreground/70">
-          chouse surah and Quranic narrative and Reader
+          {t(`dashboard.quran_page.subtitle`)}
         </h1>
       </div>
       <div className="w-4/5 mt-5 self-end  m-auto md:flex md:flex-row md:justify-between">
@@ -58,9 +59,11 @@ export default function Quran_recitations() {
         <Mp3Playe />
       </div>
       <Separator className=" m-auto my-5 " />
-      <h1 className="text-2xl font-bold text-end">Saved Quran reactiations</h1>
+      <h1 className="text-2xl font-bold text-center">
+        {t(`dashboard.quran_page.saved_recitations`)}
+        </h1>
       <div className="self-end w-full ">
-        <Saved/>
+        <Saved />
       </div>
     </div>
   );

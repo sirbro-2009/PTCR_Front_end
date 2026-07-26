@@ -114,6 +114,65 @@
     "delete":"الحذف",
     "absoulutely":"هل أنت متأكد تماماً؟",
     "delete_description":"لا يمكن التراجع عن هذا الإجراء. سيؤدي هذا إلى حذف حسابك نهائياً من خوادمنا",
-    "imgLabel":"يرجى تحميل صورة واحدة فقط لا يتجاوز حجمها 5 ميجابايت"
+    "imgLabel":"يرجى تحميل صورة واحدة فقط لا يتجاوز حجمها 5 ميجابايت",
+"quran_page": {
+    "title": "تلاوات القرآن الكريم",
+    "subtitle": "اختر السورة والرواية القرآنية والقارئ",
+    "select_reader": "اختر القارئ",
+    "select_narration": "اختر الرواية",
+    "select_surah": "اختر السورة",
+    "select_audio_hint": "اختر الصوت بهذه الطريقة",
+    "saved_recitations": "تلاوات القرآن المحفوظة",
+"read_surah": "قراءة سورة",
+  "read_aya_by_aya": "اقرأ آية بآية",
+  "select_surah_and_read": "اختر السورة واقرأها",
+  "select_to_start": "حدد للبدء",
+  "select_surah_and_verse": "اختر السورة والآية",
+  "select_aya_from_here": "اختر آية من هنا",
+  "previous": "سابق",
+  "next": "التالي",
+  "page": "صفحة",
+  "copy_aya": "نسخ آية",
+  "copy_translate": "نسخ ترجمة",
+  "read_tafsir": "قراءة التفسير",
+  "quran_tafsirs": "تفاسير القرآن",
+  "select_a_tafsir": "حدد التفسير",
+  "copy": "نسخ",
+  "tafsir_names": {
+    "al_muyassar": "التفسير الميسر",
+    "al_jalalayn": "تفسير الجلالين",
+    "al_sadi": "تفسير السعدي",
+    "ibn_kathir": "تفسير ابن كثير",
+    "al_baghawi": "تفسير البغوي",
+    "al_qurtubi": "تفسير القرطبي",
+    "al_tabari": "تفسير الطبري",
+    "arberry": "أربيري",
+    "yusuf_ali": "يوسف علي",
+    "keyzer": "كيزر",
+    "leemhuis": "ليمهويس",
+        "ar":"العربية",
+        "en":"الانجليزية",
+        "nl":"الهولندية"
+  },
+  "reader": "القارئ",
+    "Share": "مشاركة",
+    "Repeat": "تكرار",
+    "Download": "تحميل",
+  "theme": {
+    "title": "سمة",
+    "normal_font_title": "الخط العادي",
+    "normal_font_desc": "الخط العادي الذي صنعه عثمان طه",
+    "indopak_title": "إندوباك",
+    "indopak_desc": "النص الاندونيسي",
+    "tajweed_title": "التجويد",
+    "tajweed_desc": "الخط بألوان التجويد"
+  },
+  "reading_settings": {
+    "title": "إعدادات القراءة",
+    "auto_scroll_title": "التمرير التلقائي للقراءة",
+    "enable_auto_scroll": "تمكين قراءة التمرير التلقائي",
+    "disable_auto_scroll": "تعطيل قراءة التمرير التلقائي"
+  }
+  }
     }
 }

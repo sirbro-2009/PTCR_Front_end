@@ -24,17 +24,17 @@ export interface Reciter {
   bitrate: string;
 }
 export const tafsirs: Tafsir[] = [
-  { id: 1, name: { ar: "الميسر", en: "Al-Tafsir Al-Muyassar" }, author: { ar: "نخبة من العلماء", en: "A group of scholars" }, language: "ar" },
-  { id: 2, name: { ar: "الجلالين", en: "Tafsir Al-Jalalayn" }, author: { ar: "جلال الدين المحلي و السيوطي", en: "Jalal al-Din al-Mahalli & al-Suyuti" }, language: "ar" },
-  { id: 3, name: { ar: "السعدي", en: "Tafsir Al-Sa'di" }, author: { ar: "عبد الرحمن بن ناصر السعدي", en: "Abd al-Rahman bin Nasir Al-Sa'di" }, language: "ar" },
-  { id: 4, name: { ar: "ابن كثير", en: "Tafsir Ibn Kathir" }, author: { ar: "إسماعيل بن كثير القرشي", en: "Isma'il ibn Kathir Al-Qurashi" }, language: "ar" },
-  { id: 6, name: { ar: "البغوي", en: "Tafsir Al-Baghawi" }, author: { ar: "الحسين بن مسعود البغوي", en: "Al-Husayn ibn Mas'ud Al-Baghawi" }, language: "ar" },
-  { id: 7, name: { ar: "القرطبي", en: "Tafsir Al-Qurtubi" }, author: { ar: "أبو عبد الله محمد بن أحمد القرطبي", en: "Abu Abdullah Muhammad ibn Ahmad Al-Qurtubi" }, language: "ar" },
-  { id: 8, name: { ar: "الطبري", en: "Tafsir Al-Tabari" }, author: { ar: "الإمام أبو جعفر الطبري", en: "Imam Abu Ja'far Al-Tabari" }, language: "ar" },
-  { id: 9, name: { ar: "أربري", en: "Arberry" }, author: { ar: "أ. ج. أربري", en: "A. J. Arberry" }, language: "en" },
-  { id: 10, name: { ar: "يوسف علي", en: "Yusuf Ali" }, author: { ar: "عبدالله يوسف علي", en: "Abdullah Yusuf Ali" }, language: "en" },
-  { id: 11, name: { ar: "كايزر", en: "Keyzer" }, author: { ar: "سالومو كايزر", en: "Salomo Keyzer" }, language: "nl" },
-  { id: 12, name: { ar: "ليمهاوس", en: "Leemhuis" }, author: { ar: "فريد ليمهاوس", en: "Fred Leemhuis" }, language: "nl" },
+  { id: 1, name: { ar: "الميسر", en: "al_muyassar" }, author: { ar: "نخبة من العلماء", en: "A group of scholars" }, language: "ar" },
+  { id: 2, name: { ar: "الجلالين", en: "al_jalalayn" }, author: { ar: "جلال الدين المحلي و السيوطي", en: "Jalal al-Din al-Mahalli & al-Suyuti" }, language: "ar" },
+  { id: 3, name: { ar: "السعدي", en: "al_sadi" }, author: { ar: "عبد الرحمن بن ناصر السعدي", en: "Abd al-Rahman bin Nasir Al-Sa'di" }, language: "ar" },
+  { id: 4, name: { ar: "ابن كثير", en: "ibn_kathir" }, author: { ar: "إسماعيل بن كثير القرشي", en: "Isma'il ibn Kathir Al-Qurashi" }, language: "ar" },
+  { id: 6, name: { ar: "البغوي", en: "al_baghawi" }, author: { ar: "الحسين بن مسعود البغوي", en: "Al-Husayn ibn Mas'ud Al-Baghawi" }, language: "ar" },
+  { id: 7, name: { ar: "القرطبي", en: "al_qurtubi" }, author: { ar: "أبو عبد الله محمد بن أحمد القرطبي", en: "Abu Abdullah Muhammad ibn Ahmad Al-Qurtubi" }, language: "ar" },
+  { id: 8, name: { ar: "الطبري", en: "al_tabari" }, author: { ar: "الإمام أبو جعفر الطبري", en: "Imam Abu Ja'far Al-Tabari" }, language: "ar" },
+  { id: 9, name: { ar: "أربري", en: "arberry" }, author: { ar: "أ. ج. أربري", en: "A. J. Arberry" }, language: "en" },
+  { id: 10, name: { ar: "يوسف علي", en: "yusuf_ali" }, author: { ar: "عبدالله يوسف علي", en: "Abdullah Yusuf Ali" }, language: "en" },
+  { id: 11, name: { ar: "كايزر", en: "keyzer" }, author: { ar: "سالومو كايزر", en: "Salomo Keyzer" }, language: "nl" },
+  { id: 12, name: { ar: "ليمهاوس", en: "leemhuis" }, author: { ar: "فريد ليمهاوس", en: "Fred Leemhuis" }, language: "nl" },
 ];
 
 

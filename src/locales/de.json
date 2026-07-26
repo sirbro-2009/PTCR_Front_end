@@ -114,6 +114,65 @@
     "delete": "Löschen",
     "absoulutely": "Sind Sie absolut sicher?",
     "delete_description": "Diese Aktion kann nicht rückgängig gemacht werden. Ihr Konto wird dauerhaft von unseren Servern gelöscht.",
-    "imgLabel": "bitte laden Sie nur ein Bild hoch, das nicht größer als 5 MB ist"
+    "imgLabel": "bitte laden Sie nur ein Bild hoch, das nicht größer als 5 MB ist",
+      "quran_page": {
+    "title": "Koranrezitationen",
+    "subtitle": "Wählen Sie Sure und Koranerzählung und Leser",
+    "select_reader": "Wählen Sie einen Leser aus",
+    "select_narration": "Wählen Sie eine Erzählung aus",
+    "select_surah": "Wählen Sie eine Sure aus",
+    "select_audio_hint": "Wählen Sie Audio wie dieses aus",
+    "saved_recitations": "Gespeicherte Koranrezitationen",
+  "read_surah": "Sure lesen",
+  "read_aya_by_aya": "Lesen Sie Aya für Aya",
+  "select_surah_and_read": "Sure auswählen und lesen",
+  "select_to_start": "Zum Starten auswählen",
+  "select_surah_and_verse": "Wählen Sie Sure und Vers aus",
+  "select_aya_from_here": "Wählen Sie hier „aya“ aus",
+  "previous": "Vorherige",
+  "next": "Nächste",
+  "page": "Seite",
+  "copy_aya": "kopiere aya",
+  "copy_translate": "kopieren übersetzen",
+  "read_tafsir": "Lesen Sie Tafsir",
+  "quran_tafsirs": "Koran-Tafsirs",
+  "select_a_tafsir": "Wählen Sie einen Tafsir",
+  "copy": "Kopie",
+  "tafsir_names": {
+    "al_muyassar": "Al-Tafsir Al-Muyassar",
+    "al_jalalayn": "Tafsir Al-Jalalayn",
+    "al_sadi": "Tafsir Al-Sa'di",
+    "ibn_kathir": "Tafsir Ibn Kathir",
+    "al_baghawi": "Tafsir Al-Baghawi",
+    "al_qurtubi": "Tafsir Al-Qurtubi",
+    "al_tabari": "Tafsir Al-Tabari",
+    "arberry": "Arberry",
+    "yusuf_ali": "Yusuf Ali",
+    "keyzer": "Keyzer",
+    "leemhuis": "Leemhuis",
+    "ar": "Arabisch",
+    "en": "Englisch",
+    "nl": "Niederlande"
+  },
+"reader": "Rezitation",
+    "Share": "Teilen",
+    "Repeat": "Wiederholen",
+    "Download": "Herunterladen",
+  "theme": {
+    "title": "Thema",
+    "normal_font_title": "Normale Schriftart",
+    "normal_font_desc": "Die normale Schriftart, die von Outhman Taha erstellt wurde",
+    "indopak_title": "Indopak",
+    "indopak_desc": "Indonesische Schrift",
+    "tajweed_title": "Tajweed",
+    "tajweed_desc": "Kalligraphie in den Farben des Tajweed"
+  },
+  "reading_settings": {
+    "title": "Leseeinstellungen",
+    "auto_scroll_title": "Automatisches Scrollen zum Lesen",
+    "enable_auto_scroll": "Aktivieren Sie das automatische Scrollen des Lesens",
+    "disable_auto_scroll": "Deaktivieren Sie das automatische Scrollen des Lesens"
+  }
+  }
   }
 }

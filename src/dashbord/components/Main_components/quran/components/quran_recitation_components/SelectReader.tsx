@@ -7,7 +7,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useAppSelector } from "@/hooks/Redux";
+import { useAppSelector } from "@/hooks/Redux";import { useTranslation } from "react-i18next";
+;
 interface readerObject{
             id: number,
             reciter: {
@@ -24,7 +25,8 @@ export function SelectReader({values}:any) {
     return state.quran;
   });
   const {readerSelect,startValue} = values || {}
-  
+    const { t,i18n } = useTranslation();
+  const isLatine: 'en' | 'ar' = ['ar', 'fa', 'ur'].includes(i18n.language) ? 'ar' : 'en';  
   const allReader = theData.theData.reciters?.map((e: any, i: number) => {
     return (
       <SelectGroup key={i} >
@@ -48,7 +50,7 @@ export function SelectReader({values}:any) {
         
       }}>
       <SelectTrigger className="w-full md:w-48 my-5">
-        <SelectValue placeholder="Select a Reader" />
+        <SelectValue placeholder={t(`dashboard.quran_page.select_reader`)} />
       </SelectTrigger>
       <SelectContent>{allReader}</SelectContent>
     </Select>

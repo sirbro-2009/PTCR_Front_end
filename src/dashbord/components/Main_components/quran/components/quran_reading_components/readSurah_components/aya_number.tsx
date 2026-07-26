@@ -19,6 +19,7 @@ import { TafsirDialoge } from "./tafsir_dialoge";
 import type { IquranText } from "./quran_surah_display";
 import type { ReactElement } from "react";
 import AWTC, { AyNUMBER } from "../readAya_components/AyaWithTajwidComp";
+import { useTranslation } from "react-i18next";
 export default function Aya_Number({
   ayaIndex,
   activeDefaultButton,
@@ -34,6 +35,8 @@ export default function Aya_Number({
     infromations.quran_text as IquranText;
   const ayaProps = verses[ayaIndex];
   const arabicNumber = ayaProps?.number.toLocaleString("ar-EG");
+      const {t} = useTranslation()
+
   const footerObjects = [
     {
       comp: (
@@ -44,7 +47,7 @@ export default function Aya_Number({
           }}
         />
       ),
-      text: "copy aya",
+      text: t(`dashboard.quran_page.copy_aya`),
       separator: true,
     },
     {
@@ -56,7 +59,7 @@ export default function Aya_Number({
           }}
         />
       ),
-      text: "copy translate",
+      text: t(`dashboard.quran_page.copy_translate`),
       separator: true,
     },
     {
@@ -65,7 +68,7 @@ export default function Aya_Number({
           <BookOpenText className="cursor-pointer" />
         </TafsirDialoge>
       ),
-      text: "read tafsir",
+      text: t(`dashboard.quran_page.read_tafsir`),
       separator: false,
     },
   ];

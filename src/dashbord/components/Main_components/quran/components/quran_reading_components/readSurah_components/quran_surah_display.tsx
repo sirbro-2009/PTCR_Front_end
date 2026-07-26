@@ -4,6 +4,7 @@ import SurahSvgBar from "@/other/SurahBarSvg";
 import { useAppSelector } from "@/hooks/Redux";
 
 import { Card } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 export interface IquranText {
   name: {
@@ -36,6 +37,7 @@ export default function Quran_surah_display({ contentObjects, key }: any) {
   const isDark = useAppSelector((state) => state.quran.QDS.theme) === "dark";
   const { name, number, revelation_place, verses_count, verses, tadjwid } =
     contentObjects as IquranText;
+  const {t} = useTranslation()
 
   const indexs: {
     firstIndex: number;
@@ -126,7 +128,7 @@ export default function Quran_surah_display({ contentObjects, key }: any) {
                       </span>
                     ))}
                 </div>
-                <span className="text-center font-bold">Page {page}</span>
+                <span className="text-center font-bold">{t(`dashboard.quran_page.page`)} {page}</span>
               </Card>
             );
           })}

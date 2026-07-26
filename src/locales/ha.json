@@ -114,6 +114,65 @@
     "delete": "Goge",
     "absoulutely": "Shin da gaske kake son yi?",
     "delete_description": "Wannan aikin ba za a iya soke shi ba. Wannan zai goge asusunka har abada daga na'urar uwar garkenmu (servers).",
-    "imgLabel": "Da fatan za a ɗora hoton da bai wuce MB 5 ba kawai"
+    "imgLabel": "Da fatan za a ɗora hoton da bai wuce MB 5 ba kawai",
+  "quran_page": {
+    "title": "Karatun Al-Qur'ani",
+    "subtitle": "zabi surah da nassin alqur'ani da mai karatu",
+    "select_reader": "Zaɓi Mai Karatu",
+    "select_narration": "Zaɓi Labari",
+    "select_surah": "Zaɓi sura",
+    "select_audio_hint": "Zaɓi sauti kamar haka",
+    "saved_recitations": "Karatun Al-Qur'ani mai girma",
+"read_surah": "Karanta surah",
+  "read_aya_by_aya": "Read aya by aya",
+  "select_surah_and_read": "Zabi surah ka karanta",
+  "select_to_start": "zaɓi don farawa",
+  "select_surah_and_verse": "Zabi sura da aya",
+  "select_aya_from_here": "Zabi aya daga nan",
+  "previous": "A baya",
+  "next": "Na gaba",
+  "page": "Shafi",
+  "copy_aya": "copy aya",
+  "copy_translate": "kwafi fassara",
+  "read_tafsir": "karanta tafsiri",
+  "quran_tafsirs": "Qur'an tafsiri",
+  "select_a_tafsir": "zabi tafsiri",
+  "copy": "Kwafi",
+  "tafsir_names": {
+    "al_muyassar": "Al-Tafsir Al-Muyassar",
+    "al_jalalayn": "Tafsir Al-Jalalayn",
+    "al_sadi": "Tafsirin Al-Sa'di",
+    "ibn_kathir": "Tafsir Ibn Kathir",
+    "al_baghawi": "Tafsirin Al-Baghawi",
+    "al_qurtubi": "Tafsirin Qurtubi",
+    "al_tabari": "Tafsirin Al-Tabari",
+    "arberry": "Arberry",
+    "yusuf_ali": "Yusuf Ali",
+    "keyzer": "Keyzer",
+    "leemhuis": "Leemhuis",
+    "ar": "larabci",
+    "en": "turanci",
+    "nl": "Nederlands"
+  },
+"reader": "Mai karatu",
+    "Share": "Raba",
+    "Repeat": "Maimaita",
+    "Download": "Sauke",
+  "theme": {
+    "title": "Jigo",
+    "normal_font_title": "Rubutun al'ada",
+    "normal_font_desc": "Rubutun al'ada wanda Outhman taha ya yi",
+    "indopak_title": "Indopak",
+    "indopak_desc": "Rubutun Indonesiya",
+    "tajweed_title": "Tajweed",
+    "tajweed_desc": "Lissafi a cikin launuka na Tajweed"
+  },
+  "reading_settings": {
+    "title": "Saitunan karatu",
+    "auto_scroll_title": "Gungura ta atomatik don karantawa",
+    "enable_auto_scroll": "Kunna karatun gungurawa ta atomatik",
+    "disable_auto_scroll": "Kashe karatun gungurawa ta atomatik"
+  }
+  }
   }
 }

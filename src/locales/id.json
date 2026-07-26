@@ -114,6 +114,65 @@
     "delete": "Hapus",
     "absoulutely": "Apakah Anda benar-benar yakin?",
     "delete_description": "Tindakan ini tidak dapat dibatalkan. Ini akan menghapus akun Anda secara permanen dari server kami.",
-    "imgLabel": "Harap unggah gambar yang ukurannya tidak lebih dari 5 MB"
+    "imgLabel": "Harap unggah gambar yang ukurannya tidak lebih dari 5 MB",
+  "quran_page": {
+    "title": "Bacaan Alquran",
+    "subtitle": "pilih surah dan narasi Alquran dan Pembaca",
+    "select_reader": "Pilih Pembaca",
+    "select_narration": "Pilih Narasi",
+    "select_surah": "Pilih surah",
+    "select_audio_hint": "Pilih audio seperti ini",
+    "saved_recitations": "Bacaan Quran yang disimpan",
+ "read_surah": "Baca surah",
+  "read_aya_by_aya": "Baca ayat demi ayat",
+  "select_surah_and_read": "Pilih surah dan baca",
+  "select_to_start": "pilih untuk memulai",
+  "select_surah_and_verse": "Pilih surah dan ayat",
+  "select_aya_from_here": "Pilih aya dari sini",
+  "previous": "Sebelumnya",
+  "next": "Berikutnya",
+  "page": "Halaman",
+  "copy_aya": "salin aya",
+  "copy_translate": "salin terjemahan",
+  "read_tafsir": "membaca tafsir",
+  "quran_tafsirs": "Tafsir Alquran",
+  "select_a_tafsir": "pilih tafsir",
+  "copy": "Menyalin",
+  "tafsir_names": {
+    "al_muyassar": "Al-Tafsir Al-Muyassar",
+    "al_jalalayn": "Tafsir Al-Jalalain",
+    "al_sadi": "Tafsir Al-Sa'di",
+    "ibn_kathir": "Tafsir Ibnu Katsir",
+    "al_baghawi": "Tafsir Al-Baghawi",
+    "al_qurtubi": "Tafsir Al-Qurtubi",
+    "al_tabari": "Tafsir Al-Tabari",
+    "arberry": "Arberry",
+    "yusuf_ali": "Yusuf Ali",
+    "keyzer": "Kunci",
+    "leemhuis": "Leemhuis",
+    "ar": "Arab",
+    "en": "bahasa inggris",
+    "nl": "Belanda"
+  },
+"reader": "Qori",
+    "Share": "Bagikan",
+    "Repeat": "Ulangi",
+    "Download": "Unduh",
+  "theme": {
+    "title": "Tema",
+    "normal_font_title": "Font biasa",
+    "normal_font_desc": "Font normal yang dibuat oleh Outhman taha",
+    "indopak_title": "Indopak",
+    "indopak_desc": "Aksara Indonesia",
+    "tajweed_title": "Tajwid",
+    "tajweed_desc": "Kaligrafi dengan warna Tajwid"
+  },
+  "reading_settings": {
+    "title": "Pengaturan membaca",
+    "auto_scroll_title": "Gulir Otomatis untuk Membaca",
+    "enable_auto_scroll": "Aktifkan pembacaan gulir otomatis",
+    "disable_auto_scroll": "Nonaktifkan pembacaan gulir otomatis"
+  }
+  }
   }
 }

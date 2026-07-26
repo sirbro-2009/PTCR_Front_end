@@ -21,14 +21,16 @@ import {
 } from "@/components/ui/select";
 import { Ellipsis } from "lucide-react";
 import Aya_Number from "../readSurah_components/aya_number";
-import { useAppDispatch, useAppSelector } from "@/hooks/Redux";
+import {  useAppSelector } from "@/hooks/Redux";
 import AWTC, { AyNUMBER } from "./AyaWithTajwidComp";
+import { useTranslation } from "react-i18next";
 
 export default function AyaQuranDisplay({ contentObjects }: any) {
   const { name, number, tadjwid, revelation_place, verses_count, verses } =
     contentObjects as IquranText;
   const [active, setActive] = useState(1);
   const Data = useAppSelector((state) => state.quran.QDS);
+    const {t} = useTranslation()
 
   const goTo = (page: number) => {
     if (page < 1 || page > verses_count) return;
@@ -78,7 +80,7 @@ export default function AyaQuranDisplay({ contentObjects }: any) {
       <div className="flex items-center flex-col gap-4">
         <Field orientation="horizontal" className="w-fit">
           <FieldLabel htmlFor="select-rows-per-page">
-            Select aya from here
+            {t(`dashboard.quran_page.select_aya_from_here`)}
           </FieldLabel>
           <Select
             defaultValue="1"
@@ -114,6 +116,7 @@ export default function AyaQuranDisplay({ contentObjects }: any) {
                   goTo(active - 1);
                 }}
                 className={active === 1 ? "pointer-events-none opacity-50" : ""}
+                text={t(`dashboard.quran_page.previous`)}
               />
             </PaginationItem>
 
@@ -149,6 +152,7 @@ export default function AyaQuranDisplay({ contentObjects }: any) {
                     ? "pointer-events-none opacity-50"
                     : ""
                 }
+                text={t(`dashboard.quran_page.next`)}
               />
             </PaginationItem>
           </PaginationContent>

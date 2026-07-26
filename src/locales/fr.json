@@ -114,6 +114,65 @@
     "delete": "Supprimer",
     "absoulutely": "Êtes-vous absolument sûr ?",
     "delete_description": "Cette action est irréversible. Cela supprimera définitivement votre compte de nos serveurs.",
-    "imgLabel": "veuillez télécharger uniquement une image ne dépassant pas 5 mb"
+    "imgLabel": "veuillez télécharger uniquement une image ne dépassant pas 5 mb",
+  "quran_page": {
+    "title": "Récitations du Coran",
+    "subtitle": "choisissez la sourate et le récit coranique et le lecteur",
+    "select_reader": "Sélectionnez un lecteur",
+    "select_narration": "Sélectionnez une narration",
+    "select_surah": "Sélectionnez une sourate",
+    "select_audio_hint": "Sélectionnez l'audio comme celui-ci",
+    "saved_recitations": "Récitations du Coran enregistrées",
+"read_surah": "Lire la sourate",
+  "read_aya_by_aya": "Lire verset par verset",
+  "select_surah_and_read": "Sélectionner la sourate et lire",
+  "select_to_start": "Sélectionner pour commencer",
+  "select_surah_and_verse": "Sélectionner la sourate et le verset",
+  "select_aya_from_here": "Sélectionner le verset ici",
+  "previous": "Précédent",
+  "next": "Suivant",
+  "page": "Page",
+  "copy_aya": "Copier le verset",
+  "copy_translate": "Copier la traduction",
+  "read_tafsir": "Lire le Tafsir",
+  "quran_tafsirs": "Tafsirs du Coran",
+  "select_a_tafsir": "Sélectionner un Tafsir",
+  "copy": "Copier",
+  "tafsir_names": {
+    "al_muyassar": "Al-Tafsir Al-Muyassar",
+    "al_jalalayn": "Tafsir Al-Jalalayn",
+    "al_sadi": "Tafsir Al-Sa'di",
+    "ibn_kathir": "Tafsir Ibn Kathir",
+    "al_baghawi": "Tafsir Al-Baghawi",
+    "al_qurtubi": "Tafsir Al-Qurtubi",
+    "al_tabari": "Tafsir Al-Tabari",
+    "arberry": "Arberry",
+    "yusuf_ali": "Yusuf Ali",
+    "keyzer": "Keyzer",
+    "leemhuis": "Leemhuis",
+    "ar": "Arabe",
+    "en": "Anglais",
+    "nl": "Néerlandais"
+  },
+  "reader": "Récitateur",
+  "Share": "Partager",
+  "Repeat": "Répéter",
+  "Download": "Télécharger",
+  "theme": {
+    "title": "Thème",
+    "normal_font_title": "Police normale",
+    "normal_font_desc": "La police normale conçue par Othman Taha",
+    "indopak_title": "Indopak",
+    "indopak_desc": "Écriture indonésienne",
+    "tajweed_title": "Tajweed",
+    "tajweed_desc": "Calligraphie avec les couleurs du Tajweed"
+  },
+  "reading_settings": {
+    "title": "Paramètres de lecture",
+    "auto_scroll_title": "Défilement automatique pour la lecture",
+    "enable_auto_scroll": "Activer le défilement automatique",
+    "disable_auto_scroll": "Désactiver le défilement automatique"
+  }
+  }
   }
 }

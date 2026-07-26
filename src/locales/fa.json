@@ -114,6 +114,65 @@
     "delete": "حذف",
     "absoulutely": "آیا کاملاً مطمئن هستید؟",
     "delete_description": "این عملیات قابل بازگشت نیست. این کار حساب شما را برای همیشه از سرورهای ما حذف می‌کند.",
-    "imgLabel": "لطفاً فقط تصاویری با حجم حداکثر ۵ مگابایت آپلود کنید"
+    "imgLabel": "لطفاً فقط تصاویری با حجم حداکثر ۵ مگابایت آپلود کنید",
+      "quran_page": {
+    "title": "تلاوت های قرآن",
+    "subtitle": "سوره و روایت قرآنی و خواننده را انتخاب کنید",
+    "select_reader": "یک خواننده را انتخاب کنید",
+    "select_narration": "یک روایت را انتخاب کنید",
+    "select_surah": "یک سوره انتخاب کنید",
+    "select_audio_hint": "صدا را مانند این انتخاب کنید",
+    "saved_recitations": "قرائت قرآن ذخیره شده",
+  "read_surah": "سوره را بخوانید",
+  "read_aya_by_aya": "aya by aya را بخوانید",
+  "select_surah_and_read": "سوره را انتخاب کنید و بخوانید",
+  "select_to_start": "را برای شروع انتخاب کنید",
+  "select_surah_and_verse": "سوره و آیه را انتخاب کنید",
+  "select_aya_from_here": "aya را از اینجا انتخاب کنید",
+  "previous": "قبلی",
+  "next": "بعدی",
+  "page": "صفحه",
+  "copy_aya": "کپی کن",
+  "copy_translate": "ترجمه کپی",
+  "read_tafsir": "تفسیر را بخوانید",
+  "quran_tafsirs": "تفاسیر قرآن",
+  "select_a_tafsir": "یک تفسیر انتخاب کنید",
+  "copy": "کپی کنید",
+  "tafsir_names": {
+    "al_muyassar": "التفسیر المیصر",
+    "al_jalalayn": "تفسیر الجلالین",
+    "al_sadi": "تفسیر السعدی",
+    "ibn_kathir": "تفسیر ابن کثیر",
+    "al_baghawi": "تفسیر البغاوی",
+    "al_qurtubi": "تفسیر القرطبی",
+    "al_tabari": "تفسیر الطبری",
+    "arberry": "آربری",
+    "yusuf_ali": "یوسف علی",
+    "keyzer": "کیزر",
+    "leemhuis": "لیمهویس",
+    "ar": "عربی",
+    "en": "انگلیسی",
+    "nl": "هلند"
+  },
+"reader": "قاری",
+    "Share": "اشتراک‌گذاری",
+    "Repeat": "تکرار",
+    "Download": "دانلود",
+  "theme": {
+    "title": "تم",
+    "normal_font_title": "فونت معمولی",
+    "normal_font_desc": "فونت معمولی که توسط اوثمان طاها ساخته شده است",
+    "indopak_title": "ایندوپاک",
+    "indopak_desc": "خط اندونزیایی",
+    "tajweed_title": "تجوید",
+    "tajweed_desc": "خوشنویسی به رنگهای تجوید"
+  },
+  "reading_settings": {
+    "title": "خواندن تنظیمات",
+    "auto_scroll_title": "پیمایش خودکار برای خواندن",
+    "enable_auto_scroll": "خواندن خودکار پیمایش را فعال کنید",
+    "disable_auto_scroll": "خواندن خودکار پیمایش را غیرفعال کنید"
+  }
+  }
   }
 }

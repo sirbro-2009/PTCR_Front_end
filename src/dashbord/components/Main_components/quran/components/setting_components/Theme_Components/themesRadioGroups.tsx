@@ -9,6 +9,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useAppDispatch,useAppSelector } from "@/hooks/Redux";
 import { toastFunctions } from "../../quran_recitation_components/mp3_compnents/ifFulfied";
 import { editQDS } from "@/features/quran/quran_slice";
+import { useTranslation } from "react-i18next";
 export default function ThemesRadioGroups() {
 const Data = useAppSelector(state=>state.quran.QDS)
 const isDark = Data.theme ==='dark'
@@ -17,22 +18,24 @@ const dispatch = useAppDispatch()
     asWords: "ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ",
     asGlyphCode: "ﱆﱇﱈﱉ",
   };
+const {t} = useTranslation()
+
   const Fonts = [
     {
-      text: "Normal  font",
-      desc: "The normal font that was made by Outhman taha",
+      text: t(`dashboard.quran_page.theme.normal_font_title`),
+      desc: t(`dashboard.quran_page.theme.normal_font_desc`),
       value: "quranFont",
       aya: ayaForTest.asWords,
     },
     {
-      text: "Indopak ",
-      desc: "Indonesian script",
+      text: t(`dashboard.quran_page.theme.indopak_title`),
+      desc: t(`dashboard.quran_page.theme.indopak_desc`),
       value: "Indopak",
       aya: ayaForTest.asWords,
     },
   {
-      text: "Tajweed ",
-      desc: "Calligraphy in the colors of Tajweed",
+      text: t(`dashboard.quran_page.theme.tajweed_title`),
+      desc: t(`dashboard.quran_page.theme.tajweed_desc`),
       value: "Tajweed",
       aya: ayaForTest.asGlyphCode,
     },
@@ -50,8 +53,8 @@ const dispatch = useAppDispatch()
           <FieldLabel key={i} >
             <Field orientation="horizontal">
               <FieldContent>
-                <FieldTitle>{e.text}</FieldTitle>
-                <FieldDescription>
+                <FieldTitle className="text-center m-auto my-2">{e.text}</FieldTitle>
+                <FieldDescription className="text-center my-2">
                     {e.desc}
                 </FieldDescription>
                 <div style={{fontFamily:e.value}} className={`font-[${e.value}] ${isDark && e.value ==='Tajweed'?'tajweed-dark-invert':``} md:w-2/3 text-center whitespace-normal wrap-break-word overflow-hidden m-auto  text-3xl`}>

@@ -114,6 +114,65 @@
     "delete": "Padam",
     "absoulutely": "Adakah anda benar-benar pasti?",
     "delete_description": "Tindakan ini tidak boleh dibatalkan. Ini akan memadamkan akaun anda secara kekal daripada pelayan kami.",
-    "imgLabel": "Sila muat naik gambar yang saiznya tidak melebihi 5 MB sahaja"
+    "imgLabel": "Sila muat naik gambar yang saiznya tidak melebihi 5 MB sahaja",
+  "quran_page": {
+    "title": "bacaan al-Quran",
+    "subtitle": "pilih surah dan naratif al-Quran dan Pembaca",
+    "select_reader": "Pilih Pembaca",
+    "select_narration": "Pilih Narasi",
+    "select_surah": "Pilih surah",
+    "select_audio_hint": "Pilih audio seperti ini",
+    "saved_recitations": "Bacaan Al-Quran yang disimpan",
+"read_surah": "Baca surah",
+  "read_aya_by_aya": "Baca aya oleh aya",
+  "select_surah_and_read": "Pilih surah dan baca",
+  "select_to_start": "pilih untuk memulakan",
+  "select_surah_and_verse": "Pilih surah dan ayat",
+  "select_aya_from_here": "Pilih aya dari sini",
+  "previous": "Sebelumnya",
+  "next": "Seterusnya",
+  "page": "Halaman",
+  "copy_aya": "salin aya",
+  "copy_translate": "salin terjemah",
+  "read_tafsir": "baca tafsir",
+  "quran_tafsirs": "tafsir al-Quran",
+  "select_a_tafsir": "pilih tafsir",
+  "copy": "salin",
+  "tafsir_names": {
+    "al_muyassar": "Al-Tafsir Al-Muyassar",
+    "al_jalalayn": "Tafsir Al-Jalalayn",
+    "al_sadi": "Tafsir Al-Sa'di",
+    "ibn_kathir": "Tafsir Ibnu Kathir",
+    "al_baghawi": "Tafsir Al-Baghawi",
+    "al_qurtubi": "Tafsir Al-Qurtubi",
+    "al_tabari": "Tafsir Al-Tabari",
+    "arberry": "Arberi",
+    "yusuf_ali": "Yusuf Ali",
+    "keyzer": "Keyzer",
+    "leemhuis": "Leemhuis",
+    "ar": "bahasa arab",
+    "en": "bahasa inggeris",
+    "nl": "Belanda"
+  },
+"reader": "Qari",
+    "Share": "Kongsi",
+    "Repeat": "Ulang",
+    "Download": "Muat turun",
+  "theme": {
+    "title": "Tema",
+    "normal_font_title": "Fon biasa",
+    "normal_font_desc": "Fon biasa yang dibuat oleh Outhman taha",
+    "indopak_title": "Indopak",
+    "indopak_desc": "skrip Indonesia",
+    "tajweed_title": "Tajwid",
+    "tajweed_desc": "Kaligrafi dalam warna Tajwid"
+  },
+  "reading_settings": {
+    "title": "Tetapan membaca",
+    "auto_scroll_title": "Tatal Auto untuk Baca",
+    "enable_auto_scroll": "Dayakan bacaan tatal automatik",
+    "disable_auto_scroll": "Lumpuhkan bacaan tatal automatik"
+  }
+  }
   }
 }

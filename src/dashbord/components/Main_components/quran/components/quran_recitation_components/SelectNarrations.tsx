@@ -1,4 +1,3 @@
-import { type SetStateAction } from "react";
 import {
   Select,
   SelectContent,
@@ -9,6 +8,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { quranNarrations } from "@/dashbord/components/Main_components/quran/components/quran_recitation_components/objects";
+import { useTranslation } from "react-i18next"
 interface e {
   ar: string;
   en: string;
@@ -16,6 +16,7 @@ interface e {
 }
 export function SelectNarrations({values}:any) {
   const {startValue,narrationsSelect} = values || {}
+const { t } = useTranslation();
   const allNarrations = quranNarrations.map((e: e, i: number) => {
     return (
       <SelectGroup key={i} >
@@ -41,7 +42,7 @@ export function SelectNarrations({values}:any) {
         
       }}>
       <SelectTrigger className="w-full md:w-48 my-5">
-        <SelectValue placeholder="Select a Narration" />
+        <SelectValue placeholder={t(`dashboard.quran_page.select_narration`)} />
       </SelectTrigger>
       <SelectContent>{allNarrations}</SelectContent>
     </Select>

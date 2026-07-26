@@ -23,7 +23,7 @@ export default function Aya_play({ props }: any) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [progress, setProgress] = useState([0]);
   return (
-    <div className="flex-col flex items-center justify-between w-full">
+    <div dir="ltr" className="flex-col flex items-center justify-between w-full">
       {/**select */}
 
       {/**play */}

@@ -49,6 +49,7 @@ import { toast } from "sonner";
 import NameCardNotMoved from "@/assets/icons/for_name.png";
 import { addToSaved, deletAudio } from "@/features/quran/quran_slice";
 import { useAppDispatch, useAppSelector } from "@/hooks/Redux";
+import { useTranslation } from "react-i18next"
 export const toastFunctions = (
   text: string,
   type: "success" | "error" | "loading" | "info",
@@ -61,12 +62,13 @@ export const toastFunctions = (
   /**copy finctions */
 }
 export const handleCopyLink = async (linkToCopy: string) => {
+
   try {
     if (!navigator.clipboard) {
       throw new Error("Clipboard API not available");
     }
     await navigator.clipboard.writeText(linkToCopy);
-    toastFunctions("copied", "success");
+    toastFunctions(`done`, "success");
   } catch (err) {
     toast.error("error", {
       position: "bottom-right",
@@ -77,7 +79,7 @@ export const handleCopyLink = async (linkToCopy: string) => {
 export default function IfFulfied({ object }: any) {
   const disptch = useAppDispatch();
   const audioSaved = useAppSelector((state) => state.quran);
-
+const { t } = useTranslation();
   const { audio, revelation_place, name, number } = object as QuranAudio;
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isSaved, setIsSaved] = useState(
