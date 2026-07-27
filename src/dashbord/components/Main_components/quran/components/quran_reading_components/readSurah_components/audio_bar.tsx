@@ -44,8 +44,10 @@ export default function Audio_Bar({ props }: any) {
   const disptch = useAppDispatch();
   const { audioProps, audioRef, audio, handleSelectChange } = props;
   const [isPlayed, setIsPlayed] = useState(!audioRef.current?.paused);
-  const {t} = useTranslation()
-
+  const {t,i18n} = useTranslation()
+    const isLatine: "en" | "ar" = ["ar", "fa", "ur"].includes(i18n.language)
+    ? "ar"
+    : "en";
   {
     /**back and front audio */
   }
@@ -154,13 +156,13 @@ export default function Audio_Bar({ props }: any) {
                     {reciters.map((e, i) => {
                       return (
                         <DropdownMenuItem
-                          dir="rtl"
+                          dir={document.dir}
                           onClick={() => {
                             handleSelectChange(e.subfolder);
                             setIsPlayed(true)
                           }}
-                          className="w-full m-auto  font-['Rubik'] text-black">
-                          {e.name.ar} - {e.bitrate}
+                          className="w-50 m-auto  font-['Rubik'] text-black">
+                          {e.name[isLatine]} - {e.bitrate}
                         </DropdownMenuItem>
                       );
                     })}
