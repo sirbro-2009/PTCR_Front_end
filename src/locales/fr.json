@@ -117,6 +117,7 @@
     "imgLabel": "veuillez télécharger uniquement une image ne dépassant pas 5 mb",
   "quran_page": {
     "title": "Récitations du Coran",
+      "quarter": "Quart",
     "subtitle": "choisissez la sourate et le récit coranique et le lecteur",
     "select_reader": "Sélectionnez un lecteur",
     "select_narration": "Sélectionnez une narration",

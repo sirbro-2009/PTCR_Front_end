@@ -12,12 +12,11 @@ import { useTranslation } from "react-i18next"
 
 export function SideBar() {
 const {i18n} = useTranslation()
-const dir = i18n.language === 'ar' ? 'rtl' : 'ltr'
 
 return (
     <Sidebar collapsible="icon">
         <SideBarHeader/>
-    <SidebarContent dir={dir}>
+    <SidebarContent dir={document.dir}>
         <SideGroupUS/>
         <SideGroupQuran/>
         <SideGroupAdkar/>

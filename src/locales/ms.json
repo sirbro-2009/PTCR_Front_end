@@ -117,6 +117,7 @@
     "imgLabel": "Sila muat naik gambar yang saiznya tidak melebihi 5 MB sahaja",
   "quran_page": {
     "title": "bacaan al-Quran",
+      "quarter": "suku",
     "subtitle": "pilih surah dan naratif al-Quran dan Pembaca",
     "select_reader": "Pilih Pembaca",
     "select_narration": "Pilih Narasi",

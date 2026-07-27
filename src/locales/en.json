@@ -119,6 +119,7 @@
     "imgLabel": "please upload only image that it was not more than 5 mb",
     "quran_page": {
       "title": "Quran recitations",
+      "quarter":"Quarter",
       "subtitle": "choose surah and Quranic narrative and Reader",
       "select_reader": "Select a Reader",
       "select_narration": "Select a Narration",

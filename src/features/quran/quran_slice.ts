@@ -19,11 +19,15 @@ const headers = {
   Authorization: `Bearer ${theToken}`,
 };
 
-interface IIres {
-  id?: number;
-  reciter?: {
-    ar?: string;
-    en?: string;
+export interface IIres {
+  id: number;
+  reciter: {
+    ar: string;
+    en: string;
+    dsc?:{
+      ar:string,
+      en:string
+    }
   };
 }
 export interface theIinitialState {

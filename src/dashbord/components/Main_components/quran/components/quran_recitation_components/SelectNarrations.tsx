@@ -16,7 +16,9 @@ interface e {
 }
 export function SelectNarrations({values}:any) {
   const {startValue,narrationsSelect} = values || {}
-const { t } = useTranslation();
+const { t ,i18n} = useTranslation();
+  const isLatine: 'en' | 'ar' = ['ar', 'fa', 'ur'].includes(i18n.language) ? 'ar' : 'en';  
+
   const allNarrations = quranNarrations.map((e: e, i: number) => {
     return (
       <SelectGroup key={i} >
@@ -24,11 +26,11 @@ const { t } = useTranslation();
         <SelectItem
             value={e.db}
             key={i}
-            dir="rtl"
-            className="  text-center cursor-pointer  w-4/5 md:w-full ">
+            dir="ltr"
+            className="  m-auto cursor-pointer  w-4/5 md:w-full ">
             {/**<p className="font-['Rubik'] ">{e.en}</p> */}
             
-            <p className="font-['Rubik'] ">{e.ar}</p>
+            <p className="font-['Rubik'] text-center">{e[isLatine]}</p>
         </SelectItem>
         <SelectSeparator />
       </SelectGroup>

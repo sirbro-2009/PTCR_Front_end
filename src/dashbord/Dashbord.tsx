@@ -11,8 +11,9 @@ useEffect(()=>{
 if(!localStorage.getItem("token")){
   navigate("/")
 }  
-},[navigate])
 
+},[navigate])
+document.dir = document.dir==='rtl'?'rtl':'ltr'
   return (
 <>
     

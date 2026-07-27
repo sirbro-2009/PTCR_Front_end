@@ -117,6 +117,7 @@
     "imgLabel": "Harap unggah gambar yang ukurannya tidak lebih dari 5 MB",
   "quran_page": {
     "title": "Bacaan Alquran",
+      "quarter": "seperempat",
     "subtitle": "pilih surah dan narasi Alquran dan Pembaca",
     "select_reader": "Pilih Pembaca",
     "select_narration": "Pilih Narasi",

@@ -24,7 +24,8 @@ const allSurahs = Object.keys(quranSurahs).map((key: string, i: number) => {
     return (
       <SelectGroup key={i}>
         <SelectLabel className="text-lg text-center " >
-          {key.replaceAll("_", " ")}
+          {t(`dashboard.quran_page.quarter`)} {i+1}
+
         </SelectLabel>
         <SelectSeparator/>
         {e.map((ele:{ar:string,id:number,en?:string}, index: number) => {

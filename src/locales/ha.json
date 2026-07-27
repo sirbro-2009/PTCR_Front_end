@@ -117,6 +117,7 @@
     "imgLabel": "Da fatan za a ɗora hoton da bai wuce MB 5 ba kawai",
   "quran_page": {
     "title": "Karatun Al-Qur'ani",
+      "quarter": "kwata",
     "subtitle": "zabi surah da nassin alqur'ani da mai karatu",
     "select_reader": "Zaɓi Mai Karatu",
     "select_narration": "Zaɓi Labari",

@@ -118,6 +118,7 @@
       "quran_page": {
     "title": "Kuran okunuşları",
     "subtitle": "sureyi ve Kuran anlatımını ve Okuyucuyu seçin",
+      "quarter": "çeyrek",
     "select_reader": "Bir Okuyucu Seçin",
     "select_narration": "Bir Anlatım Seçin",
     "select_surah": "Bir sure seçin",

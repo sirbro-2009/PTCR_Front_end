@@ -118,6 +118,7 @@
   "quran_page": {
     "title": "Visomo vya Quran",
     "subtitle": "chagua surah na simulizi ya Qurani na Msomaji",
+      "quarter": "robo",
     "select_reader": "Chagua Kisomaji",
     "select_narration": "Chagua Simulizi",
     "select_surah": "Chagua surah",

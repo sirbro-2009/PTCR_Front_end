@@ -79,7 +79,7 @@ export const handleCopyLink = async (linkToCopy: string) => {
 export default function IfFulfied({ object }: any) {
   const disptch = useAppDispatch();
   const audioSaved = useAppSelector((state) => state.quran);
-const { t } = useTranslation();
+const { t ,i18n} = useTranslation();
   const { audio, revelation_place, name, number } = object as QuranAudio;
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isSaved, setIsSaved] = useState(
@@ -139,6 +139,9 @@ const { t } = useTranslation();
   {
     /**name card */
   }
+  const isLatine: "en" | "ar" = ["ar", "fa", "ur"].includes(i18n.language)
+    ? "ar"
+    : "en";
   const nameCrad = (
     <div
       className="w-80 h-80 rounded-full 
@@ -150,14 +153,15 @@ const { t } = useTranslation();
         backgroundSize: "cover",
       }}>
       <h1 className="text-xl font-bold mb-4" style={{ fontFamily: "Thuluth" }}>
-        سورة {name?.ar}
+         {isLatine ==='ar'?'سورة ':``}{name?.[isLatine]}
       </h1>
       <p className="text-sm mb-2" style={{ fontFamily: "Thuluth" }}>
-        {revelation_place?.ar}
+        {revelation_place?.[isLatine].toUpperCase()}
         {revelation_place?.ar === "مكية" ? `🕋` : `🕌`}
       </p>
       <h1 className="text-[13px]" style={{ fontFamily: "Thuluth" }}>
-        تلاوة الشيخ {audio?.reciter.ar}
+        {isLatine ==='ar'?' تلاوة الشيخ  ':``}
+       {audio?.reciter[isLatine].toUpperCase()}
       </h1>
     </div>
   );

@@ -13,13 +13,16 @@ import type { QuranAudio } from "./Mp3Playe";
 import { useEffect, useState } from "react";
 import { BookmarkMinus, Play } from "lucide-react";
 import { addToSaved, deletAudio,getAudioSaved, playSaved} from "@/features/quran/quran_slice";
+import { useTranslation } from "react-i18next";
 
 export default function Saved() {
   const audioSaved = useAppSelector((state) => state.quran);
+  const {i18n} = useTranslation()
   const array = audioSaved.quranAudioAfterFetch;
-  const [reader, setReader] = useState("");
   const dispatch = useAppDispatch();
-
+    const isLatine: "en" | "ar" = ["ar", "fa", "ur"].includes(i18n.language)
+    ? "ar"
+    : "en";
   useEffect(() => {
     dispatch(getAudioSaved());
   }, []);
@@ -28,14 +31,13 @@ export default function Saved() {
       <CarouselItem
         key={index}
         className=" m-1  cursor-pointer">
-        <Card dir="rtl" className="p-2 flex flex-row justify-between">
+        <Card dir={document.dir} className="p-2 flex flex-row justify-between">
           <CardContent className="w-3/4">
-            <p> سورة {e.name?.ar} </p>
+            <p> {isLatine === 'ar'?'سورة':``} {e.name?.[isLatine]} </p>
             <p>
-              
-              بصوت {e.audio?.reciter.ar} {e.audio?.reciter.dsc?.ar}
+              {isLatine === 'ar'?'بصوت':``} {e.audio?.reciter[isLatine]} {e.audio?.reciter.dsc?.[isLatine]}
             </p>
-            <p> رواية {e.audio?.rewaya.ar}</p>
+            <p> {isLatine === 'ar'?'رواية':``} {e.audio?.rewaya[isLatine]}</p>
           </CardContent>
           <CardContent className="w-1/3 items-center flex flex-row-reverse justify-between">
             <BookmarkMinus color="red" onClick={async()=>{
@@ -66,7 +68,7 @@ export default function Saved() {
       </Carousel>
     </div>:<div className="m-auto text-center items-center flex flex-col justify-center">
               <CiNoWaitingSign size={90} className="font-bold" color="red"/>
-              <Label className="text-xl">You dont have any saved Quran reactiations</Label>
+
               </div>
   return final_components
 }
