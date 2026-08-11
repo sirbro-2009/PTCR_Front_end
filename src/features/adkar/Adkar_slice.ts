@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import adkar_object from "@/assets/JSON/adkarObject.json";
+
 export interface initialState{
         search:boolean,
         searchArrayRes:string[],
@@ -7,7 +8,11 @@ export interface initialState{
         searchStatue:boolean|null
         readArray:{count:number,text:string}[];
         Read:boolean,   
-        searchElement:boolean
+        searchElement:boolean,
+        noftications:{
+            isEnabled:boolean,
+            notifications:{type:string,time:string}[]
+        }
 }
 const initialState:initialState = {
         search:false,
@@ -16,7 +21,11 @@ const initialState:initialState = {
         readArray:[],
         Read:false,
         searchArrayResLength:0,
-        searchElement:true
+        searchElement:true,
+        noftications:{
+            isEnabled:false,
+            notifications:JSON.parse(sessionStorage.getItem("a")??`[]`)
+        }
     }
 export const adkarSlice = createSlice({
     name:'adkar',
@@ -28,7 +37,7 @@ export const adkarSlice = createSlice({
             state.search = searchValue.length >0
             const reagExp = new RegExp(searchValue)
             state.searchArrayRes = (Object.keys(adkar_object) as Array<keyof typeof adkar_object>).filter((e,i)=>{
-                return reagExp.test(e) === true
+                return reagExp.test(e.toLowerCase()) === true
             })
             if(state.searchArrayRes.length ){
                 state.searchArrayResLength = state.searchArrayRes.length
@@ -47,6 +56,9 @@ export const adkarSlice = createSlice({
         setShow:(state,action?)=>{
             state.readArray = action?.payload
             state.Read = !state.Read
+            state.searchStatue = false
+            state.search = false 
+            state.searchArrayRes = (Object.keys(adkar_object) as Array<keyof typeof adkar_object>) 
             state.searchElement = !state.searchElement
         }
     },

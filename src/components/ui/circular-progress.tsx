@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 
 interface CircularProgressProps {
-  value: number // النسبة المئوية من 0 إلى 100
-  size?: number // حجم الدائرة بالـ px
-  strokeWidth?: number // سمك الخط
-  colorClass?: string // لون شريط التقدم
-  children?: React.ReactNode // المحتوى الداخلي في منتصف الدائرة
+  value: number;
+  size?: number;
+  strokeWidth?: number;
+  colorClass?: string;
+  children?: React.ReactNode;
 }
 
 export function CircularProgress({
@@ -17,21 +17,18 @@ export function CircularProgress({
   colorClass = "text-emerald-500",
   children,
 }: CircularProgressProps) {
-  const radius = (size - strokeWidth) / 2
-  const circumference = 2 * Math.PI * radius
-  const strokeDashoffset = circumference - (value / 100) * circumference
+  const radius = (size - strokeWidth) / 2;
+  const circumference = 2 * Math.PI * radius;
+  const strokeDashoffset = circumference - (value / 100) * circumference;
 
   return (
     <div
       className="relative inline-flex items-center justify-center"
-      style={{ width: size, height: size }}
-    >
+      style={{ width: size, height: size }}>
       <svg
         width={size}
         height={size}
-        className="rotate-[-90deg] transition-all duration-300 ease-in-out"
-      >
-        {/* الدائرة الخلفية الرمادية */}
+        className="-rotate-90 transition-all duration-300 ease-in-out">
         <circle
           cx={size / 2}
           cy={size / 2}
@@ -40,7 +37,6 @@ export function CircularProgress({
           strokeWidth={strokeWidth}
           fill="transparent"
         />
-        {/* دائرة التقدم الملونة */}
         <circle
           cx={size / 2}
           cy={size / 2}
@@ -54,14 +50,15 @@ export function CircularProgress({
         />
       </svg>
 
-      {/* المحتوى في المنتصف (children) */}
       <div className="absolute inset-0 flex items-center justify-center">
-        {children ? children : (
+        {children ? (
+          children
+        ) : (
           <span className="text-sm font-semibold text-foreground">
             {Math.round(value)}%
           </span>
         )}
       </div>
     </div>
-  )
+  );
 }

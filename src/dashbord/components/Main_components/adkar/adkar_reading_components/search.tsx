@@ -21,7 +21,7 @@ export function SearchBar() {
         onInput={(e) => {
           const searchValue = (e.target as HTMLInputElement).value
           setInputValue(searchValue);
-          dispatch(handelInputSearch({searchValue}))
+          dispatch(handelInputSearch({searchValue:searchValue.replaceAll(" ","_")}))
         }}
         placeholder="Search in adkar..."
       />
