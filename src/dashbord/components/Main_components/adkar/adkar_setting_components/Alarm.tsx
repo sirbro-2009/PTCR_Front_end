@@ -1,5 +1,4 @@
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Plus } from "lucide-react";
 import {
@@ -10,25 +9,38 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useAppSelector } from "@/hooks/Redux";
+import { useAppDispatch, useAppSelector } from "@/hooks/Redux";
 import adkar_object from "@/assets/JSON/adkarObject.json";
 import { categoriesMetadata } from "@/other/data";
 import { EmptyMuted } from "./time_components/no_any_thing";
 import NotificationsFiled from "./time_components/notifications_filed";
-const array = [
-  {text:"Lorem ipsum, dolor sit amet consectetur adipisicing elit.",time:"10:20"},
-  {text:" Illum magnam cum inventore deleniti tenetur reiciendis suscipit omnis quam asperiores eveniet ratione iusto est,",time:"10:50"},
-  {text:"fuga architecto labore quas magni necessitatibus sit.",time:"00:12"}
-]
+import { useEffect, useState, type InputHTMLAttributes } from "react";
+import { addAlarm, getData } from "@/features/adkar/Adkar_slice";
+import { toastFunctions } from "../../quran/components/quran_recitation_components/mp3_compnents/ifFulfied";
 export function Adkar_alarm() {
-localStorage.setItem("lastAindex","setAlarm")
-  const isTrue = true
+  localStorage.setItem("lastAindex", "setAlarm");
+  interface alarmObjectType{
+     id: number;
+      time: string
+  }
+  useEffect(() => {
+    dispatch(getData());
+  }, []);
   const data = useAppSelector((state) => state.adkar);
+  const isTrue = data.noftications.alaramArray.length !== 0;
+  const dispatch = useAppDispatch();
+  const [new_alarm, setNew_alarm] = useState(
+    {} as alarmObjectType,
+  );
   return (
     <Card>
       <CardTitle className="flex flex-row items-center w-full p-2 md:w-2/5 m-auto justify-between">
         {/**select */}
-        <Select>
+        <Select
+          value={new_alarm.id?.toString() }
+          onValueChange={(value) => {
+            setNew_alarm({ ...new_alarm, id: Number(value) });
+          }}>
           <SelectTrigger className="w-fit mx-2">
             <SelectValue placeholder="select dhikr type" />
           </SelectTrigger>
@@ -37,10 +49,10 @@ localStorage.setItem("lastAindex","setAlarm")
               {data.searchArrayRes.map((e, i) => {
                 const keyValue = adkar_object[e as keyof typeof adkar_object];
                 const metadata = categoriesMetadata[i];
-                const color = metadata?.color
+                const color = metadata?.color;
                 return (
                   <SelectItem
-                    value={metadata!.category}
+                    value={i.toString()}
                     color={metadata?.color}
                     className={color}
                     style={{ color: metadata?.color }}
@@ -56,19 +68,56 @@ localStorage.setItem("lastAindex","setAlarm")
         {/**time input */}
         <Input
           type="time"
-
           className="appearance-none bg-background w-fit [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
+          value={new_alarm.time}
+          onInput={(e) => {
+            const target = e.target as HTMLInputElement;
+            if (target.value.trim()) {
+              setNew_alarm({ ...new_alarm, time: target.value.trim() });
+            }
+          }}
         />
         {/*add button */}
-        <Plus size={30} className="rounded-full bg-accent cursor-pointer" />
+        <Plus
+          size={30}
+          className="rounded-full bg-accent cursor-pointer"
+          onClick={async() => {
+            if (new_alarm && new_alarm.time) {
+              const check = data.noftications.alaramArray.filter((e,i)=>{
+                return e.id === new_alarm.id
+              })
+              
+              if(check.length !==0){
+                toastFunctions("This dtikr already exixt","error")
+                return null
+              }              
+
+              await dispatch(addAlarm(new_alarm))  
+              if(data.noftications.done2){
+                toastFunctions("done","success")
+              }
+              if(data.noftications.done2 === false){
+                toastFunctions("something wrong","error")
+              }
+              if(data.noftications.done2 === null){
+                toastFunctions("wait","loading")
+              }                
+              setNew_alarm({time:''} as alarmObjectType)
+            }
+            else if(!new_alarm || !new_alarm.time){
+              toastFunctions("check input","error")
+            }
+          }}
+        />
       </CardTitle>
       <CardContent>
-        {
-          isTrue?
-          array.map((e,i)=>{
-            return (<NotificationsFiled key={i} object={e}></NotificationsFiled>)
-          }):<EmptyMuted/>          
-        }
+        {isTrue ? (
+          data.noftications.alaramArray.map((e, i) => {
+            return <NotificationsFiled key={i} object={e}></NotificationsFiled>;
+          })
+        ) : (
+          <EmptyMuted />
+        )}
       </CardContent>
     </Card>
   );

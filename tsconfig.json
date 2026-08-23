@@ -46,5 +46,8 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+  },
+  "references": [
+    { "path": "./tsconfig.sw.json" }
+  ]
 }

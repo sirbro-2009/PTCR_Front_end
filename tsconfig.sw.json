@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "noEmit": false,
+    "module": "ESNext",
+    "target": "esnext",
+    "lib": ["webworker", "esnext"],
+    "types": [],
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    "strict": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "composite": true,
+    "declaration": true
+  },
+  "include": ["src/sw.ts"]
+}
