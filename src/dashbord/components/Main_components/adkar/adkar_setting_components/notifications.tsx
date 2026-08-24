@@ -56,7 +56,7 @@ export function Notification() {
             subscription = await registration.pushManager.subscribe({
               userVisibleOnly: true,
               applicationServerKey: urlBase64ToUint8Array(
-                "BOOVZNHhTTG8FHYOO1TKmJyDTxmxjKOjab7HILEkd43hF3PC_j6cVRBbzj-1X8XN4Q2nxeNrvkhtMHhGB5x-qOM",
+                "",
               ),
             });
             new window.Notification("enabled", {
