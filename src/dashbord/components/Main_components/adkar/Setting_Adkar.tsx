@@ -17,8 +17,6 @@ import { useEffect } from "react";
 import { getData } from "@/features/adkar/Adkar_slice";
 import { useAppDispatch, useAppSelector } from "@/hooks/Redux";
 import Loader from "@/other/Loader.";
-import { Label } from "@/components/ui/label";
-import { Pickaxe } from "lucide-react";
 export default function Setting_Adkar() {
   const dispatch = useAppDispatch();
     useEffect(() => {
@@ -28,8 +26,25 @@ export default function Setting_Adkar() {
   const isNotifcationActivated = useAppSelector((state) => state.adkar.noftications.isActivated);
 
   return (
-<Label className="m-auto" dir="ltr">Soon
-  <Pickaxe/>
-</Label>
+    <Tabs defaultValue={localStorage.getItem("lastAindex")??"notifcation"} className="w-full mx-auto mt-10">
+      <TabsList className="w-full">
+        <TabsTrigger value="notifcation">Notifications</TabsTrigger>
+        <TabsTrigger value="setAlarm">set alarm</TabsTrigger>
+      </TabsList>
+      <TabsContent value="notifcation">
+        <Card>
+          <Notification/>
+        </Card>
+      </TabsContent>
+      <TabsContent value="setAlarm">
+        {isNotifcationActivated?<Adkar_alarm/>:
+        isNotifcationActivated===false?
+        <Card>
+          <CardTitle className="font-bold text-center">Active notification to access to alarm features</CardTitle>
+        </Card>:<Loader/>
+        }
+      
+      </TabsContent>
+    </Tabs>
   )
 }

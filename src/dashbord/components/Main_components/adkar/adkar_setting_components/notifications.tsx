@@ -30,9 +30,9 @@ export function Notification() {
   localStorage.setItem("lastAindex", "notifcation");
   const Public_Key = (
     import.meta as ImportMeta & {
-      env: { VITE_PUBLIC_VAPID_KEY: string };
+      env: { VITE_VAPID_PUBLIC_KEY: string };
     }
-  ).env.VITE_PUBLIC_VAPID_KEY;
+  ).env.VITE_VAPID_PUBLIC_KEY;
   useEffect(() => {
     dispatch(getData());
   }, []);
@@ -56,7 +56,7 @@ export function Notification() {
             subscription = await registration.pushManager.subscribe({
               userVisibleOnly: true,
               applicationServerKey: urlBase64ToUint8Array(
-                "",
+                Public_Key,
               ),
             });
             new window.Notification("enabled", {
