@@ -37,7 +37,7 @@ return (<RadioGroup defaultValue={Data.readMode?'true':'false'} className="max-w
               </FieldContent>
               <RadioGroupItem value={e.value} onClick={async()=>{
                 await dispatch(editQDS(['font',e.value === 'true'?true:false]))
-                toastFunctions("Done","success")
+                toastFunctions(t(`auth.done`),"success")
               }}/>
             </Field>
           </FieldLabel>

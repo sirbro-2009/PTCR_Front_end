@@ -8,7 +8,6 @@ import { VitePWA } from "vite-plugin-pwa";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
@@ -19,6 +18,10 @@ export default defineConfig({
       filename: "sw.ts",
       injectManifest: {
         injectionPoint: undefined,
+      },
+      devOptions: {
+        enabled: true,
+        type: "module",
       },
     }),
   ],

@@ -11,6 +11,7 @@ import { BellCheck, BellOff } from "lucide-react";
 import { useEffect } from "react";
 import { getData, setActiver } from "@/features/adkar/Adkar_slice";
 import { toastFunctions } from "../../quran/components/quran_recitation_components/mp3_compnents/ifFulfied";
+import { useTranslation } from "react-i18next";
 function urlBase64ToUint8Array(base64String: string) {
   const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
   const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
@@ -28,6 +29,8 @@ export interface subscription {
 }
 export function Notification() {
   localStorage.setItem("lastAindex", "notifcation");
+      const { t ,i18n} = useTranslation();
+
   const Public_Key = (
     import.meta as ImportMeta & {
       env: { VITE_VAPID_PUBLIC_KEY: string };
@@ -51,7 +54,7 @@ export function Notification() {
           if (permission === "granted") {
             finalBoolean = true;
             const registration =
-              await navigator.serviceWorker.register("/sw.js");
+              await navigator.serviceWorker.ready;
 
             subscription = await registration.pushManager.subscribe({
               userVisibleOnly: true,
@@ -63,14 +66,14 @@ export function Notification() {
               tag: "Done!",
               body: "now you can add adkar alarm!",
             });
-            toastFunctions("done", "success");
+            toastFunctions(t(`auth.done`), "success");
           }
           if (permission === "denied") {
             toastFunctions("notifications are blocked", "error");
           }
         })
         .catch((e) => {
-          console.error(e);
+          console.log(e);
         });
     } catch (e) {
       console.log(e);
@@ -79,8 +82,8 @@ export function Notification() {
   };
   const option = [
     {
-      title: "active noftication",
-      des: "we will send notification to you whene was the time of adkar.",
+      title: t(`dashboard.adkar_page.notifications.active.title`),
+      des: t(`dashboard.adkar_page.notifications.active.description`),
       value: "true",
       function: async () => {
         const { finalBoolean, subscription } =
@@ -93,6 +96,7 @@ export function Notification() {
             subscription: {
               ...(subscriptionData ?? {}),
               timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+              lang: i18n.language,
             },
           }),
         );
@@ -100,16 +104,17 @@ export function Notification() {
       icon: <BellCheck />,
     },
     {
-      title: "desactive noftication",
-      des: "we wont send notification to you whene was the time of adkar.",
+      title: t(`dashboard.adkar_page.notifications.deactive.title`),
+      des: t(`dashboard.adkar_page.notifications.deactive.description`),
       value: "false",
       function: async () => {
+        
         await dispatch(setActiver({ active: false }));
         if (notification.done1) {
-          toastFunctions("done", "success");
+          toastFunctions(t(`auth.done`), "success");
         }
         if (notification.done1 === false) {
-          toastFunctions("something wrong", "error");
+          toastFunctions(t(`auth.some`), "error");
         }
         if (notification.done1 === null) {
           toastFunctions("wait", "loading");
@@ -121,7 +126,10 @@ export function Notification() {
   return (
     <RadioGroup
       value={notification.isActivated === true ? "true" : "false"}
-      className="w-full p-2">
+      className="w-full p-2"
+
+      dir={i18n.dir()}
+      >
       {option.map((e, i) => {
         return (
           <FieldLabel key={i} onClick={e.function}>
@@ -131,7 +139,7 @@ export function Notification() {
                   {e.icon}
                   {e.title}
                 </FieldTitle>
-                <FieldDescription>{e.des}</FieldDescription>
+                <FieldDescription className="text-start">{e.des}</FieldDescription>
               </FieldContent>
               <RadioGroupItem value={e.value} />
             </Field>

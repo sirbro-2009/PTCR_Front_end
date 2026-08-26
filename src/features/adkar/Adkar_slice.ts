@@ -1,12 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import adkar_object from "@/assets/JSON/adkarObject.json";
 import { serverHost } from "@/other/data";
-import type { subscription } from "@/dashbord/components/Main_components/adkar/adkar_setting_components/notifications";
+import { adhkarData } from "@/sw";
 const theToken = localStorage.getItem("token");
 const headers = {
   "Content-Type": "application/json",
   Authorization: `Bearer ${theToken}`,
 };
+
 /**
  */
 ///get data
@@ -70,7 +71,7 @@ export const setActiver = createAsyncThunk(
       method: "PUT",
       body: JSON.stringify({ active, subscription }),
     });
-    const res = await request.json()
+    const res = await request.json();
     return res;
   },
 );
@@ -112,11 +113,17 @@ export const adkarSlice = createSlice({
       const { searchValue }: { searchValue: string } = action.payload;
       if (searchValue?.trim().length > 0) {
         state.search = searchValue.length > 0;
-        const reagExp = new RegExp(searchValue);
+        const reagExp = new RegExp(searchValue.trim()??``);
+        
         state.searchArrayRes = (
           Object.keys(adkar_object) as Array<keyof typeof adkar_object>
-        ).filter((e, i) => {
-          return reagExp.test(e.toLowerCase()) === true;
+        ).filter((e) => {
+          const item = adhkarData[e as keyof typeof adhkarData];
+          const language = (
+            localStorage.getItem("i18nextLng") ?? "en"
+          ) as keyof (typeof item);
+          //console.log(searchValue.matchAll(new RegExp(item?.[language])))
+          return reagExp.test(item?.[language]) === true;
         });
         if (state.searchArrayRes.length) {
           state.searchArrayResLength = state.searchArrayRes.length;

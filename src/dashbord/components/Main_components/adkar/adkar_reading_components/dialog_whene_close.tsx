@@ -12,10 +12,12 @@ import {
 import { setShow } from "@/features/adkar/Adkar_slice";
 import { useAppDispatch, useAppSelector } from "@/hooks/Redux";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function DWC(value:any) {
   const data = useAppSelector((state) => state.adkar);
   const dispatch = useAppDispatch()
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false)
 const handleCheckCondition = () => {
 
@@ -29,14 +31,16 @@ const handleCheckCondition = () => {
       </DialogTrigger>
       <DialogContent className="sm:max-w-md m-auto" dir={document.dir}  showCloseButton={false}>
         <DialogHeader>
-          <DialogTitle>Good</DialogTitle>
+          <DialogTitle>
+            {t(`dashboard.adkar_page.reading.completeTitle`)}
+            </DialogTitle>
           <DialogDescription>
-            You complete the adkar !
+            {t(`dashboard.adkar_page.reading.completeMessage`)}
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="sm:justify-start">
           <DialogClose asChild>
-            <Button type="button" onClick={()=>{dispatch(setShow([]))}}>Close</Button>
+            <Button type="button" onClick={()=>{dispatch(setShow([]))}}>{t(`dashboard.adkar_page.reading.closeButton`)}</Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>

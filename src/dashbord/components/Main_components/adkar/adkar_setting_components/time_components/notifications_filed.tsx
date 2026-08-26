@@ -10,11 +10,14 @@ import { Delete, Pencil, Plus } from "lucide-react";
 import { EditTime } from "./popover_components/editTime";
 import { DeleteAlarm } from "./popover_components/delete";
 import { useAppDispatch, useAppSelector } from "@/hooks/Redux";
+import { useTranslation } from "react-i18next";
 export default function NotificationsFiled(data: {
   key: number;
   object: { id: number; time: string };
 }) {
   const { id, time } = data.object;
+  const { t } = useTranslation();
+
   const adkarData = useAppSelector((state) => state.adkar);
   const dispatch = useAppDispatch();
   return (
@@ -23,12 +26,15 @@ export default function NotificationsFiled(data: {
         <FieldContent className="grid grid-cols-1 ">
           <div className="flex flex-row items-center justify-between">
             <FieldTitle>
-              {adkarData.searchArrayRes[id]?.replaceAll("_", " ")}
+              {t(
+                `dashboard.adkar_page.adhkarNames.${adkarData.searchArrayRes[id]}`,
+              )}
+
             </FieldTitle>
             <FieldLegend>{time}</FieldLegend>
           </div>
           <FieldDescription className="flex flex-row justify-between items-center ">
-            <EditTime id={id} >
+            <EditTime id={id}>
               <Pencil size={30} className="cursor-pointer" color="green" />
             </EditTime>
             <DeleteAlarm id={id}>

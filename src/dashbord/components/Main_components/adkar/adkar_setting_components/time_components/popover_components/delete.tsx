@@ -9,6 +9,7 @@ import { toastFunctions } from "@/dashbord/components/Main_components/quran/comp
 import { deleteAlarm } from "@/features/adkar/Adkar_slice";
 import { useAppDispatch, useAppSelector } from "@/hooks/Redux";
 import { useState, type ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 export function DeleteAlarm({
   children,
@@ -20,15 +21,19 @@ export function DeleteAlarm({
   const dispatch = useAppDispatch();
   const data = useAppSelector((state) => state.adkar);
   const [open, setOpen] = useState(false);
+      const { t ,i18n} = useTranslation();
+
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger>{children}</PopoverTrigger>
-      <PopoverContent className="w-80">
+      <PopoverContent dir={i18n.dir()} className="w-80">
         <div className="grid gap-4">
           <div className="space-y-2">
-            <h4 className="leading-none font-medium">Delete</h4>
+            <h4 className="leading-none font-medium">
+              {t(`dashboard.adkar_page.dialogs.delete.title`)}  
+            </h4>
             <p className="text-sm text-muted-foreground">
-              Are you sure to delete ?
+              {t(`dashboard.adkar_page.dialogs.delete.message`)}  
             </p>
           </div>
           <div className="flex flex-row items-center justify-between">
@@ -38,21 +43,21 @@ export function DeleteAlarm({
               onClick={async () => {
                 await dispatch(deleteAlarm({ id }));
                 if (data.noftications.done2) {
-                  toastFunctions("done", "success");
+                  toastFunctions(t(`auth.done`), "success");
                 }
                 if (data.noftications.done2 === false) {
-                  toastFunctions("something wrong", "error");
+                  toastFunctions(t(`auth.some`), "error");
                 }
                 if (data.noftications.done2 === null) {
                   toastFunctions("wait", "loading")
                 }
               }}>
-              Yes
-            </Button>
+              {t(`dashboard.adkar_page.dialogs.delete.confirm`)} 
+                          </Button>
             <Button onClick={()=>{
               setOpen(false)
             }} variant={`outline`} size={`lg`}>
-              No
+              {t(`dashboard.adkar_page.dialogs.delete.cancel`)} 
             </Button>
           </div>
         </div>

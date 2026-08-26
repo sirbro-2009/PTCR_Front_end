@@ -202,8 +202,8 @@ export const supportedLanguages: ILanguage[] = [
   { code: "de", name: "Deutsch", nameEn: "German", dir: "ltr" },
 ]
 export const categoriesMetadata:{ category: string, icon: React.ReactNode, color: string }[] = [
-    { category: "moarning adkar", icon: <WiSunrise />, color: "#FFDF00" },
-  { category: "evening adkar", icon: <FaMoon />, color: "#FFA500" },
+    { category: "morning adhkar", icon: <WiSunrise />, color: "#FFDF00" },
+  { category: "evening adhkar", icon: <FaMoon />, color: "#FFA500" },
   { category: "Waking Up Adhkar", icon: <FaSun />, color: "#F59E0B" },
   { category: "Dua for Wearing Clothes", icon: <FaShirt />, color: "#3B82F6" },
   { category: "Dua for Wearing New Clothes", icon: <FaShirt />, color: "#10B981" },

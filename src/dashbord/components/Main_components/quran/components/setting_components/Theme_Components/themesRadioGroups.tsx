@@ -63,7 +63,7 @@ const {t} = useTranslation()
               </FieldContent>
               <RadioGroupItem value={e.value} onClick={async()=>{
                 await dispatch(editQDS(['font',e.value]))
-                toastFunctions("Done","success")
+                toastFunctions(t(`auth.done`),"success")
               }}/>
             </Field>
           </FieldLabel>

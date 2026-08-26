@@ -17,6 +17,7 @@ import { useEffect } from "react";
 import { getData } from "@/features/adkar/Adkar_slice";
 import { useAppDispatch, useAppSelector } from "@/hooks/Redux";
 import Loader from "@/other/Loader.";
+import { useTranslation } from "react-i18next";
 export default function Setting_Adkar() {
   const dispatch = useAppDispatch();
     useEffect(() => {
@@ -24,12 +25,13 @@ export default function Setting_Adkar() {
   }, []);
 
   const isNotifcationActivated = useAppSelector((state) => state.adkar.noftications.isActivated);
+    const { t } = useTranslation();
 
   return (
     <Tabs defaultValue={localStorage.getItem("lastAindex")??"notifcation"} className="w-full mx-auto mt-10">
       <TabsList className="w-full">
-        <TabsTrigger value="notifcation">Notifications</TabsTrigger>
-        <TabsTrigger value="setAlarm">set alarm</TabsTrigger>
+        <TabsTrigger value="notifcation">{t(`dashboard.adkar_page.notifications.tabTitle`)}</TabsTrigger>
+        <TabsTrigger value="setAlarm">{t(`dashboard.adkar_page.notifications.setAlarmTab`)}</TabsTrigger>
       </TabsList>
       <TabsContent value="notifcation">
         <Card>
@@ -40,7 +42,8 @@ export default function Setting_Adkar() {
         {isNotifcationActivated?<Adkar_alarm/>:
         isNotifcationActivated===false?
         <Card>
-          <CardTitle className="font-bold text-center">Active notification to access to alarm features</CardTitle>
+          <CardTitle className="font-bold text-center">
+            {t(`dashboard.adkar_page.alarm.activationRequired`)}</CardTitle>
         </Card>:<Loader/>
         }
       
