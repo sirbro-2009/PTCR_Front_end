@@ -17,7 +17,7 @@ import { useTranslation } from "react-i18next";
 export default function DWC(value:any) {
   const data = useAppSelector((state) => state.adkar);
   const dispatch = useAppDispatch()
-  const { t } = useTranslation();
+  const { t,i18n } = useTranslation();
   const [open, setOpen] = useState(false)
 const handleCheckCondition = () => {
 
@@ -29,7 +29,7 @@ const handleCheckCondition = () => {
       <DialogTrigger asChild >
         <Button variant="outline" onClick={handleCheckCondition} className="opacity-0">ddd</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md m-auto" dir={document.dir}  showCloseButton={false}>
+      <DialogContent className="sm:max-w-md m-auto" dir={i18n.dir()}  showCloseButton={false}>
         <DialogHeader>
           <DialogTitle>
             {t(`dashboard.adkar_page.reading.completeTitle`)}

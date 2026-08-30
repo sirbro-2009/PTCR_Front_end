@@ -1,4 +1,4 @@
-import theIcon from '@/assets/icons/icon.svg'
+import theIcon from '@/assets/icons/icon.png'
 import { Link } from 'react-router'
 export default function Icon({className}:any){
     return(

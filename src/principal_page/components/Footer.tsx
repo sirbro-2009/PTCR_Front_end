@@ -49,7 +49,6 @@ export default function Footer() {
             <br />
             <h1 className="text-lg text-Secondary text-center">Ver 3.8.9 </h1>
             <br />
-            <br />
             <Icon className={``} />
           </div>
           <h1 className="text-lg text-Secondary text-center">{year} ©</h1>
