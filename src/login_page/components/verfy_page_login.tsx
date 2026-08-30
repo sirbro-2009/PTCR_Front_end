@@ -22,6 +22,7 @@ import {
 import { Field } from "@/components/ui/field";
 import { MailCheck } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { toastFunctions } from "@/dashbord/components/Main_components/quran/components/quran_recitation_components/mp3_compnents/ifFulfied";
 
 export default function Verify_page_login() {
   const { t } = useTranslation();
@@ -88,13 +89,7 @@ export default function Verify_page_login() {
         }, 5000);
       } else if (res.cause) {
         setLogin({ ...login, done: false });
-        toast.error("Error", {
-          description: res.cause,
-          action: {
-            label: "Undo",
-            onClick: () => console.log("Undo"),
-          },
-        });
+          toastFunctions("error!","error")
       }
     }
   };
@@ -125,13 +120,8 @@ export default function Verify_page_login() {
 
       } else if (res.cause) {
         setLogin({ ...login, done: false });
-        toast.error("Eroor", {
-          description: res.cause,
-          action: {
-            label: "Undo",
-            onClick: () => console.log("Undo"),
-          },
-        });
+          toastFunctions("error!","error")
+
       }
     }
     }

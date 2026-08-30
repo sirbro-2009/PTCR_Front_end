@@ -47,9 +47,7 @@ export function SelectReader({ values }: any) {
       disabled={!startValue.reader}
       onValueChange={(value) => {
         readerSelect(value);
-            console.log(theData.theData.reciters.filter((e,i)=>
-            e.id === Number(value)
-            ))
+
       }}>
       <SelectTrigger className="w-full md:w-48 my-5">
         <SelectValue placeholder={t(`dashboard.quran_page.select_reader`)} />

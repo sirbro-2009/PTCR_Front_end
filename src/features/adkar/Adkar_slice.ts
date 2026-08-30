@@ -122,7 +122,6 @@ export const adkarSlice = createSlice({
           const language = (
             localStorage.getItem("i18nextLng") ?? "en"
           ) as keyof (typeof item);
-          //console.log(searchValue.matchAll(new RegExp(item?.[language])))
           return reagExp.test(item?.[language]) === true;
         });
         if (state.searchArrayRes.length) {

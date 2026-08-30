@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/input-otp";
 import { Field } from "@/components/ui/field";
 import { MailCheck } from "lucide-react";
+import { toastFunctions } from "@/dashbord/components/Main_components/quran/components/quran_recitation_components/mp3_compnents/ifFulfied";
 export default function Verify_page() {
   const navigate = useNavigate()
   const { navigateFunction } = useAuthActions();
@@ -55,13 +56,8 @@ export default function Verify_page() {
           
         } else if (res.cause) {
           setSignUp({ ...signUp, done: false });
-          toast.error("Eroor", {
-            description: res.cause,
-            action: {
-              label: "Undo",
-              onClick: () => console.log("Undo"),
-            },
-          });
+          toastFunctions("error!","error")
+
         }
       }
     }
