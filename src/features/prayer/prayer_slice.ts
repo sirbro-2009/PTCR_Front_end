@@ -220,8 +220,9 @@ export const prayer_slice = createSlice({
           return { title: titles[i] || "", time: e };
         });
         let hijrid_date_splited = hijrid_date.split("-");
+        console.log(hijrid_date.split(`-`) )
         state.hijrid_date =
-          typeof Number(hijrid_date.split(`-`)[0]) === "number"
+          (hijrid_date.split(`-`)[0])?.length === 0
             ? hijrid_date_splited[0] +
               "-" +
               hijriMonths[Number(hijrid_date_splited[0])] +
