@@ -92,33 +92,33 @@ export const getCityData = createAsyncThunk(
         }>((resolve, reject) => {
           navigator.geolocation.getCurrentPosition(
             async (pos) => {
-              try{
-              const { latitude, longitude } = pos.coords;
-              const request = await fetch(
-                `https://us1.locationiq.com/v1/reverse.php?key=pk.c1726c6a2a12b42ad99a440efb52627d&lat=${latitude}&lon=${longitude}&format=json&accept-language=${lng}`,
-              );
-              const { country, city, state,town } = (await request.json()).address;
-              const request3 = await fetch(
-                `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=auto`,
-              );
-              const { is_day, weathercode, temperature } = (
-                await request3.json()
-              ).current_weather;
-              object = {
-                latitude,
-                longitude,
-                countryName: country,
-                regionName: state,
-                cityName: city??town,
-                is_day,
-                weathercode,
-                temperature,
-              };
-              resolve(object);
-              return object;
-              }
-              catch(err){
-                console.log(err)
+              try {
+                const { latitude, longitude } = pos.coords;
+                const request = await fetch(
+                  `https://us1.locationiq.com/v1/reverse.php?key=pk.c1726c6a2a12b42ad99a440efb52627d&lat=${latitude}&lon=${longitude}&format=json&accept-language=${lng}`,
+                );
+                const { country, city, state, town } = (await request.json())
+                  .address;
+                const request3 = await fetch(
+                  `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=auto`,
+                );
+                const { is_day, weathercode, temperature } = (
+                  await request3.json()
+                ).current_weather;
+                object = {
+                  latitude,
+                  longitude,
+                  countryName: country,
+                  regionName: state,
+                  cityName: city ?? town,
+                  is_day,
+                  weathercode,
+                  temperature,
+                };
+                resolve(object);
+                return object;
+              } catch (err) {
+                console.log(err);
               }
             },
             (err) => reject(err),
@@ -128,9 +128,9 @@ export const getCityData = createAsyncThunk(
         const request = await fetch(`https://free.freeipapi.com/api/json`);
         const { latitude, longitude } = await request.json();
         const request2 = await fetch(
-          `https://us1.locationiq.com/v1/reverse.php?key=pk.c1726c6a2a12b42ad99a440efb52627d&lat=${latitude}&lon=${longitude}&format=json&accept-language=${lng}`
+          `https://us1.locationiq.com/v1/reverse.php?key=pk.c1726c6a2a12b42ad99a440efb52627d&lat=${latitude}&lon=${longitude}&format=json&accept-language=${lng}`,
         );
-        const { country, city, state,town } = (await request2.json()).address;
+        const { country, city, state, town } = (await request2.json()).address;
         const request3 = await fetch(
           `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=auto`,
         );
@@ -141,7 +141,7 @@ export const getCityData = createAsyncThunk(
           longitude,
           countryName: country,
           regionName: state,
-          cityName: city??town,
+          cityName: city ?? town,
           is_day,
           weathercode,
           temperature,
@@ -149,7 +149,7 @@ export const getCityData = createAsyncThunk(
         return object;
       }
     } catch (e) {
-       console.log(e);
+      console.log(e);
     }
   },
 );

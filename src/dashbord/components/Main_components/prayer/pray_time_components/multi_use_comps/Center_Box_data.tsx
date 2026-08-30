@@ -2,10 +2,12 @@ import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { useEffect, useState } from "react";
 import { editZero, EditTime, editHour12 } from "./prayer_time_box";
+import { useAppSelector } from "@/hooks/Redux";
 const monthsArabic = [
   "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
   "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"]
 export default function CBD() {
+  const hijri = useAppSelector(state=>state.prayer.hijrid_date)
   const [fullTimeData, setFullTimeData] = useState({
     hour: "00",
     mins: "00",
@@ -21,15 +23,13 @@ export default function CBD() {
   window.onfocus = ()=>{
     setBlur(false)
   }
+  useEffect(()=>{
   if(!blur){
   setInterval(() => {
       setVisible(!visible)
     }, 8000);
   }
-  
-  useEffect(()=>{
-
-  },[visible])
+  },[visible,blur])
   const is12 = false;
     setInterval(async() => {
     const data = new Date();
@@ -49,7 +49,7 @@ export default function CBD() {
   }, 1000);
 
   const fullDay = {
-    hijri: "الجمعة 15 ربيع الأول 1448",
+    hijri,
     greogore: fullTimeData.fullDate,
   };
 
