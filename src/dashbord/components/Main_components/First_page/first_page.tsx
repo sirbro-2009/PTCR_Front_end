@@ -14,7 +14,7 @@ const userInformations = useAppSelector(state=>state.user)
 
 useEffect(()=>{
 dispatch(userData())
-},[userInformations.done])
+},[])
 const {fullName,profilePicture} = userInformations.data as Data
 const isDone = userInformations.done
     return (isDone?
