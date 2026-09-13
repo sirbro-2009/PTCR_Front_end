@@ -105,6 +105,7 @@
     "The_prayer": "The prayer",
     "Pray_times": "Pray times",
     "Searching_for_mosques": "Searching for mosques",
+    "Set_mosque_data": "Set mosque settings",
     "Account_informations": "Account informations",
     "DialogDescription": "Make changes to your & here. Click save when you're done.",
     "DialogTitle": "Edit",
@@ -363,6 +364,123 @@
         "What_to_Say_When_Startled": "What to Say When Startled",
         "What_to_Say_When_Slaughtering": "What to Say When Slaughtering",
         "What_to_Say_to_Repel_the_Schemes_of_Rebellious_Devils": "What to Say to Repel the Schemes of Rebellious Devils"
+      }
+    },
+    "prayer_page": {
+      "gregorianMonths": {
+        "January": "January",
+        "February": "February",
+        "March": "March",
+        "April": "April",
+        "May": "May",
+        "June": "June",
+        "July": "July",
+        "August": "August",
+        "September": "September",
+        "October": "October",
+        "November": "November",
+        "December": "December"
+      },
+      "hijriMonths": {
+        "Muharram": "Muharram",
+        "Safar": "Safar",
+        "Rabi' al-Awwal": "Rabi' al-Awwal",
+        "Rabi' al-Thani": "Rabi' al-Thani",
+        "Jumada al-Ula": "Jumada al-Ula",
+        "Jumada al-Akhira": "Jumada al-Akhira",
+        "Rajab": "Rajab",
+        "Sha'ban": "Sha'ban",
+        "Ramadan": "Ramadan",
+        "Shawwal": "Shawwal",
+        "Dhu al-Qi'dah": "Dhu al-Qi'dah",
+        "Dhu al-Hijjah": "Dhu al-Hijjah"
+      },
+      "prayers": {
+        "Fajr": "Fajr",
+        "Dhuhr": "Dhuhr",
+        "Asr": "Asr",
+        "Maghrib": "Maghrib",
+        "Isha": "Isha"
+      },
+      "titles": {
+        "Sunrise": "Sunrise",
+        "Midnight": "Midnight"
+      },
+      "adhan_page": {
+        "icama": "Remaining until the Iqamah",
+        "attention": "Please turn off your phone"
+      },
+      "tabs": {
+        "prayerMethod": "Prayer method",
+        "prayerTimeEdit": "Prayer time edit",
+        "madhabCalcMethod": "Madhab calc method",
+        "timeDisplay": "time display",
+        "setMosquePlace": "set mosque place",
+        "setIcama": "set icama",
+        "mosqueStyling": "mosque styling"
+      },
+      "search": {
+        "title": "Search",
+        "frontMe": "Front me",
+        "allMosquesNear": "All mosques in 1.3 km",
+        "trySearch": "Try search!",
+        "placeholder": "Type to search...",
+        "searchBtn": "Search",
+        "setAsMosqueData": "set as mosque data"
+      },
+      "prayerMethod": {
+        "selectTitle": "Select a pray Method",
+        "defaultLabel": "The default value is Muslim World League method",
+        "methods": {
+          "University of Islamic Sciences, Karachi (South ASIA)": "University of Islamic Sciences, Karachi (South ASIA)",
+          "Islamic Society of North America (ISNA)": "Islamic Society of North America (ISNA)",
+          "Muslim World League": "Muslim World League",
+          "Umm Al-Qura University (KSA)": "Umm Al-Qura University (KSA)",
+          "Egyptian General Authority (EG)": "Egyptian General Authority (EG)",
+          "Gulf Region": "Gulf Region",
+          "Kuwait": "Kuwait",
+          "Qatar": "Qatar",
+          "Majlis Ugama Islam Singapura": "Majlis Ugama Islam Singapura",
+          "Union Organization islamic de France": "Union Organization islamic de France",
+          "Diyanet İşleri Başkanlığı (Türkiye)": "Diyanet İşleri Başkanlığı (Türkiye)",
+          "Spiritual Administration of Muslims of Russia": "Spiritual Administration of Muslims of Russia",
+          "Moonsighting Committee Worldwide": "Moonsighting Committee Worldwide",
+          "Dubai (experimental)": "Dubai (experimental)",
+          "Jabatan Kemajuan Islam Malaysia (JAKIM)": "Jabatan Kemajuan Islam Malaysia (JAKIM)",
+          "Tunisia": "Tunisia",
+          "Algeria": "Algeria",
+          "Kementerian Agama Republik Indonesia": "Kementerian Agama Republik Indonesia",
+          "Morocco": "Morocco",
+          "Comunidade Islamica de Lisboa": "Comunidade Islamica de Lisboa",
+          "Ministry of Awqaf, Islamic Affairs and Holy Places, Jordan": "Ministry of Awqaf, Islamic Affairs and Holy Places, Jordan"
+        }
+      },
+      "madhab": {
+        "selectTitle": "Select a pray Method",
+        "defaultLabel": "The default value is Standard",
+        "standard": "Standard(Maliki, Shafi'i, Hanbali)",
+        "hanafi": "Hanafi"
+      },
+      "timeDisplay": {
+        "selectTitle": "Select a Time display show",
+        "defaultLabel": "The default value is Normal show",
+        "amPm": "AM - PM clock show",
+        "normal": "Normal Show"
+      },
+      "timeEdit": {
+        "title": "Edit following times (add or reduction mins)",
+        "sendData": "Sent Data"
+      },
+      "mosqueSetup": {
+        "addMosqueTitle": "Add the mosque and make it visible",
+        "conditionsTitle": "You must follow those conditions and read mark",
+        "condition1": "1. Your mosque must exist in google map",
+        "condition2": "2. If it exists, we will get mosque data and use it",
+        "condition3": "3. You can edit mosque calc method, offset, time display, madhab from setting",
+        "condition4": "4. From here you can set your mosque location, background display, adkar show, and icama times",
+        "availableBackgrounds": "Available backgrounds",
+        "uploadBackground": "Upload your own Background",
+        "showPreviewImage": "Show previews image"
       }
     }
   }

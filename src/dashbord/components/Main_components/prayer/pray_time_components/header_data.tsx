@@ -4,9 +4,9 @@ import { useAppSelector } from "@/hooks/Redux";
 import Loader from "@/other/Loader.";
 import Whether_data from "./multi_use_comps/Whether_data";
 import { useTranslation } from "react-i18next";
-
-export default function Header_data() {
-  const data = useAppSelector((state) => {
+import type { WeatherAndPrayerState } from "@/mosque_props_display_page/Display_mosque";
+export default function Header_data({object}:{object?:WeatherAndPrayerState|undefined}) {
+  const data = object??useAppSelector((state) => {
     return state.prayer;
   });
   const { i18n } = useTranslation();
@@ -14,13 +14,13 @@ export default function Header_data() {
   const { countryName, cityName, regionName } = data.full_location_data;
   const { is_day, weathercode, temperature } = data;
   return (
-    <div className="w-full flex flex-col gap-2 p-1">
+    <div className=" flex flex-col ">
       {
-      is_day &&
-      weathercode &&
-      temperature ? (
+      is_day  !== null &&
+      weathercode !== null &&
+      temperature !== null ? (
         <div className="w-full flex  flex-col items-center md:flex-row-reverse justify-between">
-          <Label className="text-lg" dir={i18n.dir()}>
+          <Label className="text-xl ml-5" dir={i18n.dir()}>
             {cityName}-{regionName}-{countryName}
           </Label>
 
@@ -34,7 +34,7 @@ export default function Header_data() {
         <Loader />
       )}
 
-      <Label className="m-auto text-4xl font-bold"></Label>
+      <Label className="m-auto text-4xl font-bold">{data.mosqueProps?.MosqueName}</Label>
     </div>
   );
 }

@@ -103,6 +103,7 @@
     "The_prayer": "الصلاة",
     "Pray_times": "مواقيت الصلاة",
     "Searching_for_mosques": "البحث عن المساجد",
+    "Set_mosque_data": "ضبط اعدادات المسجد",
     "Account_informations": "معلومات الحساب",
     "DialogDescription": "قم بإجراء تغييرات على & الخاص بك هن هنا.انقر على حفظ عند الانتهاء.",
     "DialogTitle": "تعديل",
@@ -362,6 +363,123 @@
         "What_to_Say_When_Startled": "ما يقال عند الفزع",
         "What_to_Say_When_Slaughtering": "ما يقال عند الذبح",
         "What_to_Say_to_Repel_the_Schemes_of_Rebellious_Devils": "ما يقال لدفع كيد الشياطين المردة"
+      }
+    },
+    "prayer_page": {
+      "gregorianMonths": {
+        "January": "يناير",
+        "February": "فبراير",
+        "March": "مارس",
+        "April": "أبريل",
+        "May": "ماي",
+        "June": "جوان",
+        "July": "جويلية",
+        "August": "أوت",
+        "September": "سبتمبر",
+        "October": "أكتوبر",
+        "November": "نوفمبر",
+        "December": "ديسمبر"
+      },
+      "hijriMonths": {
+        "Muharram": "محرم",
+        "Safar": "صفر",
+        "Rabi' al-Awwal": "ربيع الأول",
+        "Rabi' al-Thani": "ربيع الثاني",
+        "Jumada al-Ula": "جمادى الأولى",
+        "Jumada al-Akhira": "جمادى الآخرة",
+        "Rajab": "رجب",
+        "Sha'ban": "شعبان",
+        "Ramadan": "رمضان",
+        "Shawwal": "شوال",
+        "Dhu al-Qi'dah": "ذو القعدة",
+        "Dhu al-Hijjah": "ذو الحجة"
+      },
+      "prayers": {
+        "Fajr": "الفجر",
+        "Dhuhr": "الظهر",
+        "Asr": "العصر",
+        "Maghrib": "المغرب",
+        "Isha": "العشاء"
+      },
+      "titles": {
+        "Sunrise": "الشروق",
+        "Midnight": "منتصف الليل"
+      },
+      "adhan_page": {
+        "icama": "باقية على إقامة الصلاة",
+        "attention": "يرجى إغلاق الهاتف"
+      },
+      "tabs": {
+        "prayerMethod": "طريقة حساب الصلاة",
+        "prayerTimeEdit": "تعديل أوقات الصلاة",
+        "madhabCalcMethod": "طريقة حساب المذهب",
+        "timeDisplay": "عرض الوقت",
+        "setMosquePlace": "تحديد موقع المسجد",
+        "setIcama": "تحديد وقت الإقامة",
+        "mosqueStyling": "تنسيق المسجد"
+      },
+      "search": {
+        "title": "بحث",
+        "frontMe": "أمامي",
+        "allMosquesNear": "جميع المساجد على بعد 1.3 كم",
+        "trySearch": "جرّب البحث !",
+        "placeholder": "اكتب للبحث...",
+        "searchBtn": "بحث",
+        "setAsMosqueData": "تعيين كبيانات للمسجد"
+      },
+      "prayerMethod": {
+        "selectTitle": "اختر طريقة الحساب",
+        "defaultLabel": "القيمة الافتراضية هي طريقة رابطة العالم الإسلامي",
+        "methods": {
+          "University of Islamic Sciences, Karachi (South ASIA)": "جامعة العلوم الإسلامية بكراتشي (جنوب آسيا)",
+          "Islamic Society of North America (ISNA)": "الجمعية الإسلامية لأمريكا الشمالية (إسنا)",
+          "Muslim World League": "رابطة العالم الإسلامي",
+          "Umm Al-Qura University (KSA)": "جامعة أم القرى (المملكة العربية السعودية)",
+          "Egyptian General Authority (EG)": "الهيئة المصرية العامة للمساحة",
+          "Gulf Region": "منطقة الخليج",
+          "Kuwait": "الكويت",
+          "Qatar": "قطر",
+          "Majlis Ugama Islam Singapura": "المجلس الإسلامي بمجلس سنغافورة (MUIS)",
+          "Union Organization islamic de France": "اتحاد المنظمات الإسلامية في فرنسا",
+          "Diyanet İşleri Başkanlığı (Türkiye)": "رئاسة الشؤون الدينية (تركيا)",
+          "Spiritual Administration of Muslims of Russia": "الإدارة الدينية لمسلمي روسيا",
+          "Moonsighting Committee Worldwide": "لجنة رؤية الهلال العالمية",
+          "Dubai (experimental)": "دبي (تجريبي)",
+          "Jabatan Kemajuan Islam Malaysia (JAKIM)": "إدارة التنمية الإسلامية الماليزية (JAKIM)",
+          "Tunisia": "تونس",
+          "Algeria": "الجزائر",
+          "Kementerian Agama Republik Indonesia": "وزارة الشؤون الدينية الإندونيسية",
+          "Morocco": "المغرب",
+          "Comunidade Islamica de Lisboa": "المركز الإسلامي في لشبونة",
+          "Ministry of Awqaf, Islamic Affairs and Holy Places, Jordan": "وزارة الأوقاف والشؤون والمقدسات الإسلامية (الأردن)"
+        }
+      },
+      "madhab": {
+        "selectTitle": "اختر مذهب الحساب",
+        "defaultLabel": "القيمة الافتراضية هي القياسي",
+        "standard": "قياسي (مالكي، شافعي، حنبلي)",
+        "hanafi": "حنفي"
+      },
+      "timeDisplay": {
+        "selectTitle": "اختر طريقة عرض الوقت",
+        "defaultLabel": "القيمة الافتراضية هي العرض العادي",
+        "amPm": "نظام 12 ساعة (ص / م)",
+        "normal": "عرض عادي (24 ساعة)"
+      },
+      "timeEdit": {
+        "title": "تعديل الأوقات التالية (إضافة أو إنقاص بالدقائق)",
+        "sendData": "إرسال البيانات"
+      },
+      "mosqueSetup": {
+        "addMosqueTitle": "إضافة المسجد وجعله مرئياً",
+        "conditionsTitle": "يجب اتباع هذه الشروط وقراءتها جيداً",
+        "condition1": "1. يجب أن يكون مسجدك موجوداً على خرائط جوجل",
+        "condition2": "2. إذا كان موجوداً، سنجلب بيانات المسجد ونستخدمها",
+        "condition3": "3. يمكنك تعديل طريقة حساب المسجد، الفوارق الزمنيّة، طريقة عرض الوقت، والمذهب من الإعدادات",
+        "condition4": "4. من هنا يمكنك تحديد موقع مسجدك، خلفية العرض، عرض الأذكار، وأوقات الإقامة",
+        "availableBackgrounds": "الخلفيات المتاحة",
+        "uploadBackground": "رفع خلفية خاصة بك",
+        "showPreviewImage": "عرض صورة المعاينة"
       }
     }
   }

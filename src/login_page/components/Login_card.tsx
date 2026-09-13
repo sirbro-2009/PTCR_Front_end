@@ -26,7 +26,7 @@ navigateFunction()
 const {Login} = LoginFunction()
 const {login} = useContext(Provider) as IProvider
 const { i18n,t } = useTranslation();
-const dir = (i18n.language || "ar") === "ar" ? "rtl" : "ltr";
+const dir = i18n.dir();
 const isValidEmail=login.isValid_email
 const isValidPassword = login.isValid_password
 return (

@@ -92,7 +92,7 @@ function App() {
         {/*ContextMenuTrigger */}
         <ContextMenuTrigger>
           <div
-            className={`min-h-screen   max-w-screen bg-background text-foreground   ${theme} font-['Rubik']`}
+            className={`min-h-screen    max-w-screen bg-background text-foreground   ${theme} font-['Rubik']`}
             dir="rtl">
             <Routes>
               {route.map((e, i) => {

@@ -18,7 +18,7 @@ useEffect(()=>{
 const data = dispatch(userData())
 data
 },[dispatch])
-return (<div   dir={i18n.language === 'ar' ? 'rtl' : 'ltr'} className="md:p-4 h-screen "> 
+return (<div   dir={i18n.dir()} className="md:p-4 h-screen "> 
         <Label className={`text-2xl`} >{t(`dashboard.Profile_image_edit`)}</Label>
                 <div className="md:p-6 flex flex-col">
                         <div  className="md:p-6 flex flex-row items-center justify-between md:my-auto my-10">

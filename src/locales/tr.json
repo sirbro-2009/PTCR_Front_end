@@ -103,6 +103,7 @@
     "The_prayer": "Namaz",
     "Pray_times": "Namaz vakitleri",
     "Searching_for_mosques": "Cami arama",
+    "Set_mosque_data": "Cami ayarlarını ayarla",
     "Account_informations": "Hesap bilgileri",
     "DialogDescription": "Buradan değişiklik yapın. Bitirdiğinizde kaydet'e tıklayın.",
     "DialogTitle": "Düzenle",
@@ -362,6 +363,123 @@
         "What_to_Say_When_Startled": "Şaşırdığınızda Ne Söylemelisiniz?",
         "What_to_Say_When_Slaughtering": "Kesim Yaparken Ne Söylemeli?",
         "What_to_Say_to_Repel_the_Schemes_of_Rebellious_Devils": "Asi Şeytanların Planlarını Püskürtmek İçin Ne Söylemeli?"
+      }
+    },
+    "prayer_page": {
+      "gregorianMonths": {
+        "January": "Ocak",
+        "February": "Şubat",
+        "March": "Mart",
+        "April": "Nisan",
+        "May": "Mayıs",
+        "June": "Haziran",
+        "July": "Temmuz",
+        "August": "Ağustos",
+        "September": "Eylül",
+        "October": "Ekim",
+        "November": "Kasım",
+        "December": "Aralık"
+      },
+      "hijriMonths": {
+        "Muharram": "Muharrem",
+        "Safar": "Sefer",
+        "Rabi' al-Awwal": "Rebiülevvel",
+        "Rabi' al-Thani": "Rebiülahir",
+        "Jumada al-Ula": "Cemaziyelevvel",
+        "Jumada al-Akhira": "Cemaziyelahir",
+        "Rajab": "Recep",
+        "Sha'ban": "Şaban",
+        "Ramadan": "Ramazan",
+        "Shawwal": "Şevval",
+        "Dhu al-Qi'dah": "Zilkade",
+        "Dhu al-Hijjah": "Zilhicce"
+      },
+      "prayers": {
+        "Fajr": "Imsak",
+        "Dhuhr": "Öğle",
+        "Asr": "İkindi",
+        "Maghrib": "Akşam",
+        "Isha": "Yatsı"
+      },
+      "titles": {
+        "Sunrise": "Güneş",
+        "Midnight": "Gece Yarısı"
+      },
+      "adhan_page": {
+        "icama": "İkamete kalan süre",
+        "attention": "Lütfen telefonunuzu kapatın"
+      },
+      "tabs": {
+        "prayerMethod": "Dua yöntemi",
+        "prayerTimeEdit": "Namaz vakti düzenlemesi",
+        "madhabCalcMethod": "Mezhep hesaplama yöntemi",
+        "timeDisplay": "zaman göstergesi",
+        "setMosquePlace": "cami yerini ayarla",
+        "setIcama": "icama'yı ayarla",
+        "mosqueStyling": "cami tasarımı"
+      },
+      "search": {
+        "title": "Aramak",
+        "frontMe": "Önümde",
+        "allMosquesNear": "1,3 km mesafedeki tüm camiler",
+        "trySearch": "Aramayı deneyin!",
+        "placeholder": "Aramak için yazın...",
+        "searchBtn": "Aramak",
+        "setAsMosqueData": "cami verisi olarak ayarla"
+      },
+      "prayerMethod": {
+        "selectTitle": "Bir dua Yöntemi seçin",
+        "defaultLabel": "Varsayılan değer Müslüman Dünya Ligi yöntemidir",
+        "methods": {
+          "University of Islamic Sciences, Karachi (South ASIA)": "İslami İlimler Üniversitesi, Karaçi (Güney ASYA)",
+          "Islamic Society of North America (ISNA)": "Kuzey Amerika İslam Topluluğu (ISNA)",
+          "Muslim World League": "Müslüman Dünya Ligi",
+          "Umm Al-Qura University (KSA)": "Umm Al-Qura Üniversitesi (KSA)",
+          "Egyptian General Authority (EG)": "Mısır Genel Otoritesi (EG)",
+          "Gulf Region": "Körfez Bölgesi",
+          "Kuwait": "Kuveyt",
+          "Qatar": "Katar",
+          "Majlis Ugama Islam Singapura": "Meclis Ugama İslam Singapura",
+          "Union Organization islamic de France": "Birlik Örgütü İslam de France",
+          "Diyanet İşleri Başkanlığı (Türkiye)": "Diyanet İşleri Başkanlığı (Türkiye)",
+          "Spiritual Administration of Muslims of Russia": "Rusya Müslümanlarının Manevi Yönetimi",
+          "Moonsighting Committee Worldwide": "Dünya Çapında Ay Gözlem Komitesi",
+          "Dubai (experimental)": "Dubai (deneysel)",
+          "Jabatan Kemajuan Islam Malaysia (JAKIM)": "Jabatan Kemajuan İslam Malezya (JAKIM)",
+          "Tunisia": "Tunus",
+          "Algeria": "Cezayir",
+          "Kementerian Agama Republik Indonesia": "Kementer Agama Republik Endonezya",
+          "Morocco": "Fas",
+          "Comunidade Islamica de Lisboa": "Comunidade İslamica de Lisboa",
+          "Ministry of Awqaf, Islamic Affairs and Holy Places, Jordan": "Evkaf, İslami İşler ve Kutsal Yerler Bakanlığı, Ürdün"
+        }
+      },
+      "madhab": {
+        "selectTitle": "Bir dua Yöntemi seçin",
+        "defaultLabel": "Varsayılan değer Standart'tır",
+        "standard": "Standart (Maliki, Şafii, Hanbeli)",
+        "hanafi": "Hanefi"
+      },
+      "timeDisplay": {
+        "selectTitle": "Bir Zaman ekranı gösterisi seçin",
+        "defaultLabel": "Varsayılan değer Normal gösteridir",
+        "amPm": "AM - PM saat gösterisi",
+        "normal": "Normal Gösteri"
+      },
+      "timeEdit": {
+        "title": "Aşağıdaki süreleri düzenleyin (dakika ekleme veya azaltma)",
+        "sendData": "Gönderilen Veriler"
+      },
+      "mosqueSetup": {
+        "addMosqueTitle": "Camiyi ekleyin ve görünür hale getirin",
+        "conditionsTitle": "Bu koşullara uymalı ve işareti okumalısınız",
+        "condition1": "1. Caminiz google haritasında mevcut olmalı",
+        "condition2": "2. Varsa cami verilerini alıp kullanacağız",
+        "condition3": "3. Cami hesaplama yöntemini, ofseti, zaman gösterimini, mezhep ayarını düzenleyebilirsiniz.",
+        "condition4": "4. Buradan cami konumunuzu, arka plan ekranınızı, reklam gösterinizi ve icama zamanlarınızı ayarlayabilirsiniz.",
+        "availableBackgrounds": "Mevcut arka planlar",
+        "uploadBackground": "Kendi Arka Planınızı yükleyin",
+        "showPreviewImage": "Önizleme resmini göster"
       }
     }
   }

@@ -43,7 +43,7 @@ export function Sign_card() {
   const { SignUp_f } = Sign_Up();
   const { signUp } = useContext(Provider) as IProvider;
   const { i18n, t } = useTranslation();
-  const dir = (i18n.language || "ar") === "ar" ? "rtl" : "ltr";
+  const dir = i18n.dir();
   const isValidEmail = signUp.isValid_email;
   const isValidPassword = signUp.isValid_password;
   const isValidUserName = signUp.isValidUserName;

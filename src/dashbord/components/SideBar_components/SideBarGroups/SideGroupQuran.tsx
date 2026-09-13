@@ -11,11 +11,10 @@ import { useTranslation } from "react-i18next";
 const imStyle = 'transition-all duration-200 cursor-pointer'
 import { ChevronRight   } from "lucide-react"
 import { useState } from "react"
-import { SBSobject } from "@/dashbord/components/SideBar_components/SideBarGroups/SBSobject"
 import useDpIndex from "@/dashbord/components/SideBar_components/SideBarGroups/SBSobject"
 
 export default function SideGroupQuran(){
-const {changeDPI} = useDpIndex()
+const {changeDPI,SBSobject} = useDpIndex()
 const {t} = useTranslation()
 const [rotate,setRotat] = useState("0")
 return(<SidebarGroup className={`md:direction-alternate-reverse`}>

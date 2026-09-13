@@ -24,10 +24,10 @@ export interface IIres {
   reciter: {
     ar: string;
     en: string;
-    dsc?:{
-      ar:string,
-      en:string
-    }
+    dsc?: {
+      ar: string;
+      en: string;
+    };
   };
 }
 export interface theIinitialState {
@@ -235,19 +235,19 @@ export const quranSlice = createSlice({
       state.done2 = true;
     },
     editQDS: (state, action) => {
-      const [key, value]:[
-        "lang" | "theme" | "readMode"|'font',
+      const [key, value]: [
+        "lang" | "theme" | "readMode" | "font",
         string | boolean,
-      ] = action.payload 
+      ] = action.payload;
       state.QDS.done = true;
-      if(typeof value !== 'string'){state.QDS.readMode = value}
-      if (typeof value === 'string' && key !== 'readMode') {
-        state.QDS[key] = value
+      if (typeof value !== "string") {
+        state.QDS.readMode = value;
       }
-      localStorage.setItem('QDS',JSON.stringify({...state.QDS}))
-
+      if (typeof value === "string" && key !== "readMode") {
+        state.QDS[key] = value;
+      }
+      localStorage.setItem("QDS", JSON.stringify({ ...state.QDS }));
     },
-
   },
   extraReducers: (builder) => {
     //get reader
@@ -323,5 +323,5 @@ export const quranSlice = createSlice({
     });
   },
 });
-export const { playSaved ,editQDS} = quranSlice.actions;
+export const { playSaved, editQDS } = quranSlice.actions;
 export default quranSlice.reducer;

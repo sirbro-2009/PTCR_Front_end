@@ -21,7 +21,7 @@ import {
 export default function Footer() {
   const year = new Date().getFullYear();
   const { t, i18n } = useTranslation();
-  const dir = i18n.language === "ar" ? "rtl" : "ltr";
+  const dir =i18n.dir()
   return (
     <div dir={dir}>
       <Card className="w-full rounded-none border-x-0 border-b-0 bg-background text-foreground flex flex-row justify-between p-6 relative z-10">

@@ -33,9 +33,9 @@ export default function PTB({
 }) {
   return (
     <Card className={`md:w-50 md:h-50 my-2 items-center  flex  md:flex-col justify-between flex-row text-center md:my-auto border-10${isCurrent?`  border-lime-800`:``}`}>
-        <Label className="text-2xl md:m-auto">{title}</Label>
-        <Label className="text-2xl md:m-auto" dir="ltr">{!is12?time:EditTime(time)}</Label>
-        {icama?<Label className="text-2xl md:m-auto">{editZero(icama)}+</Label>:``}
+        <Label className="text-3xl  md:m-auto">{title}</Label>
+        <Label className="text-3xl  md:m-auto" dir="ltr">{!is12?time:EditTime(time)}</Label>
+        {icama?<Label className="text-3xl md:text-2xl md:m-auto">{editZero(icama)}+</Label>:``}
         
     </Card>
   );

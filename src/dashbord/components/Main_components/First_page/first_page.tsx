@@ -18,7 +18,7 @@ dispatch(userData())
 const {fullName,profilePicture} = userInformations.data as Data
 const isDone = userInformations.done
     return (isDone?
-        <Card className="m-auto w-full md:w-1/2 p-2 " dir={i18n.language==='ar'?'rtl':`ltr`}>
+        <Card className="m-auto w-full md:w-1/2 p-2 " dir={i18n.dir()}>
             <h1 className="font-bold text-xl text-center">{t(`navbar.greeting`)}</h1>
             <div className="flex flex-row justify-between">
                 <img src={`https://media.tenor.com/CnP64S7lszwAAAAj/meme-cat-cat-meme.gif`} alt="happ cat" className="" />

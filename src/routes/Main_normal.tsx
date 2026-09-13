@@ -13,8 +13,9 @@ import Adkar_Reading from "@/dashbord/components/Main_components/adkar/Adkar_Rea
 import Setting_Adkar from "@/dashbord/components/Main_components/adkar/Setting_Adkar"
 {/*Prayer */}
 import Pray_times from "@/dashbord/components/Main_components/prayer/Pray_times"
-import Searching_for_mosques from "@/dashbord/components/Main_components/prayer/Searching_for_mosques"
-import Setting_mosque from "@/dashbord/components/Main_components/prayer/Setting_mosque"
+import Searching_for_mosques from "@/dashbord/components/Main_components/prayer/for_mosque"
+import Setting_mosque from "@/dashbord/components/Main_components/prayer/prayer_category_seeting"
+
 const mainObjects = [
     <FirstPage/>,
     <General/>,

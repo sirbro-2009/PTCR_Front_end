@@ -3,7 +3,7 @@ import adkar_object from "@/assets/JSON/adkarObject.json";
 import { serverHost } from "@/other/data";
 import { adhkarData } from "@/sw";
 const theToken = localStorage.getItem("token");
-const headers = {
+export const headers = {
   "Content-Type": "application/json",
   Authorization: `Bearer ${theToken}`,
 };

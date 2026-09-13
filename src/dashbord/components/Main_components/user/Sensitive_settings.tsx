@@ -32,7 +32,7 @@ const optionsHtml =
                 </div>
 
 return (
-<div   dir={i18n.language === 'ar' ? 'rtl' : 'ltr'} className="md:p-4 h-screen "> 
+<div   dir={i18n.dir()} className="md:p-4 h-screen "> 
 <Label className={`text-2xl`} >{t(`dashboard.Sensitive_settings`)}</Label>
 {userImformations.done?optionsHtml:<Loader/>}
 </div>

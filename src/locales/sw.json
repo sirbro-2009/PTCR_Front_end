@@ -103,6 +103,7 @@
     "The_prayer": "Swala",
     "Pray_times": "Nyakati za Swala",
     "Searching_for_mosques": "Kutafuta msikiti",
+    "Set_mosque_data": "Weka mipangilio ya msikiti",
     "Account_informations": "Taarifa za akaunti",
     "DialogDescription": "Fanya mabadiliko hapa. Bonyeza hifadhi unapomaliza.",
     "DialogTitle": "Hariri",
@@ -362,6 +363,123 @@
         "What_to_Say_When_Startled": "Nini cha Kusema Unaposhtuka",
         "What_to_Say_When_Slaughtering": "Nini cha Kusema Wakati wa Kuchinja",
         "What_to_Say_to_Repel_the_Schemes_of_Rebellious_Devils": "Nini cha Kusema Ili Kuondoa Miradi ya Mashetani Waasi"
+      }
+    },
+    "prayer_page": {
+      "gregorianMonths": {
+        "January": "Januari",
+        "February": "Februari",
+        "March": "Machi",
+        "April": "Aprili",
+        "May": "Mei",
+        "June": "Juni",
+        "July": "Julai",
+        "August": "Agosti",
+        "September": "Septemba",
+        "October": "Oktoba",
+        "November": "Novemba",
+        "December": "Desemba"
+      },
+      "hijriMonths": {
+        "Muharram": "Mfunguo Tano",
+        "Safar": "Mfunguo Sitta",
+        "Rabi' al-Awwal": "Mfunguo Pitatu",
+        "Rabi' al-Thani": "Mfunguo Nne",
+        "Jumada al-Ula": "Mfunguo Tano",
+        "Jumada al-Akhira": "Mfunguo Sita",
+        "Rajab": "Rajabu",
+        "Sha'ban": "Shabani",
+        "Ramadan": "Ramadhani",
+        "Shawwal": "Mfunguo Mosi",
+        "Dhu al-Qi'dah": "Mfunguo Pili",
+        "Dhu al-Hijjah": "Mfunguo Tatu"
+      },
+      "prayers": {
+        "Fajr": "Alfajiri",
+        "Dhuhr": "Adhuhuri",
+        "Asr": "Alasiri",
+        "Maghrib": "Magharibi",
+        "Isha": "Isha"
+      },
+      "titles": {
+        "Sunrise": "Mawio",
+        "Midnight": "Usiku wa manane"
+      },
+      "adhan_page": {
+        "icama": "Wakati uliobaki hadi Iqama",
+        "attention": "Tafadhali zima simu yako"
+      },
+      "tabs": {
+        "prayerMethod": "Mbinu ya maombi",
+        "prayerTimeEdit": "Hariri wakati wa maombi",
+        "madhabCalcMethod": "Njia ya hesabu ya Madhab",
+        "timeDisplay": "onyesho la wakati",
+        "setMosquePlace": "weka mahali pa msikiti",
+        "setIcama": "weka icama",
+        "mosqueStyling": "mtindo wa msikiti"
+      },
+      "search": {
+        "title": "Tafuta",
+        "frontMe": "Mbele yangu",
+        "allMosquesNear": "Misikiti yote katika kilomita 1.3",
+        "trySearch": "Jaribu kutafuta!",
+        "placeholder": "Andika ili kutafuta...",
+        "searchBtn": "Tafuta",
+        "setAsMosqueData": "weka kama data ya msikiti"
+      },
+      "prayerMethod": {
+        "selectTitle": "Chagua Mbinu ya kuomba",
+        "defaultLabel": "Thamani chaguo-msingi ni mbinu ya Ligi ya Kiislamu",
+        "methods": {
+          "University of Islamic Sciences, Karachi (South ASIA)": "Chuo Kikuu cha Sayansi ya Kiislamu, Karachi (Asia Kusini)",
+          "Islamic Society of North America (ISNA)": "Jumuiya ya Kiislamu ya Amerika Kaskazini (ISNA)",
+          "Muslim World League": "Umoja wa Kiislamu Duniani",
+          "Umm Al-Qura University (KSA)": "Chuo Kikuu cha Umm Al-Qura (KSA)",
+          "Egyptian General Authority (EG)": "Mamlaka Kuu ya Misri (EG)",
+          "Gulf Region": "Mkoa wa Ghuba",
+          "Kuwait": "Kuwait",
+          "Qatar": "Qatar",
+          "Majlis Ugama Islam Singapura": "Majlis Ugama Islam Singapura",
+          "Union Organization islamic de France": "Muungano wa Jumuiya ya Kiislamu ya Ufaransa",
+          "Diyanet İşleri Başkanlığı (Türkiye)": "Diyanet İşleri Başkanlığı (Türkiye)",
+          "Spiritual Administration of Muslims of Russia": "Utawala wa Kiroho wa Waislamu wa Urusi",
+          "Moonsighting Committee Worldwide": "Kamati ya Kutazama Mwezi Ulimwenguni Pote",
+          "Dubai (experimental)": "Dubai (majaribio)",
+          "Jabatan Kemajuan Islam Malaysia (JAKIM)": "Jabatan Kemajuan Islam Malaysia (JAKIM)",
+          "Tunisia": "Tunisia",
+          "Algeria": "Algeria",
+          "Kementerian Agama Republik Indonesia": "Kementerian Agama Republik Indonesia",
+          "Morocco": "Moroko",
+          "Comunidade Islamica de Lisboa": "Comunidade Islamica de Lisboa",
+          "Ministry of Awqaf, Islamic Affairs and Holy Places, Jordan": "Wizara ya Awqaf, Masuala ya Kiislamu na Maeneo Matakatifu, Jordan"
+        }
+      },
+      "madhab": {
+        "selectTitle": "Chagua Mbinu ya kuomba",
+        "defaultLabel": "Thamani chaguo-msingi ni Kawaida",
+        "standard": "Kawaida(Maliki, Shafi'i, Hanbali)",
+        "hanafi": "Hanafi"
+      },
+      "timeDisplay": {
+        "selectTitle": "Chagua onyesho la wakati",
+        "defaultLabel": "Thamani chaguo-msingi ni Onyesho la Kawaida",
+        "amPm": "Onyesho la saa la AM - PM",
+        "normal": "Onyesho la Kawaida"
+      },
+      "timeEdit": {
+        "title": "Hariri nyakati zifuatazo (ongeza au punguza dakika)",
+        "sendData": "Data Iliyotumwa"
+      },
+      "mosqueSetup": {
+        "addMosqueTitle": "Ongeza msikiti na uifanye ionekane",
+        "conditionsTitle": "Lazima ufuate masharti hayo na usome alama",
+        "condition1": "1. Msikiti wako lazima uwepo kwenye ramani ya google",
+        "condition2": "2. Ikiwa ipo, tutapata data za msikiti na kuzitumia",
+        "condition3": "3. Unaweza kuhariri mbinu ya calc ya msikiti, kukabiliana, onyesho la wakati, madhab kutoka kwa mpangilio",
+        "condition4": "4. Kuanzia hapa unaweza kuweka eneo la msikiti wako, onyesho la mandharinyuma, onyesho la adkar na nyakati za icama",
+        "availableBackgrounds": "Asili zinazopatikana",
+        "uploadBackground": "Pakia Mandharinyuma yako mwenyewe",
+        "showPreviewImage": "Onyesha picha ya muhtasari"
       }
     }
   }

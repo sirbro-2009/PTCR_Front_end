@@ -103,6 +103,7 @@
     "The_prayer": "نماز",
     "Pray_times": "نماز کے اوقات",
     "Searching_for_mosques": "مساجد کی تلاش",
+    "Set_mosque_data": "مسجد کی ترتیبات مرتب کریں",
     "Account_informations": "اکاؤنٹ کی معلومات",
     "DialogDescription": "یہاں اپنی تبدیلی کریں۔ مکمل ہونے پر محفوظ کریں پر کلک کریں۔",
     "DialogTitle": "ترمیم کریں",
@@ -358,6 +359,123 @@
         "What_to_Say_When_Startled": "جب چونکا تو کیا کہوں",
         "What_to_Say_When_Slaughtering": "ذبح کرتے وقت کیا کہا جائے؟",
         "What_to_Say_to_Repel_the_Schemes_of_Rebellious_Devils": "سرکش شیطانوں کی چالوں کو پسپا کرنے کے لیے کیا کہا جائے۔"
+      }
+    },
+    "prayer_page": {
+      "gregorianMonths": {
+        "January": "جنوری",
+        "February": "فروری",
+        "March": "مارچ",
+        "April": "اپریل",
+        "May": "مئی",
+        "June": "جون",
+        "July": "جولائی",
+        "August": "اگست",
+        "September": "ستمبر",
+        "October": "اکتوبر",
+        "November": "نومبر",
+        "December": "دسمبر"
+      },
+      "hijriMonths": {
+        "Muharram": "محرم",
+        "Safar": "صفر",
+        "Rabi' al-Awwal": "ربیع الأول",
+        "Rabi' al-Thani": "ربیع الثانی",
+        "Jumada al-Ula": "جمادی الأولى",
+        "Jumada al-Akhira": "جمادی الآخرۃ",
+        "Rajab": "رجب",
+        "Sha'ban": "شعبان",
+        "Ramadan": "رمضان",
+        "Shawwal": "شوال",
+        "Dhu al-Qi'dah": "ذو القعدة",
+        "Dhu al-Hijjah": "ذو الحجة"
+      },
+      "prayers": {
+        "Fajr": "فجر",
+        "Dhuhr": "ظہر",
+        "Asr": "عصر",
+        "Maghrib": "مغرب",
+        "Isha": "عشاء"
+      },
+      "titles": {
+        "Sunrise": "طلوع آفتاب",
+        "Midnight": "نصف شب"
+      },
+      "adhan_page": {
+        "icama": "اقامت میں باقی وقت",
+        "attention": "برائے مہربانی اپنا فون بند کر دیں"
+      },
+      "tabs": {
+        "prayerMethod": "نماز کا طریقہ",
+        "prayerTimeEdit": "نماز کے اوقات میں ترمیم",
+        "madhabCalcMethod": "مداب کیلک طریقہ",
+        "timeDisplay": "وقت ڈسپلے",
+        "setMosquePlace": "مسجد کی جگہ مقرر کرو",
+        "setIcama": "icama سیٹ کریں",
+        "mosqueStyling": "مسجد کا اسٹائل"
+      },
+      "search": {
+        "title": "تلاش کریں۔",
+        "frontMe": "میرے سامنے",
+        "allMosquesNear": "1.3 کلومیٹر میں تمام مساجد",
+        "trySearch": "تلاش کرنے کی کوشش کریں!",
+        "placeholder": "تلاش کرنے کے لیے ٹائپ کریں...",
+        "searchBtn": "تلاش کریں۔",
+        "setAsMosqueData": "مسجد کے ڈیٹا کے طور پر سیٹ کریں۔"
+      },
+      "prayerMethod": {
+        "selectTitle": "دعا کا طریقہ منتخب کریں۔",
+        "defaultLabel": "پہلے سے طے شدہ قدر مسلم ورلڈ لیگ کا طریقہ ہے۔",
+        "methods": {
+          "University of Islamic Sciences, Karachi (South ASIA)": "یونیورسٹی آف اسلامک سائنسز، کراچی (جنوبی ایشیا)",
+          "Islamic Society of North America (ISNA)": "اسلامک سوسائٹی آف نارتھ امریکہ (ISNA)",
+          "Muslim World League": "مسلم ورلڈ لیگ",
+          "Umm Al-Qura University (KSA)": "ام القراء یونیورسٹی (KSA)",
+          "Egyptian General Authority (EG)": "مصری جنرل اتھارٹی (EG)",
+          "Gulf Region": "خلیجی علاقہ",
+          "Kuwait": "کویت",
+          "Qatar": "قطر",
+          "Majlis Ugama Islam Singapura": "مجلس اُگامہ اسلام سنگاپورہ",
+          "Union Organization islamic de France": "یونین آرگنائزیشن اسلامک ڈی فرانس",
+          "Diyanet İşleri Başkanlığı (Türkiye)": "Diyanet İşleri Başkanlığı (Türkiye)",
+          "Spiritual Administration of Muslims of Russia": "روس کے مسلمانوں کی روحانی انتظامیہ",
+          "Moonsighting Committee Worldwide": "دنیا بھر میں چاند دیکھنے والی کمیٹی",
+          "Dubai (experimental)": "دبئی (تجرباتی)",
+          "Jabatan Kemajuan Islam Malaysia (JAKIM)": "جباتن کیماجوان اسلام ملائیشیا (JAKIM)",
+          "Tunisia": "تیونس",
+          "Algeria": "الجزائر",
+          "Kementerian Agama Republik Indonesia": "کیمینٹیرین اگاما ریپبلک انڈونیشیا",
+          "Morocco": "مراکش",
+          "Comunidade Islamica de Lisboa": "Comunidade Islamica de Lisboa",
+          "Ministry of Awqaf, Islamic Affairs and Holy Places, Jordan": "وزارت اوقاف، اسلامی امور اور مقدس مقامات، اردن"
+        }
+      },
+      "madhab": {
+        "selectTitle": "دعا کا طریقہ منتخب کریں۔",
+        "defaultLabel": "پہلے سے طے شدہ قدر معیاری ہے۔",
+        "standard": "معیاری (مالکی، شافعی، حنبلی)",
+        "hanafi": "حنفی"
+      },
+      "timeDisplay": {
+        "selectTitle": "ٹائم ڈسپلے شو کو منتخب کریں۔",
+        "defaultLabel": "ڈیفالٹ ویلیو نارمل شو ہے۔",
+        "amPm": "AM - PM کلاک شو",
+        "normal": "نارمل شو"
+      },
+      "timeEdit": {
+        "title": "درج ذیل اوقات میں ترمیم کریں (منٹ شامل کریں یا کم کریں)",
+        "sendData": "ڈیٹا بھیجا۔"
+      },
+      "mosqueSetup": {
+        "addMosqueTitle": "مسجد کو شامل کریں اور اسے دکھائی دیں۔",
+        "conditionsTitle": "آپ کو ان شرائط پر عمل کرنا چاہیے اور مارک ریڈ کرنا چاہیے۔",
+        "condition1": "1. آپ کی مسجد گوگل میپ میں موجود ہونی چاہیے۔",
+        "condition2": "2. اگر یہ موجود ہے تو ہم مسجد کا ڈیٹا حاصل کریں گے اور اسے استعمال کریں گے۔",
+        "condition3": "3. آپ سیٹنگ سے مسجد کیلک طریقہ، آفسیٹ، ٹائم ڈسپلے، مدار میں ترمیم کر سکتے ہیں۔",
+        "condition4": "4. یہاں سے آپ اپنی مسجد کی لوکیشن، بیک گراؤنڈ ڈسپلے، ایڈکر شو، اور آئیکا ٹائم سیٹ کر سکتے ہیں۔",
+        "availableBackgrounds": "دستیاب پس منظر",
+        "uploadBackground": "اپنا اپنا پس منظر اپ لوڈ کریں۔",
+        "showPreviewImage": "پیش نظارہ تصویر دکھائیں۔"
       }
     }
   }

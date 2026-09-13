@@ -1,5 +1,35 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { serverHost } from "@/other/data";
+import { toastFunctions } from "@/dashbord/components/Main_components/quran/components/quran_recitation_components/mp3_compnents/ifFulfied";
+const theToken = localStorage.getItem("token");
+export const headers = {
+  "Content-Type": "application/json",
+  Authorization: `Bearer ${theToken}`,
+};
+interface MosqueIcama {
+  Fajr: string;
+  Dhuhr: string;
+  Asr: string;
+  Maghrib: string;
+  Isha: string;
+}
+
+interface PrayerMethod {
+  method: string;
+  tune: string[];
+  school: string;
+  is_12: boolean;
+  City: string;
+  Country: string;
+  MosqueName: string;
+  MosqueImg: string;
+  Lat: number;
+  Lon: number;
+  Region: string;
+  MosqueId: number;
+  MosqueIcama: MosqueIcama;
+}
+
 export interface IntitalStateObject {
   latitude: number | null;
   longitude: number | null;
@@ -11,6 +41,18 @@ export interface IntitalStateObject {
     cityName?: string;
     countryName?: string;
   };
+  mosqueProps?: {
+    MosqueName: string;
+    MosqueImg?: string;
+    MosqueId: number;
+    MosqueIcama?: {
+      Fajr: string;
+      Dhuhr: string;
+      Asr: string;
+      Maghrib: string;
+      Isha: string;
+    };
+  };
   hijrid_date: string | null;
   prayers: {
     title: string;
@@ -21,15 +63,21 @@ export interface IntitalStateObject {
   sunrise_midnight: {
     title: string;
     time: string;
-    is12?: boolean;
   }[];
-  is12: boolean;
+  prayer_prefrence_data: {
+    school: string;
+    tune: string[];
+    method: string;
+    is_12: boolean;
+  };
   All_done: {
     done1: null | boolean;
     done2: null | boolean;
     done3: null | boolean;
+    done4: null | boolean;
   };
 }
+
 const initialState: IntitalStateObject = {
   latitude: null,
   longitude: null,
@@ -41,27 +89,38 @@ const initialState: IntitalStateObject = {
   full_location_data: {},
   prayers: [],
   sunrise_midnight: [],
-  is12: false,
+  prayer_prefrence_data: {
+    school: "0",
+    tune: ["0", "0", "0", "0", "0", "0", "0", "0", "0"],
+    method: "3",
+    is_12: false,
+  },
   All_done: {
     done1: null,
     done2: null,
     done3: null,
+    done4: null,
   },
 };
-const hijriMonths = [
-  "محرم",
-  "صفر",
-  "ربيع الأول",
-  "ربيع الآخر",
-  "جمادى الأولى",
-  "جمادى الآخرة",
-  "رجب",
-  "شعبان",
-  "رمضان",
-  "شوال",
-  "ذو القعدة",
-  "ذو الحجة",
+export const hijriMonths = [
+  "Muharram",
+  "Safar",
+  "Rabi' al-Awwal",
+  "Rabi' al-Thani",
+  "Jumada al-Ula",
+  "Jumada al-Akhira",
+  "Rajab",
+  "Sha'ban",
+  "Ramadan",
+  "Shawwal",
+  "Dhu al-Qi'dah",
+  "Dhu al-Hijjah",
 ];
+
+// Islamic prayer names
+export const prayers_names = ["Fajr", "Dhuhr", "Asr", "Maghrib", "Isha"];
+
+export const titles = ["Sunrise", "Midnight"];
 
 export const getCityData = createAsyncThunk(
   "prayer/city_data",
@@ -153,14 +212,126 @@ export const getCityData = createAsyncThunk(
     }
   },
 );
+export const get_user_prayer_prefrence_data = createAsyncThunk(
+  "prayer/get_props",
+  async () => {
+    const request = await fetch(`${serverHost}prayer/get_props`, {
+      method: "GET",
+      headers,
+    });
+    return await request.json();
+  },
+);
+export const getWeather_Data = createAsyncThunk(
+  "prayer/weather",
+  async ({ latitude, longitude }: { latitude: number; longitude: number }) => {
+    const request = await fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=auto`,
+    );
+    return await request.json();
+  },
+);
 export const getPrayers_and_date_data = createAsyncThunk(
   "prayer/gPD",
   async ({ latitude, longitude }: { latitude: number; longitude: number }) => {
     const request = await fetch(
       serverHost +
         `prayer/prayer_time?latitude=${latitude}&longitude=${longitude}`,
+      {
+        method: "GET",
+        headers,
+      },
     );
 
+    return await request.json();
+  },
+);
+export const set_user_prayer_prefrence_data = createAsyncThunk(
+  "prayer/add_props",
+  async (object: {
+    method: string;
+    school: string;
+    tune: string[];
+    is_12: boolean;
+  }) => {
+    const request = await fetch(serverHost + `prayer/add_props`, {
+      method: "POST",
+      headers,
+      body: JSON.stringify(object),
+    });
+    return await request.json();
+  },
+);
+export const getMosque_data = createAsyncThunk(
+  "prayer/get_Mosque_data",
+  async () => {
+    const request = await fetch(serverHost + `mosque/get_mosque_data`, {
+      method: "GET",
+      headers,
+    });
+    const res = await request.json();
+    return res;
+  },
+);
+////////////////////////
+export const set_mosque_active = createAsyncThunk(
+  "prayer/active_mosque",
+  async (object: {
+    Lat: number;
+    Lon: number;
+    MosqueName: string;
+    Country: string;
+    City: string;
+    Region: string;
+  }) => {
+    const request = await fetch(serverHost + `mosque/set_active`, {
+      method: "POST",
+      headers,
+      body: JSON.stringify(object),
+    });
+    return await request.json();
+  },
+);
+export const set_icama = createAsyncThunk(
+  "mosque/set_icama",
+  async (object: {
+    Fajr: string;
+    Dhuhr: string;
+    Asr: string;
+    Maghrib: string;
+    Isha: string;
+  }) => {
+    const request = await fetch(serverHost + `mosque/edit_icama_durations`, {
+      method: "POST",
+      headers,
+      body: JSON.stringify(object),
+    });
+
+    return await request.json();
+  },
+);
+export const set_bg = createAsyncThunk(
+  "mosque/set_Bg",
+  async (object: { type: string; link: string }) => {
+    const request = await fetch(serverHost + `mosque/set_bg`, {
+      method: "POST",
+      headers,
+      body: JSON.stringify(object),
+    });
+
+    return await request.json();
+  },
+);
+export const set_bg_file = createAsyncThunk(
+  "mosque/set_Bg_file",
+  async (payload: FormData ) => {
+    const request = await fetch(serverHost + `mosque/set_bg_img`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${theToken}`,
+      },
+      body: payload,
+    });
     return await request.json();
   },
 );
@@ -216,13 +387,11 @@ export const prayer_slice = createSlice({
           return returnPrayerTime(e, i, prayers);
         });
         state.sunrise_midnight = sunrise_midnight.map((e, i) => {
-          const titles = ["الشروق", "منتصف الليل"];
           return { title: titles[i] || "", time: e };
         });
         let hijrid_date_splited = hijrid_date.split("-");
-        console.log(hijrid_date.split(`-`) )
         state.hijrid_date =
-          (hijrid_date.split(`-`)[0])?.length === 0
+          hijrid_date.split(`-`)[0]?.length === 0
             ? hijrid_date_splited[0] +
               "-" +
               hijriMonths[Number(hijrid_date_splited[0])] +
@@ -237,9 +406,168 @@ export const prayer_slice = createSlice({
     builder.addCase(getPrayers_and_date_data.rejected, (state, action) => {
       state.All_done.done2 = false;
     });
+    //////////////////////////////////
+    builder.addCase(
+      get_user_prayer_prefrence_data.fulfilled,
+      (state, action) => {
+        try {
+          const { is_12, school, tune, method } = action.payload;
+          const all_Props = [method, school, tune, is_12];
+          const props_name: string[] = ["method", "school", "tune", "is_12"];
+          all_Props.forEach((e, i) => {
+            if (e !== undefined && props_name[i]) {
+              (state.prayer_prefrence_data as any)[
+                props_name[i] as keyof typeof state.prayer_prefrence_data
+              ] = e;
+            }
+          });
+          state.All_done.done3 = true;
+        } catch (e) {
+          console.log(e);
+          state.All_done.done3 = false;
+        }
+      },
+    );
+    builder.addCase(
+      get_user_prayer_prefrence_data.rejected,
+      (state, action) => {
+        state.All_done.done3 = false;
+      },
+    );
+    builder.addCase(
+      set_user_prayer_prefrence_data.fulfilled,
+      (state, action) => {
+        try {
+          const { is_12, school, tune, method } = action.payload;
+          const all_Props = [method, school, tune, is_12];
+
+          const props_name: string[] = ["method", "school", "tune", "is_12"];
+          all_Props.forEach((e, i) => {
+            if (e !== undefined && props_name[i]) {
+              (state.prayer_prefrence_data as any)[
+                props_name[i] as keyof typeof state.prayer_prefrence_data
+              ] = e;
+            }
+          });
+          toastFunctions("✅","success")
+        } catch (e) {
+          console.log(e);
+          toastFunctions("error","error")
+        }
+      },
+    );
+    builder.addCase(
+      set_user_prayer_prefrence_data.rejected,
+      (state, action) => {
+        //state.All_done.done3 = false;
+      },
+    );
+    //////////////////////////
+    builder.addCase(set_mosque_active.fulfilled, (state, action) => {
+      const { Lon, Lat, MosqueName, Country, City, Region, MosqueId } =
+        action.payload as {
+          Lat: number;
+          Lon: number;
+          MosqueName: string;
+          Region: string;
+          Country: string;
+          City: string;
+          MosqueId: number;
+        };
+      state.latitude = Lat;
+      state.longitude = Lon;
+      state.mosqueProps = { MosqueName, MosqueId };
+      state.full_location_data = {
+        countryName: Country,
+        regionName: Region,
+        cityName: City,
+      };
+      state.All_done.done4 = true;
+    });
+    builder.addCase(set_mosque_active.rejected, (state, action) => {
+      state.All_done.done4 = false;
+      toastFunctions("error", "error");
+    });
+    ///////
+    builder.addCase(getMosque_data.fulfilled, (state, action) => {
+      const {
+        method,
+        tune,
+        school,
+        is_12,
+        City,
+        Country,
+        MosqueName,
+        MosqueImg,
+        Lat,
+        Lon,
+        Region,
+        MosqueId,
+        MosqueIcama,
+      } = action.payload as PrayerMethod;
+      if (Lat === undefined) {
+        state.All_done.done4 = false;
+        return;
+      }
+      state.mosqueProps = { MosqueId, MosqueImg, MosqueName, MosqueIcama };
+      state.latitude = Lat;
+      state.longitude = Lon;
+      state.full_location_data = {
+        cityName: City,
+        regionName: Region,
+        countryName: Country,
+      };
+      state.prayer_prefrence_data = { is_12, school, tune, method };
+      state.All_done.done4 = true;
+    });
+    builder.addCase(getMosque_data.rejected, (state, action) => {
+      state.All_done.done4 = false;
+    });
+    /////////////////////////////////////////////
+    builder.addCase(getWeather_Data.fulfilled, (state, action) => {
+      const { is_day, weathercode, temperature } = action.payload
+        .current_weather as {
+        is_day: number;
+        weathercode: number;
+        temperature: number;
+      };
+      state.is_day = is_day;
+      state.weathercode = weathercode;
+      state.temperature = temperature;
+    });
+    ///////////////////////////////////////////////////////////////
+    builder.addCase(set_icama.fulfilled, (state, action) => {
+      state.mosqueProps = action.payload;
+      toastFunctions("✅", "success");
+    });
+    builder.addCase(set_icama.rejected, (state) => {
+      toastFunctions("error", "error");
+    });
+    ////////////////////////////////////////////////////////////////////////////
+    builder.addCase(set_bg.fulfilled, (state, action) => {
+      state.mosqueProps = action.payload;
+      toastFunctions("✅", "success");
+    });
+    builder.addCase(set_bg.rejected, (state) => {
+      toastFunctions("error", "error");
+    });
+    builder.addCase(set_bg_file.fulfilled, (state, action) => {
+      try{
+        state.mosqueProps = action.payload;
+        toastFunctions("✅", "success");
+      }
+      catch{
+        toastFunctions("error", "error");
+      }
+      
+    });
+    builder.addCase(set_bg_file.rejected, (state) => {
+      toastFunctions("error", "error");
+    });
   },
 });
-function returnPrayerTime(
+////////////////////////////////////////////////////////////////////////////////////
+export function returnPrayerTime(
   time: string,
   index: number,
   array: string[],
@@ -249,10 +577,8 @@ function returnPrayerTime(
   icama?: string;
   isCurrent: boolean;
 } {
-  const prayers_name = ["الفجر", "الظهر", "العصر", "المغرب", "العشاء"];
-
   return {
-    title: prayers_name[index] || "",
+    title: prayers_names[index] || "",
     time,
     isCurrent: !!returnCurrentTime(array)[index],
   };
@@ -260,7 +586,7 @@ function returnPrayerTime(
 const returnCurrentTime = (array: string[]): boolean[] => {
   const theDate = new Date();
   const currentHour = theDate.getHours();
-  const currentMins = theDate.getHours();
+  const currentMins = theDate.getMinutes();
   const numbred_array = array.map((e, i) => {
     const [hour, mins] = e.split(":").map((ele) => {
       return Number(ele);
@@ -274,6 +600,11 @@ const returnCurrentTime = (array: string[]): boolean[] => {
       hour - currentHour > 0
     ) {
       return true;
+    } else if (
+      hour - currentHour < 0 ||
+      (hour - currentHour === 0 && mins - currentMins >= 0)
+    ) {
+      return false;
     } else {
       return false;
     }

@@ -89,7 +89,6 @@ export function Notification() {
         const { finalBoolean, subscription } =
           await requestNotificationPermission();
         const subscriptionData = subscription?.toJSON();
-        console.log(subscriptionData)
         dispatch(
           setActiver({
             active: finalBoolean,

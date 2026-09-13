@@ -38,7 +38,7 @@ fetch(serverHost+"analytics").then((e)=>{
     setData(states)
 })
 },[])
-const dir = i18n.language === 'ar' ? 'ltr' : 'rtl'
+const dir =i18n.dir()
 return (
     <Tabs defaultValue="users" className="mb-20 w-full mt-20" >
         <TabsList className={`w-full flex-row-reverse`}>

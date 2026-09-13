@@ -52,7 +52,7 @@ const option_html = options.map((e,i)=>{
                                                 </div>                                                                                                 
                                         </div>)
                         })
-return (<div dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}   className="md:p-4 h-screen "> 
+return (<div dir={i18n.dir()}   className="md:p-4 h-screen "> 
         <Label className={`text-2xl`} >{t(`dashboard.General`)}</Label>
                 <Label className={`md:p-6`} >{t(`dashboard.Account_informations`)}</Label>
                 <div className="md:p-6 flex flex-col">

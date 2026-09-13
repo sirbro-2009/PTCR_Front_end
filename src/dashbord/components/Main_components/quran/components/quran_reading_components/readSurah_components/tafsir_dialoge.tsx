@@ -90,9 +90,11 @@ export function TafsirDialoge({
           <div
             className="m-auto flex flex-row cursor-pointer"
             onClick={() => {
-              handleCopyLink(object?.text as string);
+              object?.text?
+              handleCopyLink(object?.text as string)
+              :``
             }}>
-            <Copy className="m-2 "></Copy>
+            <Copy className="m-2 "/>
             <Label className="m-2 font-bold">
               {t(`dashboard.quran_page.copy`)}
             </Label>
