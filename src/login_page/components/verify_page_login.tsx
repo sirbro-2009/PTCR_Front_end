@@ -213,7 +213,6 @@ export default function Verify_page_login() {
           <>
             <Input
               className={`w-1/2 self-center`}
-              aria-invalid={showInput.boolen}
               onChange={(e) => {
                 const boolen = e.target.value.length>=8?false:true
                 const new_password = e.target.value
