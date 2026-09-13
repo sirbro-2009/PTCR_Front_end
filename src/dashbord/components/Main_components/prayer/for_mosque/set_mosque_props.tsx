@@ -44,7 +44,7 @@ return (    <Card className="p-2 my-2" dir={i18n.dir()}>
 export default function Set_mosque_props() {
     const {t,i18n} = useTranslation()
   return (
-<Tabs dir={i18n.dir()} defaultValue={localStorage.getItem("lastIndexMP") as string} className="w-full p-2">
+<Tabs dir={i18n.dir()} defaultValue={localStorage.getItem("lastIndexMP") as string??'set_mosque_place'} className="w-full p-2">
   <TabsList className="w-full">
     <TabsTrigger value="set_mosque_place">{t(`dashboard.prayer_page.tabs.setMosquePlace`)}</TabsTrigger>
     <TabsTrigger value="set_Icama">{t(`dashboard.prayer_page.tabs.setIcama`)}</TabsTrigger>
