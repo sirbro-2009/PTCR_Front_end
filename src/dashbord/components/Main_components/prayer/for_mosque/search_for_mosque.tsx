@@ -5,8 +5,12 @@ import { Field, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { serverHost } from "@/other/data";
-import Loader from "@/other/Loader.";
-import { MapPinHouse, Search } from "lucide-react";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+import { MapPinHouse } from "lucide-react";
 import { Mosque } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -54,7 +58,7 @@ export default function Search_for_mosque() {
   const [search, setSearch] = useState<{
     res: MosqueProps[];
     res_boolean: boolean | null;
-    nearby?:boolean
+    nearby?: boolean;
   }>({
     res: [],
     res_boolean: null,
@@ -78,7 +82,7 @@ export default function Search_for_mosque() {
       setSearch({
         res: await request.json(),
         res_boolean: true,
-        nearby:true,
+        nearby: true,
       });
     } catch {
       setSearch({ res: [], res_boolean: false });
@@ -93,7 +97,7 @@ export default function Search_for_mosque() {
         setSearch({
           res: await request.json(),
           res_boolean: true,
-                  nearby:false,
+          nearby: false,
         });
       } catch {
         setSearch({ res: [], res_boolean: false });
@@ -128,9 +132,15 @@ export default function Search_for_mosque() {
         </ButtonGroup>
       </Field>
       <Card className="mt-5">
-        <Label className="m-auto">{!!search.nearby?``:t(`dashboard.prayer_page.search.allMosquesNear`)}</Label>
+        <Label className="m-auto">
+          {!!search.nearby
+            ? ``
+            : t(`dashboard.prayer_page.search.allMosquesNear`)}
+        </Label>
         {search.res_boolean && search.res.length !== 0 ? (
           search.res.map((e, i) => (
+            <HoverCard>
+              <HoverCardTrigger>
             <Button
               key={i}
               className="w-[98%] h-auto p-2 m-auto cursor-pointer grid grid-cols-2 md:flex  md:flex-row  justify-between "
@@ -164,6 +174,11 @@ export default function Search_for_mosque() {
                 </Avatar>
               </Label>
             </Button>
+              </HoverCardTrigger>
+              <HoverCardContent side="top" className="bg-transparent ">
+                <img src={e.MosqueImg} alt={e.MosqueName} className="w-full h-1/2 rounded-t-lg" />
+              </HoverCardContent>
+            </HoverCard>
           ))
         ) : search.res_boolean === null ? (
           <Label className="text-xl m-auto">
