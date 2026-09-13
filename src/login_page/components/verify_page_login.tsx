@@ -178,30 +178,30 @@ export default function Verify_page_login() {
             <InputOTPGroup>
               <InputOTPSlot
                 index={0}
-                aria-invalid={login.done === false ? false : true}
+                aria-invalid={!login.done}
               />
               <InputOTPSlot
                 index={1}
-                aria-invalid={login.done === false ? false : true}
+                aria-invalid={!login.done}
               />
               <InputOTPSlot
                 index={2}
-                aria-invalid={login.done === false ? false : true}
+                aria-invalid={!login.done}
               />
             </InputOTPGroup>
             <InputOTPSeparator />
             <InputOTPGroup>
               <InputOTPSlot
                 index={3}
-                aria-invalid={login.done === false ? false : true}
+                aria-invalid={!login.done}
               />
               <InputOTPSlot
                 index={4}
-                aria-invalid={login.done === false ? false : true}
+                aria-invalid={!login.done}
               />
               <InputOTPSlot
                 index={5}
-                aria-invalid={login.done === false ? false : true}
+                aria-invalid={!login.done}
               />
             </InputOTPGroup>
           </InputOTP>
@@ -217,9 +217,7 @@ export default function Verify_page_login() {
               onChange={(e) => {
                 const boolen = e.target.value.length>=8?false:true
                 setShowInput({ ...showInput, new_password: e.target.value,boolen:boolen });
-
               }}
-              value={showInput.new_password}
               placeholder={t(`auth.placeHolder2`)}
               type="password"
             />
