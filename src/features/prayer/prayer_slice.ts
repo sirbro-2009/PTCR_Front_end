@@ -610,7 +610,11 @@ const returnCurrentTime = (array: string[]): boolean[] => {
     }
   });
   const firstIndex = filtred_array1.indexOf(true);
+  
   const final_array = filtred_array1.map((e, i) => {
+    if(firstIndex  === -1 && i === 0){
+      return true
+    }
     if (e && i === firstIndex) {
       return true;
     } else {
