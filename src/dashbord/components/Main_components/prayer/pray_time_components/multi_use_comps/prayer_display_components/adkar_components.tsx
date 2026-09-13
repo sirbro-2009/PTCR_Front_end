@@ -63,7 +63,7 @@ export default function Adkar_components() {
   return (
     <div  style={{ background: `url(${MosqueImg ?? ``})` }}>
     <div
-      className={` text-center flex items-center justify-center  h-screen w-screen ${theme ? "bg-black/50" : ``}`}>
+      className={` text-center flex items-center justify-center  h-screen w-screen dark:bg-black/50 `}>
       {hadith.done ? (
         <Label className={`  ${[2,24,29].includes(randomHadith)?`text-[2vw] p-3`:`text-[3.4vw] p-2`}`} dir="ltr">
           {hadith.hadith.replaceAll("<br>","\n")}

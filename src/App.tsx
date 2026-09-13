@@ -13,10 +13,10 @@ import {
 } from "@/components/ui/context-menu";
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import ContextMenuContentComp from "./other/contextMenu.js";
-if (localStorage.getItem("theme") === undefined) {
+if (!localStorage.getItem("theme")) {
   localStorage.setItem("theme", "dark");
 }
-if (localStorage.getItem("lastDPindex") === undefined) {
+if (!localStorage.getItem("lastDPindex")) {
   localStorage.setItem("lastDPindex", "0");
 }
 

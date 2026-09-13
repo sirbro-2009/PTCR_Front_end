@@ -21,7 +21,7 @@ export default function Display_Pryaer_time({
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}>
-      <div className={theme && !usetType ? "bg-black/50" : ``}>
+      <div className={`dark:bg-black/50`}>
         <Header_data object={data} />
         <Separator className="my-3 lg:my-6  opacity-0" />
         <Middle_Screen_data object={data} />
