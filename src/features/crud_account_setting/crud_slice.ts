@@ -81,9 +81,6 @@ export const userSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(userData.pending, (state) => {
-      state.done = null;
-    });
     builder.addCase(userData.rejected, (state) => {
       state.done = false;
     });
