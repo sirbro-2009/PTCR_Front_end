@@ -32,6 +32,9 @@ export default function Time_remaining({
       const intervalId = setInterval(() => {
         const date = new Date();
         let offset: number = 0;
+        if(date.getMinutes () === 0 && date.getHours() === 0 && date.getSeconds() === 0){
+          location.reload()
+        }
         //86400000
         if (prayer_time?.title === "Fajr") {
           const hour = Number(prayer_time.time.split(":")[0]) - date.getHours();

@@ -18,7 +18,7 @@ export default function DatePicker() {
   const [open, setOpen] = useState(false);
   const Checker = (sentedDate: string): boolean => {
     try {
-      let theDate = new Date(Date.now());
+      let theDate = new Date();
       const SendedDate = new Date(sentedDate);
       const def: number = Math.round(
         (theDate.getTime() - SendedDate.getTime()) / 1000 / 60 / 60 / 24 / 365,
@@ -57,7 +57,7 @@ export default function DatePicker() {
             captionLayout="dropdown"
             onSelect={(date) => {
               if (!date) return;
-              const isoDate = date.toISOString();
+              const isoDate = new Date(date.getTime() + 86400000).toISOString();
               setSignUp({
                 ...signUp,
                 dateOfborn: isoDate,
