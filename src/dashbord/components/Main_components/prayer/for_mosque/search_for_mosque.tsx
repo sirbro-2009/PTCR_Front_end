@@ -38,7 +38,6 @@ interface MosqueProps {
   Distance?: number;
 }
 const editDistance = (distance: number): string => {
-  console.log(distance);
   if (distance < 1) {
     return Math.round(distance * 1000) + "m";
   }
@@ -139,44 +138,49 @@ export default function Search_for_mosque() {
         </Label>
         {search.res_boolean && search.res.length !== 0 ? (
           search.res.map((e, i) => (
-            <HoverCard>
+            <HoverCard key={i}>
               <HoverCardTrigger>
-            <Button
-              key={i}
-              className="w-[98%] h-auto p-2 m-auto cursor-pointer grid grid-cols-2 md:flex  md:flex-row  justify-between "
-              dir="rtl"
-              onClick={() => {
-                handelChoice(e.MosqueId.toString());
-              }}>
-              <Label>{e.MosqueName}</Label>
-              <Label>
-                {e.City} {e.Region} {e.Country}
-              </Label>
-              <Label className="w-full md:w-1/4 justify-between flex " dir="ltr">
-                <Mosque className="w-20 h-20" />
-                {e.Distance ? editDistance(e.Distance) : ``}
-                <Avatar>
-                  <AvatarImage src={e.MosqueImg} alt={e.MosqueName} />
-                  <AvatarFallback>{e.MosqueName[0]}</AvatarFallback>
-                  <AvatarBadge
-                    className={
-                      e.Distance &&
-                      e.Distance >= (1.3 / 3) * 2 &&
-                      e.Distance >= 1.3 / 3
-                        ? "bg-red-600 dark:bg-red-800"
-                        : e.Distance &&
-                            e.Distance < (1.3 / 3) * 2 &&
-                            e.Distance >= 1.3 / 3
-                          ? "bg-yellow-600 dark:bg-yellow-800"
-                          : "bg-green-600 dark:bg-green-800"
-                    }
-                  />
-                </Avatar>
-              </Label>
-            </Button>
+                <Button
+                  className="w-[98%] h-auto p-2 m-auto cursor-pointer grid grid-cols-2 md:flex  md:flex-row  justify-between "
+                  dir="rtl"
+                  onClick={() => {
+                    handelChoice(e.MosqueId.toString());
+                  }}>
+                  <Label>{e.MosqueName}</Label>
+                  <Label>
+                    {e.City} {e.Region} {e.Country}
+                  </Label>
+                  <Label
+                    className="w-full md:w-1/4 justify-between flex "
+                    dir="ltr">
+                    <Mosque className="w-20 h-20" />
+                    {e.Distance ? editDistance(e.Distance) : ``}
+                    <Avatar>
+                      <AvatarImage src={e.MosqueImg} alt={e.MosqueName} />
+                      <AvatarFallback>{e.MosqueName[0]}</AvatarFallback>
+                      <AvatarBadge
+                        className={
+                          e.Distance &&
+                          e.Distance >= (1.3 / 3) * 2 &&
+                          e.Distance >= 1.3 / 3
+                            ? "bg-red-600 dark:bg-red-800"
+                            : e.Distance &&
+                                e.Distance < (1.3 / 3) * 2 &&
+                                e.Distance >= 1.3 / 3
+                              ? "bg-yellow-600 dark:bg-yellow-800"
+                              : "bg-green-600 dark:bg-green-800"
+                        }
+                      />
+                    </Avatar>
+                  </Label>
+                </Button>
               </HoverCardTrigger>
               <HoverCardContent side="top" className="bg-transparent ">
-                <img src={e.MosqueImg} alt={e.MosqueName} className="w-full h-1/2 rounded-t-lg" />
+                <img
+                  src={e.MosqueImg}
+                  alt={e.MosqueName}
+                  className="w-full h-1/2 rounded-t-lg"
+                />
               </HoverCardContent>
             </HoverCard>
           ))

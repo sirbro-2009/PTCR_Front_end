@@ -26,7 +26,7 @@ export default function Prayer_Category_setting() {
             localStorage.getItem("last_tab_name") ?? "prayer_method"
           }
           className="w-full mx-auto p-2">
-          <TabsList className="w-full flex justify-between flex-row">
+          <TabsList className="w-full flex justify-between flex-row scrollbar-none overflow-x-scroll md:overflow-x-visible">
             <TabsTrigger value="prayer_method">{t(`dashboard.prayer_page.tabs.prayerMethod`)}</TabsTrigger>
             <TabsTrigger value="Prayer_time_offset">
               {t(`dashboard.prayer_page.tabs.prayerTimeEdit`)}

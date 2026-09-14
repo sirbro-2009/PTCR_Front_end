@@ -7,8 +7,9 @@ import { useTranslation } from "react-i18next";
 import { inWordTranslations } from "@/other/data";
 import { useNavigate, useParams } from "react-router";
 
-export const f = (x: number) => (-x + 60 === 60 ? 0 : -x + 60);
-
+export function f(x: number){
+return -x + 60 === 60 ? 0 : -x + 60
+}
 export default function Time_remaining({
   prayer_time,
   icama,
@@ -27,13 +28,17 @@ export default function Time_remaining({
       : undefined;
 
     useEffect(() => {
-      if (!prayer_time?.time && !mosqueIcama) return;
+      if (!prayer_time?.time && !mosqueIcama && !id) return;
 
       const intervalId = setInterval(() => {
         const date = new Date();
         let offset: number = 0;
-        if(date.getMinutes () === 0 && date.getHours() === 0 && date.getSeconds() === 0){
-          location.reload()
+        if (
+          date.getMinutes() === 0 &&
+          date.getHours() === 0 &&
+          date.getSeconds() === 0
+        ) {
+          location.reload();
         }
         //86400000
         if (prayer_time?.title === "Fajr") {
@@ -67,8 +72,8 @@ export default function Time_remaining({
         //  : remaining_time_text.full_time
         setTR(dif as string);
         //remaining_hour === 0 && remaining_mins === 0 && f(second) === 0
-        if (dif === '0:00:00') {
-          //navigate(`/adhan/${prayer_time?.title}/${mosqueIcama ?? 5}/${id}`);
+        if (dif === "0:00:00") {
+          navigate(`/adhan/${prayer_time?.title}/${mosqueIcama ?? 5}/${id}`);
         }
 
         if (
@@ -91,7 +96,12 @@ export default function Time_remaining({
         <Clock />
         {t(`dashboard.prayer_page.prayers.${prayer_time.title}`)}{" "}
         {inWordTranslations[i18n.language as keyof typeof inWordTranslations]}
-        <span dir="ltr">{timeRemaining}</span>
+        <span dir="ltr">
+          {timeRemaining
+            .split(":")
+            .map((e) => editZero(e))
+            .join(":")}
+        </span>
       </Label>
     );
   } catch {

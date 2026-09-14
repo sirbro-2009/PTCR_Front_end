@@ -53,7 +53,7 @@ export default function SideBarFooter() {
             onOpenChange={(open) => {
               document.body.style.overflowY = open ? "hidden" : "auto";
             }}>
-            <DropdownMenuTrigger asChild dir={i18n.dir()}>
+            <DropdownMenuTrigger asChild>
               <SidebarMenuButton
                 className={`flex md:flex-row-reverse h-13 bg-transparent! overflow-visible`}>
                 {!userInformations.done ? (

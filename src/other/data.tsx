@@ -686,9 +686,9 @@ export const Downloads: Download[] = [
   },
   {
     text: "Andorid",
-    link: "https://median.co/share/abzewen#apk",
+    link: "",
     icon: <FaAndroid size={30} />,
-    available: true,
+    available: false,
   },
   {
     text: "ios",

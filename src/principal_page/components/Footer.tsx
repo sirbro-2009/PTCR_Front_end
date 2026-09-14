@@ -101,11 +101,11 @@ export default function Footer() {
                     {Downloads.map((e, i) => {
                       return (
                         <Link to={e.link} key={i} target="_blank">
-                          <Card className="w-full items-center  p-2 flex-row flex justify-between">
+                          <Button disabled={!e.available} variant="ghost" size="lg" className={"w-full items-center  p-2 flex-row flex justify-between"}>
                             {e.icon}
                             <HoverCard>
                               <HoverCardTrigger >
-                                <span className="text-black font-bold">
+                                <span className={`${e.available?`text-black`:`text-red-600`} font-bold`}>
                                   {e.text}
                                 </span>
                               </HoverCardTrigger>
@@ -117,7 +117,7 @@ export default function Footer() {
                               }
 
                             </HoverCard>
-                          </Card>
+                          </Button>
                         </Link>
                       );
                     })}

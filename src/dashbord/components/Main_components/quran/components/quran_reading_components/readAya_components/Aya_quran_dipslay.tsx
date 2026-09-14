@@ -107,7 +107,7 @@ export default function AyaQuranDisplay({ contentObjects }: any) {
           </Aya_Number>
         </Field>
         <Pagination>
-          <PaginationContent>
+          <PaginationContent dir="ltr">
             <PaginationItem>
               <PaginationPrevious
                 href="#"
