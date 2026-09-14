@@ -1,4 +1,4 @@
-import Bar from "./components/Bar.js"
+import Bar from "./components/Header.js"
 import ImgCarsool from "./components/ImgCarsool.js"
 import { DataShow } from "./components/DataShow.js"
 import Footer from "./components/Footer.js"

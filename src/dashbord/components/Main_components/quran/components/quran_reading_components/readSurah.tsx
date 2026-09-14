@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 
 export default function ReadSurah() {
   const containerRef = useRef<HTMLDivElement>(null);
-    const {t} = useTranslation()
+    const {t,i18n} = useTranslation()
 
   const [currentScroll, setCurrentScroll] = useState(0);
   const [surahIndex, surahSelect] = useState("");
@@ -17,7 +17,6 @@ export default function ReadSurah() {
   const infromations = useAppSelector((state) => state.quran);
   const iSAutoModeEnabled = useAppSelector((state) => state.quran.QDS.readMode);
   const done = infromations.done4;
-  const dispatch = useAppDispatch();
 
   useEffect(() => {
     localStorage.setItem("lastTab", "surah_reading");
@@ -72,7 +71,7 @@ useEffect(() => {
   className="bg-secondary p-2 flex-col flex rounded-xl w-full scrollbar-hide overflow-y-auto max-h-screen"
   ref={containerRef}
   onScroll={handleScroll}>
-      <div className="bg-secondary p-2 justify-center flex rounded-xl w-full">
+      <div dir={i18n.dir()} className="bg-secondary p-2 justify-center flex rounded-xl w-full">
         <Label className="my-2 font-semibold md:text-2xl">
           {t(`dashboard.quran_page.select_surah_and_read`)}
         </Label>

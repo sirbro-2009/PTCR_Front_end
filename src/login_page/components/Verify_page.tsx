@@ -1,4 +1,4 @@
-import Bar from "@/principal_page/components/Bar";
+import Bar from "@/principal_page/components/Header";
 import { useTranslation } from "react-i18next";
 import Footer from "@/principal_page/components/Footer";
 import { useContext, useEffect, useState } from "react";

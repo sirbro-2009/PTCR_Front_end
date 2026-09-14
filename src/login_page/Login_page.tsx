@@ -1,4 +1,4 @@
-import Bar from "@/principal_page/components/Bar";
+import Bar from "@/principal_page/components/Header.js";
 import { useTranslation } from "react-i18next";
 import { Login_card } from "./components/Login_card.js";
 import Footer from "@/principal_page/components/Footer";

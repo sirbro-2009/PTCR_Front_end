@@ -10,14 +10,14 @@ import { useTranslation } from "react-i18next";
 export default function ReadAya() {
     const [surah,surahSelect] = useState("")
 localStorage.setItem("lastTab","aya_reading")
-  const {t} = useTranslation()
+  const {t,i18n} = useTranslation()
 
   const infromations = useAppSelector((state) => state.quran);
   const done = infromations.done4;
   if (done === false) {
     toastFunctions("error", "error");
   }
-    return (<div className="bg-secondary p-2 flex-col flex rounded-xl w-full">
+    return (<div className="bg-secondary p-2 flex-col flex rounded-xl w-full" dir={i18n.dir()}>
                 <div className="bg-secondary p-2 justify-center flex rounded-xl w-full">
 
                  <Label className="my-2 font-semibold md:text-2xl">

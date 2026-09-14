@@ -39,7 +39,7 @@ export default function SideBarFooter() {
   useEffect(() => {
     dispatch(userData());
   }, [dispatch]);
-  const { t } = useTranslation();
+  const { t ,i18n} = useTranslation();
 
   const user = userInformations.data;
   const { profilePicture, fullName, userName, userType, email } = user as Data
@@ -48,12 +48,12 @@ export default function SideBarFooter() {
     <SidebarFooter>
       <hr />
       <SidebarMenu>
-        <SidebarMenuItem>
+        <SidebarMenuItem >
           <DropdownMenu
             onOpenChange={(open) => {
               document.body.style.overflowY = open ? "hidden" : "auto";
             }}>
-            <DropdownMenuTrigger asChild>
+            <DropdownMenuTrigger asChild dir={i18n.dir()}>
               <SidebarMenuButton
                 className={`flex md:flex-row-reverse h-13 bg-transparent! overflow-visible`}>
                 {!userInformations.done ? (
@@ -75,7 +75,7 @@ export default function SideBarFooter() {
                     ) : (
                       <User className="scale-120 font-bold" />
                     )}
-                    <div className="group-data-[collapsible=icon]:hidden">
+                    <div  className="group-data-[collapsible=icon]:hidden">
                       <p>{user.fullName || `Full Name`}</p>
                       <p className="text-muted-foreground font-light text-sm">
                         {t(`sideBar.${userType || `-_-`}`)}{" "}
@@ -95,7 +95,7 @@ export default function SideBarFooter() {
                   </div>
                 </>
               ) : (
-                <>
+                <div dir={i18n.dir()}>
                   <DropdownMenuGroup>
                     {/*ACCOUNT NAME USER NAME */}
                     <DropdownMenuLabel>
@@ -106,7 +106,7 @@ export default function SideBarFooter() {
                       <Link
                         to={`/`}
                         className="w-full flex flex-row  items-center justify-start">
-                        <House className="mr-3" />
+                        <House className="mx-3" />
                         {t(`dashboard.principale_page`)}
                       </Link>
                     </DropdownMenuItem>
@@ -119,12 +119,12 @@ export default function SideBarFooter() {
                         onClick={() => {
                           sign_out()
                         }}>
-                        <LogOut className="mr-3" />
+                        <LogOut className="m-3" />
                         {t(`navbar.logOut`)}
                       </a>
                     </DropdownMenuItem>
                   </DropdownMenuGroup>
-                </>
+                </div>
               )}
             </DropdownMenuContent>
           </DropdownMenu>

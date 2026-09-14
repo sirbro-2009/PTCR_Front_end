@@ -21,7 +21,7 @@ import type { Data } from "@/dashbord/components/SideBar_components/SideBarFoote
 export default function Yes_Login() {
   //const [user, setUser] = useState({});
 
-  const {t } = useTranslation();
+  const {t,i18n } = useTranslation();
   const userInformations = useAppSelector(state=>state.user) 
   const dispatch = useAppDispatch()
 useEffect(()=>{
@@ -33,7 +33,7 @@ const {profilePicture,fullName,userName} = user as Data
     <DropdownMenu onOpenChange={(open) => {
   document.body.style.overflowY = open ? "hidden" : "auto"
 }}>
-      <DropdownMenuTrigger asChild >
+      <DropdownMenuTrigger asChild  dir={i18n.dir()}>
         <Button variant="outline" className={`rounded-full w-8 h-8 bg-transparent cursor-pointer`} >
                 {
                   profilePicture?
@@ -55,24 +55,24 @@ const {profilePicture,fullName,userName} = user as Data
         <DropdownMenuGroup>
                 {/*ACCOUNT NAME USER NAME */}
                   {userInformations.done?
-                    <DropdownMenuLabel>
+                    <DropdownMenuLabel dir={i18n.dir()}>
                           <h1 className="font-bold">{fullName||`Full Name`}</h1>
                           <h1 className="font-medium">{userName||`user_1234`}</h1>
                     </DropdownMenuLabel>:
                     <Loader/>
                     }
-                  <DropdownMenuItem>
+                  <DropdownMenuItem dir={i18n.dir()}>
                         <Link to={`/dashboard`} className="w-full flex flex-row  items-center justify-start">
-                        <LayoutDashboard className="mr-3" />
+                        <LayoutDashboard className="mx-3" />
                             {t(`navbar.Dashboard`)}
                         </Link>
                   </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
+          <DropdownMenuItem dir={i18n.dir()}>
             <a className="w-full flex flex-row  items-center justify-start" onClick={()=>{sign_out()}}>
-              <LogOut className="mr-3"/>
+              <LogOut className="mx-3"/>
               {t(`navbar.logOut`)}
             </a>
           </DropdownMenuItem>
