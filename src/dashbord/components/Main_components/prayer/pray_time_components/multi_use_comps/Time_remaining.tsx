@@ -70,7 +70,7 @@ export default function Time_remaining({
         //sub_time === 0
         //  ? remaining_time_text.no_hour
         //  : remaining_time_text.full_time
-        setTR(prayer_time?.title==='Fajr'?sub_time === 0
+        setTR(prayer_time?.title!=='Fajr'?sub_time === 0
          ? remaining_time_text.no_hour
           : remaining_time_text.full_time:dif as string);
         //remaining_hour === 0 && remaining_mins === 0 && f(second) === 0

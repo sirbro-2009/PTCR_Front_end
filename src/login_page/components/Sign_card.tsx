@@ -166,8 +166,8 @@ export function Sign_card() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
-                      <SelectItem value="mosque">{t(`auth.mosque`)}</SelectItem>
                       <SelectItem value="normal">{t(`auth.normal`)}</SelectItem>
+                      <SelectItem value="mosque">{t(`auth.mosque`)}</SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>
