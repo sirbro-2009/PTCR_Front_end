@@ -70,9 +70,11 @@ export default function Time_remaining({
         //sub_time === 0
         //  ? remaining_time_text.no_hour
         //  : remaining_time_text.full_time
-        setTR(dif as string);
+        setTR(prayer_time?.title==='Fajr'?sub_time === 0
+         ? remaining_time_text.no_hour
+          : remaining_time_text.full_time:dif as string);
         //remaining_hour === 0 && remaining_mins === 0 && f(second) === 0
-        if (dif === "0:00:00") {
+        if (prayer_time?.title!=='Fajr'? remaining_hour === 0 && remaining_mins === 0 && f(second) === 0:dif=== '0:00:00' ) {
           navigate(`/adhan/${prayer_time?.title}/${mosqueIcama ?? 5}/${id}`);
         }
 
