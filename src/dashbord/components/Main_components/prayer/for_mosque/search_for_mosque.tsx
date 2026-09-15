@@ -137,7 +137,7 @@ export default function Search_for_mosque() {
             : t(`dashboard.prayer_page.search.allMosquesNear`)}
         </Label>
         {search.res_boolean && search.res.length !== 0 ? (
-          search.res.map((e, i) => (
+          search?.res?.map((e, i) => (
             <HoverCard key={i}>
               <HoverCardTrigger>
                 <Button
