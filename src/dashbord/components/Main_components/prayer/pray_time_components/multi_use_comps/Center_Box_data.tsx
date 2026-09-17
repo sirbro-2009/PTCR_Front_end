@@ -81,7 +81,7 @@ export default function CBD({
   return (
     <Card className="h-70   md:w-1/3 border-10">
       <Label
-        className={`${!usetType?`md:text-6xl`:``} text-5xl m-auto text-shadow-2xs shadow-accent-foreground`}
+        className={`${!usetType?`md:text-4xl lg:text-5xl`:``} text-5xl m-auto text-shadow-2xs shadow-accent-foreground`}
         dir="ltr">
         {fullTimeData.hour} : {fullTimeData.mins} : {fullTimeData.second} {is12 ? fullTimeData.am_pm : ``}
       </Label>

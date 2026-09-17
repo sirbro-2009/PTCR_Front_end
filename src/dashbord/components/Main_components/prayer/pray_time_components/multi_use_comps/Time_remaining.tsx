@@ -94,7 +94,7 @@ export default function Time_remaining({
     if (!prayer_time) return null;
 
     return (
-      <Label className="m-auto text-3xl" dir={i18n.dir()}>
+      <Label className="m-auto text-2xl md:text-xl lg:text-3xl" dir={i18n.dir()}>
         <Clock />
         {t(`dashboard.prayer_page.prayers.${prayer_time.title}`)}{" "}
         {inWordTranslations[i18n.language as keyof typeof inWordTranslations]}

@@ -11,7 +11,7 @@ export default function Five_Prayer_data({object}:{object?:WeatherAndPrayerState
   const keys = ['Fajr','Dhuhr','Asr','Maghrib','Isha']
   const {t,i18n} = useTranslation()
   return (
-    <div className="mx-auto flex md:flex-row flex-col md:justify-between p-2" dir={i18n.dir()}>
+    <div className="mx-auto flex md:flex-row flex-col  md:justify-between mb-25" dir={i18n.dir()}>
       {data.prayers.map((e, i) => {
 
         return (
